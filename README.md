@@ -122,3 +122,12 @@ An easy to read, compact, professional looking font.
 *   [Techsini](http://techsini.com/ "techsini.com")
 
 [Back to top](#table-of-content)
+
+---
+
+# Testing
+This is done in a seperate file:
+
+[TESTING.md](https://github.com/Zelhorst92/GeKnoQu/blob/master/TESTING.md "Link to tests and bugs file")
+
+---
