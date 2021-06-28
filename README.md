@@ -96,3 +96,29 @@ Furthermore Bootstrap has a wide browser compatibility, is quite easy to use and
 During the quiz there will be a time restraint, therefore a simple but well readable font is necessary.
 I will be using a font from [Google Fonts](https://fonts.google.com/ "Google Fonts"), specifically the [Teko Font](https://fonts.google.com/specimen/Teko "Teko Font").
 An easy to read, compact, professional looking font.
+
+---
+
+# Technologies
+## Languages
+*   [HTML](https://en.wikipedia.org/wiki/HTML "Link to the HTML wikipedia page")
+*   [CSS](https://en.wikipedia.org/wiki/CSS "Link to the CSS wikipedia page")
+*   [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to the JavaScript wikipedia page")
+
+## Libraries and Tools
+### Libraries & Frameworks
+*   [Bootstrap](https://getbootstrap.com/ "Link to bootstrap")
+*   [Fontawsome](https://fontawesome.com/ "Link to fontawesome") 
+*   [Googlefonts](https://fonts.google.com/ "Link to googlefonts") 
+
+### Tools
+*   [Gitpod](https://www.gitpod.io/ "Link to gitpod")
+*   [Github](https://github.com/ "Link to github")
+*   [Git](https://git-scm.com/ "Link to git")
+*   [Tinypng](https://tinypng.com/ "Link to tinypng") 
+*   [Balsamiq Wireframes](https://balsamiq.com/wireframes/ "Link to balsamiq wireframes")
+*   [W3C Css-validator](https://jigsaw.w3.org/css-validator/ "Link to the w3 css validator")
+*   [W3C Markup-validator](https://validator.w3.org/ "Link to w3c markup validator")
+*   [Techsini](http://techsini.com/ "techsini.com")
+
+[Back to top](#table-of-content)
