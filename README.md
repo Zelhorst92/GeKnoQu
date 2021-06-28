@@ -39,3 +39,17 @@
     * To see how many answers were answered correctly.
     * To see how many questions are there still to go/on which question out of total amount of questions the user is.
     * To see the score.
+
+## User Stories
+As a user;
+* I want a website which is easy and intuitively to use.
+* I want to see what the website is about at first glance. 
+* I want a website that works on all screen sizes.
+* I want to know how to play the game.
+* I want to select the category of the questions.
+* I want to know if an answer is correct or wrong.
+* I want to know how far along I am on the questionaire/quiz.
+* I want to my see my score.
+* I want to play the game again.
+
+[Back to top](#table-of-content)
