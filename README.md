@@ -131,3 +131,38 @@ This is done in a seperate file:
 [TESTING.md](https://github.com/Zelhorst92/GeKnoQu/blob/master/TESTING.md "Link to tests and bugs file")
 
 ---
+
+# Deployment
+## Deployment via GitHub Pages
+The website was deployed via GitHub by following the steps below:
+-   Go to the repository you want to deply on github.
+-   Click on the **Settings** tab
+-   Go to **Pages** on the left side navigation
+-   In the **Source** section, there is a dropdown menu; select the **master** branch and **root**. Click **save**.
+-   Within a short moment the website is live.
+    You will see a link on the top of the GitHub Pages section, either in a blue or green field.
+    -   Example on how the **link** will look like and coincidently the link to the current website: [https://zelhorst92.github.io/GeKnoQu/](https://zelhorst92.github.io/GeKnoQu/ "Link to the deployed website")
+-   Any time you will push to Github, the update will be visible after a short while.
+
+## Deployment of the website locally:
+-   Click on the dropdown menu which says **Code** on the Github Repository.
+-   You will see several options; 
+    -   **Clone with a link**, 
+    -   **Open with GitHub Desktop** 
+    -   **download ZIP**
+
+#### Clone with a link
+-   When you want to clone; use the **Clone with HTTPS option**, copy the link displayed.
+-   Open your IDE and go to the terminal.
+-   Change the working directory to the location where the cloned directory is to go.
+-   Use the **git clone** command and paste the url copied in the second step.
+
+#### Open with GitHub Desktop
+-   If you have GitHub Desktop installed, you can click on this and it will import and clone the repository for you, after selecting where it needs to go.
+
+#### Download the ZIP
+-   You can also download the whole repository in a zip file and use the IDE software you want.
+
+[Back to top](#table-of-content)
+
+---
