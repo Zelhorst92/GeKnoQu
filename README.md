@@ -30,6 +30,8 @@
 * For users to have fun and learn something at the same time.
 * 
 
+---
+
 ## User Goals
 * A website where you can play a multiple choice quiz game.
 * A website that is easy to use on and has good responsiveness on all screen sizes.
@@ -39,6 +41,8 @@
     * To see how many answers were answered correctly.
     * To see how many questions are there still to go/on which question out of total amount of questions the user is.
     * To see the score.
+
+---
 
 ## User Stories
 As a user;
@@ -55,9 +59,26 @@ As a user;
 
 [Back to top](#table-of-content)
 
+---
+
 ## User Requirements
 * Intuitively know how to start the game or to see how to play the game.
 * Able to select the category of questions.
 * A time indicator.
 * Feedback on whether a question is correct or wrong.
 
+---
+
+## User Expectations
+User expects: 
+* the navigation on the site to be working properly.
+* to be able to select a category.
+* to known how much time the user has left to answer the question.
+* feedback on if the given answer is correct or wrong.
+* the correct answer to be shown.
+* upon giving the correct answer that it increases to score. 
+* to see the users final score on the end of the quiz.
+
+[Back to top](#table-of-content)
+
+---
