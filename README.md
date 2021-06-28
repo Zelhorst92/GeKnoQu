@@ -82,3 +82,17 @@ User expects:
 [Back to top](#table-of-content)
 
 ---
+
+## Design Choices
+The goal of this site is that users can play a quiz/questionaire game. Therefore the user should immediately see the way to start to game or to see how to.
+
+### The structure
+For the structure of the website I will use the framework [Bootstrap](https://getbootstrap.com/ "Link to bootstrap").
+This framework allows for a proper responsive website which is build up from a mobile-first perspective.
+The grid-system that Bootstrap provides is very usefull to have a well working responsive website.
+Furthermore Bootstrap has a wide browser compatibility, is quite easy to use and is very customizable.
+
+### Fonts
+During the quiz there will be a time restraint, therefore a simple but well readable font is necessary.
+I will be using a font from [Google Fonts](https://fonts.google.com/ "Google Fonts"), specifically the [Teko Font](https://fonts.google.com/specimen/Teko "Teko Font").
+An easy to read, compact, professional looking font.
