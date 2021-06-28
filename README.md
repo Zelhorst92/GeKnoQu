@@ -30,4 +30,12 @@
 * For users to have fun and learn something at the same time.
 * 
 
-
+## User Goals
+* A website where you can play a multiple choice quiz game.
+* A website that is easy to use on and has good responsiveness on all screen sizes.
+* An explanation on how to play the game and if there are any rules to it.
+* In game:
+    * To see whether a given answer is correct or wrong.
+    * To see how many answers were answered correctly.
+    * To see how many questions are there still to go/on which question out of total amount of questions the user is.
+    * To see the score.
