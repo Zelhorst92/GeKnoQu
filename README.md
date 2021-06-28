@@ -47,9 +47,17 @@ As a user;
 * I want a website that works on all screen sizes.
 * I want to know how to play the game.
 * I want to select the category of the questions.
+* I want to see how much time I have left to anser the question.
 * I want to know if an answer is correct or wrong.
 * I want to know how far along I am on the questionaire/quiz.
 * I want to my see my score.
 * I want to play the game again.
 
 [Back to top](#table-of-content)
+
+## User Requirements
+* Intuitively know how to start the game or to see how to play the game.
+* Able to select the category of questions.
+* A time indicator.
+* Feedback on whether a question is correct or wrong.
+
