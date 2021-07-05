@@ -58,9 +58,12 @@ header {
 }
 
 .tally {
-    height:15%;
+    /* height:15%; */
     margin: 0;
-
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .question-num,
@@ -68,14 +71,22 @@ header {
     margin: 0 1rem;
     border: 1px solid black;
     border-radius: 50%;
-    display: inline-block;
-    width: 1.25rem;
-    height: 1.25rem;
-    padding: 1.25rem;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-.question {
-    height:25%;
+#category {
+    width: 80%;
+}
+
+#question {
+    /* height:25%; */
     font-size: 1.5rem;
 }
 
@@ -85,7 +96,6 @@ header {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 1rem;
     justify-content: center;
     align-items: center;
 }
@@ -108,10 +118,15 @@ header {
     border: 2px solid black;
 }
 
-.btn-start, .bttn-next {
+.btn-answer {
+    margin:2px;
+}
+
+.btn-start {
     width: 12rem;
     height: 6rem;
     font-size: 4rem;
+    margin-top: 1.5rem;
 }
 
 .correct {
