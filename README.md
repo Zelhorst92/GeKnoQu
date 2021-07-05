@@ -166,3 +166,25 @@ The website was deployed via GitHub by following the steps below:
 [Back to top](#table-of-content)
 
 ---
+
+# Credits
+
+## Overall
+
+## Content
+
+## Images
+
+### Useful links
+
+## Code
+
+### Overal
+
+### Timer bar
+
+The timer bar is roughly based on [this](https://stackoverflow.com/questions/35383629/css-circle-border-fill-animation "stackoverflow forum") and [this](https://jsfiddle.net/rsfkmegp/2/ "jsfiddle") piece of code, made by [G-Cyrillus](https://stackoverflow.com/users/2442099/g-cyrillus "stackoverflow forum"). Integration with the code I already made myself was quite something to figure out, but ultimately successful.
+
+# Thanks
+
+#### Several People
