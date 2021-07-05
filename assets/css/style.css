@@ -1,1 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600&display=swap');
+@import url('');
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+.game-section {
+    position: relative;
+}
+
+.outer-circle {
+    border: 0.5rem solid black;
+    border-radius: 50%;
+    height: 100vw;
+    max-height: 50rem;
+    width: 100vw;
+    max-width: 50rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: blue;
+
+    box-shadow: 0 0 1rem 2px;
+}
+
+.inner-circle {
+    border: .5rem solid black;
+    border-radius: 50%;
+    height: 25rem;
+    width: 25rem;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 2rem;
+
+    background-color: white;
+
+    box-shadow: 0 0 1rem 2px;
+}
+
+.tally {
+    height:15%;
+    margin: 0;
+
+}
+
+.question-num,
+.score {
+    margin: 0 1rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    padding: 1.25rem;
+}
+
+.question {
+    height:25%;
+    font-size: 1.5rem;
+}
+
+/* -------------Buttons */
+
+.btn-container {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    border: .1rem solid black;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 4rem;
+    margin: 0rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.btn:hover {
+    background-color: blue;
+    color: white;
+    border: 2px solid black;
+}
+
+.btn-start, .bttn-next {
+    width: 12rem;
+    height: 6rem;
+    font-size: 4rem;
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+.how-to-play {
+    justify-content: center;
+    align-items: center;
+    top: 80vh;
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
