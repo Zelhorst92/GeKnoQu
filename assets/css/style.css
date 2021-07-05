@@ -23,28 +23,28 @@ header {
 }
 
 .outer-circle {
-    border: 0.5rem solid black;
-    border-radius: 100%;
     height: 100vw;
     max-height: 50rem;
     width: 100vw;
     max-width: 50rem;
+    background-color: blue;
+    border: 0.5rem solid black;
+    border-radius: 100%;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: blue;
     box-shadow: 0 0 1rem 2px;
 
     z-index: 4;
 }
 
 .middle-circle {
-    border: 1px solid black;
-    border-radius: 100%;
-    background-color: #ffffff;
     height: 31rem;
     width: 31rem;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -54,22 +54,20 @@ header {
 /* --------Test Loading Bar */
 
 .timer {
+    height: 100%;
+    width: 100%;
     background-color: blue;
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
     clip: rect(0px, 31rem, 31rem, 15.5rem);
-    
     position: absolute;
 }
 
 .loading {
+    height: 100%;
+    width: 100%;
     background-color: white;
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
     clip: rect(0px, 31rem, 31rem, 15.5rem);
-
     position: absolute;
 }
 
@@ -102,7 +100,6 @@ header {
 }
 
 .right {
-    
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -145,20 +142,17 @@ header {
 /* -------------------- Inner Circle */
 
 .inner-circle {
-    border: .5rem solid black;
-    border-radius: 50%;
     height: 25rem;
     width: 25rem;
+    background-color: white;
+    border: .5rem solid black;
+    border-radius: 50%;
     margin: auto;
+    padding: 2rem;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    padding: 2rem;
-
-    background-color: white;
-
     box-shadow: 0 0 1rem 2px;
 
     z-index: 4;
@@ -175,17 +169,16 @@ header {
 
 .question-num,
 .score {
-    margin: 0 1rem;
+    height: 4rem;
+    width: 4rem;
+    font-size: 1.25rem;
+    text-align: center;
     border: 1px solid black;
     border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    text-align: center;
-    font-size: 1.25rem;
+    margin: 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 #category {
@@ -208,15 +201,16 @@ header {
 }
 
 .btn {
+    height: 4rem;
+    width: 10rem;
+    font-size: 1.2rem;
     border: .1rem solid black;
     border-radius: 1rem;
-    width: 10rem;
-    height: 4rem;
     margin: 0rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+ 
 }
 
 .btn:hover {
@@ -230,8 +224,8 @@ header {
 }
 
 .btn-start {
-    width: 12rem;
     height: 6rem;
+    width: 12rem;
     font-size: 4rem;
     margin-top: 1.5rem;
 }
@@ -244,13 +238,60 @@ header {
     background-color: red;
 }
 
-.how-to-play {
-    justify-content: center;
-    align-items: center;
-    top: 80vh;
-    position: relative;
-}
-
 .hide {
     display: none;
+}
+
+.how-to-play {
+    position: relative;
+    top: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.how-to-play:hover {
+    color: blue;
+}
+
+/* --------------- Help modal */
+
+.help-modal {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.75);
+    padding-top: 5vh;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99;
+}
+
+.help-content {
+    height: 90vh;
+    width: 90vw;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 1rem 3px;
+}
+
+.help-content ul {
+    padding-left: 0;
+}
+
+.help-content ul li {
+    padding: 1rem;
+    list-style: none;
+}
+
+#helpExit:hover {
+    background-color: blue;
 }
