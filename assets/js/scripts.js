@@ -1,15 +1,23 @@
-/* ----------------- Fade in/out animation Script */
+/* ----------------- Collapse animation Script */
 
 document.getElementById('start').addEventListener("click", function () {
     setTimeout(
         function () {
             document.getElementById('game-circle').className += ' inner-circle-load';
+            document.getElementById('category-selector').className += ' hide';
+            document.getElementById('start').className += ' hide';
         }, 500
     );
     setTimeout(
         function () {
             document.getElementById('game-circle').className = 'inner-circle';
         }, 4000
+    );
+    setTimeout(
+        function () {
+            document.getElementById('category-selector').className = '';
+            document.getElementById('start').className = 'btn btn-start';
+        }, 4500
     );
 });
 
