@@ -189,8 +189,8 @@ header {
     align-items: center;
 }
 
-#category {
-    width: 80%;
+#category-selector {
+    width: 22rem;
 }
 
 #question {
