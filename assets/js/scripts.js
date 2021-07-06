@@ -98,3 +98,10 @@ window.onclick = function (event) {
 }
 
 /* ----------------- Restart Script */
+
+document.getElementById("restart").addEventListener("click", function(){
+    if(!confirm("Are you sure you want to quit the game and go back to the menu?")){}
+    else {
+        window.location.reload();
+    }
+});
