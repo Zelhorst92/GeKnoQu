@@ -11,40 +11,64 @@ let getData = function (url) {
 let selectCategory = document.getElementById("category-selector");
 let getCategories = getData(baseURL + "api_category.php");
 
-getCategories.then(function (data) {
-    categories = data.trivia_categories; /* array of categories taken from API*/
-    for(let category of categories) {
+getCategories.then(function (result) {
+    categories = result.trivia_categories; /* array of categories taken from API*/
+    for (let category of categories) {
         (selectCategory.options[selectCategory.options.length] = new Option(category.name, category.id)); /* Create an option list for the category selector */
     };
 });
 
-/* ----------------- Getting question data from opentbd.com API */
-
-/* ----------------- Collapse animation Script */
+/* ----------------- Getting category choice back to request appropriate questions form the API and start the game */
 
 document.getElementById("start").addEventListener("click", function () {
+   /*  let getQuestions = getData(baseURL + "api.php?amount=10&category=" + categoryId + "&type=multiple"); */
     setTimeout(
         function () {
             document.getElementById("game-circle").className += " inner-circle-load";
             document.getElementById("category-container").className += " hide";
             document.getElementById("start").className += " hide";
-        }, 500
+            document.getElementById("linkHelpModal").className += " hide"
+            document.getElementById("restart").className = "give-up";
+        }, 200
     );
     setTimeout(
         function () {
             document.getElementById("game-circle").className = "inner-circle";
-        }, 4000
+            document.getElementById("tally-container").className = "";
+            document.getElementById("question").className = "";
+            document.getElementById("choiceOne").className = "btn btn-answer";
+            document.getElementById("choiceTwo").className = "btn btn-answer";
+            document.getElementById("choiceThree").className = "btn btn-answer";
+            document.getElementById("choiceFour").className = "btn btn-answer";
+        }, 3000
+    );
+});
+
+/* ----------------- Getting question data from opentbd.com API */
+
+
+
+/* ----------------- Collapse animation Script */
+
+/* document.getElementById("start").addEventListener("click", collapseFunction); */
+
+/* function unCollapseFunction() {
+
+    setTimeout(
+        function () {
+            document.getElementById("game-circle").className = "inner-circle";
+        }, 2000
     );
     setTimeout(
         function () {
             document.getElementById("category-container").className = "";
             document.getElementById("start").className = "btn btn-start";
-        }, 4500
+        }, 2800
     );
-});
+}; */
 
 
-/* ----------------- Modal Script */
+/* ----------------- Modal Help Script */
 
 let modal = document.getElementById("helpModal");
 let help = document.getElementById("linkHelpModal");
@@ -63,3 +87,5 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+/* ----------------- Restart Script */

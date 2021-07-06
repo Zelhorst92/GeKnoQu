@@ -175,8 +175,8 @@ header {
     align-items: center;
 }
 
-.question-num,
-.score {
+#question-num,
+#score {
     height: 4rem;
     width: 4rem;
     font-size: 1.25rem;
@@ -250,14 +250,14 @@ header {
     display: none;
 }
 
-.how-to-play {
+.how-to-play, .give-up {
     position: relative;
     top: 80vh;
     justify-content: center;
     align-items: center;
 }
 
-.how-to-play:hover {
+.how-to-play:hover, .give-up:hover {
     color: blue;
 }
 
