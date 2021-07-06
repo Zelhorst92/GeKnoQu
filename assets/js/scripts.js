@@ -1,10 +1,19 @@
+/* ----------------- Base data during gameplay */
+let currentQuestion = {};
+let score = 0;
+let questionCounter = 0;
+let questions = [];
+
 /* ----------------- Getting any data from opentbd.com API */
 
 let baseURL = "https://opentdb.com/"
 
 let getData = function (url) {
-    return fetch(url).then(Response => Response.json());
-}
+    return fetch(url).then(Response => Response.json())
+    .catch(err => {
+        console.error(err)
+    });
+};
 
 /* ----------------- Getting category data from opentbd.com API */
 
