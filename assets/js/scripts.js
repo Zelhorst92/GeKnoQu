@@ -1,3 +1,19 @@
+/* ----------------- Fade in/out animation Script */
+
+document.getElementById('start').addEventListener("click", function () {
+    setTimeout(
+        function () {
+            document.getElementById('game-circle').className += ' inner-circle-load';
+        }, 500
+    );
+    setTimeout(
+        function () {
+            document.getElementById('game-circle').className = 'inner-circle';
+        }, 4000
+    );
+});
+
+
 /* ----------------- Modal Script */
 
 let modal = document.getElementById("helpModal");

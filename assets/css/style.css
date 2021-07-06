@@ -39,6 +39,8 @@ header {
     z-index: 4;
 }
 
+/* --------Test Loading Bar */
+
 .middle-circle {
     height: 31rem;
     width: 31rem;
@@ -50,8 +52,6 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-/* --------Test Loading Bar */
 
 .timer {
     height: 100%;
@@ -154,8 +154,16 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 1rem 2px;
-
+    overflow: hidden;
     z-index: 4;
+
+    transition: all 1s;
+}
+
+.inner-circle-load {
+    height: 1px;
+    width: 1px;
+    padding: 0;
 }
 
 .tally {
