@@ -253,14 +253,14 @@ header {
     display: none;
 }
 
-.how-to-play, .give-up {
+.btn-bottom {
     position: relative;
     top: 80vh;
     justify-content: center;
     align-items: center;
 }
 
-.how-to-play:hover, .give-up:hover {
+.btn-bottom:hover {
     color: blue;
 }
 

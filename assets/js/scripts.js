@@ -85,7 +85,7 @@ document.getElementById("start").addEventListener("click", function startGame() 
                 document.getElementById("category-container").className += " hide";
                 document.getElementById("start").className += " hide";
                 document.getElementById("linkHelpModal").className += " hide"
-                document.getElementById("restart").className = "give-up";
+                document.getElementById("give-up").className = "btn-bottom";
 
             }, 200
         );
@@ -108,28 +108,26 @@ document.getElementById("start").addEventListener("click", function startGame() 
     }
 });
 
-
-
 /* ----------------- Get a new question */
 
 function getNewQuestion() {
 
     if (availableQuestions.length === 0) {
-        question.innerText = "Game Done"; /* Temporary end message */
+        question.HTMLText = "Game Done"; /* Temporary end message */
         for (let choice of choices) {
             choice.className = "btn answer-choice hide"
         };
     } else {
         questionCounter++;
-        questionCounterProgress.innerText = questionCounter + "/" + maxQuestions;
+        questionCounterProgress.innerHTML = questionCounter + "/" + maxQuestions;
 
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestion = availableQuestions[questionIndex];
-        question.innerText = currentQuestion.question;
+        question.innerHTML = currentQuestion.question;
 
         for (let choice of choices) {
             const number = choice.dataset["number"];
-            choice.innerText = currentQuestion["choice" + number];
+            choice.innerHTML = currentQuestion["choice" + number];
         };
 
         availableQuestions.splice(questionIndex, 1);
@@ -208,7 +206,7 @@ window.onclick = function (event) {
 
 /* ----------------- Restart Script */
 
-document.getElementById("restart").addEventListener("click", function () {
+document.getElementById("give-up").addEventListener("click", function () {
     if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
         window.location.reload();
     }
