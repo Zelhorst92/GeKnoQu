@@ -46,6 +46,8 @@ function fetchQuestions() {
 
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
+const questionCounterProgress = document.getElementById("question-counter");
+const scoreProgress = document.getElementById("score");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -93,6 +95,8 @@ document.getElementById("start").addEventListener("click", function startGame() 
     );
 })
 
+/* ----------------- Get a new question */
+
 function getNewQuestion() {
 
     if (availableQuestions.length === 0) {
@@ -102,6 +106,8 @@ function getNewQuestion() {
         };
     } else {
         questionCounter++;
+        
+        questionCounterProgress.innerText = questionCounter+"/"+maxQuestions;
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestion = availableQuestions[questionIndex];
         question.innerText = currentQuestion.question;
@@ -116,6 +122,9 @@ function getNewQuestion() {
         acceptingAnswers = true;
     };
 };
+
+/* ----------------- Check answer */
+
 for (let choice of choices) {
     choice.addEventListener("click", function (event) {
         if (!acceptingAnswers) return;
@@ -149,8 +158,6 @@ for (let choice of choices) {
             }, 1100
         );
         console.log(classToApply);
-
-        
     });
 }
 

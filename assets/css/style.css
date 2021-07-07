@@ -174,7 +174,7 @@ header {
     align-items: center;
 }
 
-#question-num,
+#question-counter,
 #score {
     height: 4rem;
     width: 4rem;
