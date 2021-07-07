@@ -16,7 +16,6 @@ getCategories.then(function (result) {
 
 /* ----------------- Getting question data from opentbd.com API with selected category*/
 
-
 document.getElementById("category-selector").addEventListener("click", function () {
     fetchQuestions()
 });
@@ -44,8 +43,6 @@ function fetchQuestions() {
         });
     });
 };
-
-
 
 /* ----------------- */
 
@@ -113,7 +110,7 @@ document.getElementById("start").addEventListener("click", function startGame() 
 function getNewQuestion() {
 
     if (availableQuestions.length === 0) {
-        question.HTMLText = "Game Done"; /* Temporary end message */
+        question.innerHTML = "Game Done"; /* Temporary end message */
         for (let choice of choices) {
             choice.className = "btn answer-choice hide"
         };
@@ -140,17 +137,17 @@ function getNewQuestion() {
 
 for (let choice of choices) {
     choice.addEventListener("click", function (event) {
-        if (!acceptingAnswers) return;
+        if (!acceptingAnswers) {
+            return;
+        };
 
         acceptingAnswers = false;
         const selectedChoice = event.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-
         let classToApply = "incorrect"
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = "correct";
         };
-
         if (classToApply === "correct") {
             addScore(correctPoint);
         }
@@ -182,7 +179,6 @@ function addScore(num) {
     score += num;
     scoreProgress.innerText = score;
 }
-
 
 /* ----------------- Modal Help Script */
 
