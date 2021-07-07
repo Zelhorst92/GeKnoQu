@@ -96,12 +96,7 @@ document.getElementById("start").addEventListener("click", function startGame() 
                 }
             }, 3000
         );
-        setTimeout(
-            function () {
-                document.getElementById("left").className = "timer left"
-                document.getElementById("right").className = "timer right"
-            }, 4000
-        )
+
     }
 });
 
@@ -115,6 +110,12 @@ function getNewQuestion() {
             choice.className = "btn answer-choice hide"
         };
     } else {
+        setTimeout(
+            function () {
+                document.getElementById("left").className = "timer left"
+                document.getElementById("right").className = "timer right"
+            }, 4000
+        )
         questionCounter++;
         questionCounterProgress.innerHTML = questionCounter + "/" + maxQuestions;
 
@@ -150,8 +151,12 @@ for (let choice of choices) {
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = "correct";
             addScore(correctPoint);
+            document.getElementById("left").className = "timer left hide"
+            document.getElementById("right").className = "timer right hide"
         } else {
             classToApply = "incorrect";
+            document.getElementById("left").className = "timer left hide"
+            document.getElementById("right").className = "timer right hide"
             setTimeout(function() {
                 const correctAnswerNumber = currentQuestion.answer;
                 const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
@@ -171,17 +176,14 @@ for (let choice of choices) {
                 selectedChoice.classList.remove(classToApply);
                 correctAnswer.classList.remove("correct");
                 document.getElementById("outer-circle").className = "neutral";
-                document.getElementById("left").className = "timer left hide"
-                document.getElementById("right").className = "timer right hide"
-
                 getNewQuestion();
-            }, 1500
+            }, 2750
         );
         setTimeout(
             function () {
                 document.getElementById("left").className = "timer left"
                 document.getElementById("right").className = "timer right"
-            }, 1100
+            }, 3000
         );
     });
 };
