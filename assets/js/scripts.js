@@ -16,7 +16,7 @@ getCategories.then(function (result) {
 
 /* ----------------- Getting question data from opentbd.com API with selected category*/
 
-document.getElementById("category-selector").addEventListener("click", function () {
+document.getElementById("category-selector").addEventListener("select", function () {
     fetchQuestions();
 });
 
