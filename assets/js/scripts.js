@@ -14,7 +14,35 @@ getCategories.then(function (result) {
     };
 });
 
-/* ---------------------------------- */
+/* ----------------- Getting question data from opentbd.com API with selected category*/
+
+document.getElementById("category-selector").addEventListener("click", fetchQuestions());
+
+function fetchQuestions() {
+    let categoryId = document.getElementById("category-selector").value;
+    const fetchedQuestions = fetch(`https://opentdb.com/api.php?amount=20&category=${categoryId}&type=multiple`)
+        .then(Response => Response.json())
+        .catch(err => {
+            console.error(err)
+        });
+    fetchedQuestions.then((data) => {
+        questions = data.results.map(fetchedQuestion => {
+            const formattedQuestions = {
+                question: fetchedQuestion.question,
+            };
+            formattedQuestions.answer = Math.floor(Math.random() * 3) + 1;
+            const answerChoices = [...fetchedQuestion.incorrect_answers];
+            answerChoices.splice(formattedQuestions.answer - 1, 0, fetchedQuestion.correct_answer);
+            answerChoices.forEach((choice, index) => {
+                formattedQuestions['choice' + (index + 1)] = choice;
+            });
+            questions = formattedQuestions;
+            return questions;
+        });
+    });
+};
+
+/* ----------------- */
 
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
@@ -26,7 +54,16 @@ let questionCounter = 0;
 let availableQuestions = [];
 let questions = [];
 
+const correctPoint = 1;
+const maxQuestions = 20;
+
 document.getElementById("start").addEventListener("click", function startGame() {
+
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...questions];
+    console.log(availableQuestions);
+    getNewQuestion();
     setTimeout(
         function () {
             document.getElementById("game-circle").className += " inner-circle-load";
@@ -34,14 +71,6 @@ document.getElementById("start").addEventListener("click", function startGame() 
             document.getElementById("start").className += " hide";
             document.getElementById("linkHelpModal").className += " hide"
             document.getElementById("restart").className = "give-up";
-            
-            
-            questionCount = 0;
-            score = 0;
-
-            fetchQuestions();
-            availabeQuestions = [...questions];
-
 
         }, 200
     );
@@ -64,33 +93,38 @@ document.getElementById("start").addEventListener("click", function startGame() 
     );
 })
 
-/* getQuestions */
+function getNewQuestion() {
 
-function fetchQuestions() {
-    let categoryId = document.getElementById("category-selector").value;
-    const fetchedQuestions = fetch(`https://opentdb.com/api.php?amount=20&category=${categoryId}&type=multiple`)
-        .then(Response => Response.json())
-        .catch(err => {
-            console.error(err)
-        });
-    fetchedQuestions.then((data) => {
-        questions = data.results.map(fetchedQuestion => {
-            const formattedQuestions = {
-                question: fetchedQuestion.question,
-            };
+    if (availableQuestions.length == 0) {
+        question.innerText = "Game Done";
+    } else {
+        questionCounter++;
+        const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+        currentQuestion = availableQuestions[questionIndex];
+        question.innerText = currentQuestion.question;
 
-            formattedQuestions.answer = Math.floor(Math.random() * 3) + 1;
-            const answerChoices = [...fetchedQuestion.incorrect_answers];
-            answerChoices.splice(formattedQuestions.answer - 1, 0, fetchedQuestion.correct_answer);
+        for (let choice of choices) {
+            const number = choice.dataset["number"];
+            choice.innerText = currentQuestion["choice" + number];
+        };
 
-            answerChoices.forEach((choice, index) => {
-                formattedQuestions['choice' + (index + 1)] = choice;
-            });
-            console.log(formattedQuestions);
-            return formattedQuestions;
-        });
+        availableQuestions.splice(questionIndex, 1);
+
+        acceptingAnswers = true;
+    };
+};
+for (let choice of choices) {
+    choice.addEventListener("click", function (event) {
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedChoice = event.target;
+        const selectedAnswer = selectedChoice.dataset["number"];
+        console.log(selectedAnswer);
+        getNewQuestion();
     });
 }
+
 
 /* ----------------- Modal Help Script */
 
