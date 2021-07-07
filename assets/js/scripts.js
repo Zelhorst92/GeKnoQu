@@ -17,7 +17,7 @@ getCategories.then(function (result) {
 /* ----------------- Getting question data from opentbd.com API with selected category*/
 
 document.getElementById("category-selector").addEventListener("click", function () {
-    fetchQuestions()
+    fetchQuestions();
 });
 
 function fetchQuestions() {
@@ -50,6 +50,9 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
 const questionCounterProgress = document.getElementById("question-counter");
 const scoreProgress = document.getElementById("score");
+const leftLoad = document.getElementById("left");
+const rightLoad = document.getElementById("right");
+const gameCircle = document.getElementById("game-circle");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -78,21 +81,20 @@ document.getElementById("start").addEventListener("click", function startGame() 
         getNewQuestion();
         setTimeout(
             function () {
-                document.getElementById("game-circle").className += " inner-circle-load";
+                gameCircle.className += " inner-circle-load";
                 document.getElementById("category-container").className += " hide";
                 document.getElementById("start").className += " hide";
                 document.getElementById("linkHelpModal").className += " hide"
                 document.getElementById("give-up").className = "btn-bottom";
-
             }, 200
         );
         setTimeout(
             function () {
-                document.getElementById("game-circle").className = "inner-circle";
+                gameCircle.className = "inner-circle";
                 document.getElementById("tally-container").className = "";
                 document.getElementById("question").className = "";
                 for (let choice of choices) {
-                    choice.className = "btn answer-choice"
+                    choice.className = "btn answer-choice";
                 }
             }, 3000
         );
@@ -112,8 +114,8 @@ function getNewQuestion() {
     } else {
         setTimeout(
             function () {
-                document.getElementById("left").className = "timer left"
-                document.getElementById("right").className = "timer right"
+                leftLoad.className = "timer left"
+                rightLoad.className = "timer right"
             }, 4000
         )
         questionCounter++;
@@ -138,6 +140,10 @@ function getNewQuestion() {
 
 for (let choice of choices) {
     choice.addEventListener("click", function (event) {
+
+        const correctAnswerNumber = currentQuestion.answer;
+        const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
+
         if (!acceptingAnswers) {
             return;
         };
@@ -145,22 +151,18 @@ for (let choice of choices) {
         acceptingAnswers = false;
         const selectedChoice = event.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-
         let classToApply;
 
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = "correct";
             addScore(correctPoint);
-            document.getElementById("left").className = "timer left hide"
-            document.getElementById("right").className = "timer right hide"
+            leftLoad.className = "timer left hide"
+            rightLoad.className = "timer right hide"
         } else {
             classToApply = "incorrect";
-            document.getElementById("left").className = "timer left hide"
-            document.getElementById("right").className = "timer right hide"
-            setTimeout(function() {
-                const correctAnswerNumber = currentQuestion.answer;
-                const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
-    
+            leftLoad.className = "timer left hide"
+            rightLoad.className = "timer right hide"
+            setTimeout(function () {
                 correctAnswer.classList.add("correct");
             }, 750)
 
@@ -171,8 +173,6 @@ for (let choice of choices) {
 
         setTimeout(
             function () {
-                const correctAnswerNumber = currentQuestion.answer;
-                const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
                 selectedChoice.classList.remove(classToApply);
                 correctAnswer.classList.remove("correct");
                 document.getElementById("outer-circle").className = "neutral";
@@ -181,8 +181,8 @@ for (let choice of choices) {
         );
         setTimeout(
             function () {
-                document.getElementById("left").className = "timer left"
-                document.getElementById("right").className = "timer right"
+                leftLoad.className = "timer left"
+                rightLoad.className = "timer right"
             }, 3000
         );
     });
