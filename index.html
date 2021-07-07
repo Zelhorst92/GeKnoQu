@@ -20,17 +20,17 @@
     <section class="game-section">
         <div class="outer-circle">
             <div class="middle-circle ">
-                <div class="timer left hide">
+                <div id="left" class="timer left hide">
                     <div class="loading"></div>
                 </div>
-                <div class="timer right hide">
+                <div id="right" class="timer right hide">
                     <div class="loading"></div>
                 </div>
                 <div id="game-circle" class="inner-circle ">
                     <div id="tally-container" class="hide">
                         <div class="tally">
-                            <p id="question-num" class="">1/15</p>
-                            <p id="score" class="">0</p>
+                            <p id="question-num" class=""></p>
+                            <p id="score" class=""></p>
                         </div>
                     </div>
                     <div class="question-container">
@@ -38,14 +38,13 @@
                             <p>Select your category:</p>
                             <select name="" id="category-selector"></select>
                         </div>
-                        <h3 id="question" class="hide">What is the highest number of Michelin stars a restaurant can
-                            receive?</h3>
+                        <h3 id="question" class="hide"></h3>
                     </div>
                     <div class="btn-container">
-                        <p id="choiceOne" class="btn btn-answer hide">Robert Lubbertus Zelhorst</p>
-                        <p id="choiceTwo" class="btn btn-answer hide">Button 2</p>
-                        <p id="choiceThree" class="btn btn-answer hide">Button 3</p>
-                        <p id="choiceFour" class="btn btn-answer hide">Button 4</p>
+                        <p class="btn answer-choice hide" data-number="1">Button 1</p>
+                        <p class="btn answer-choice hide" data-number="2">Button 2</p>
+                        <p class="btn answer-choice hide" data-number="3">Button 3</p>
+                        <p class="btn answer-choice hide" data-number="4">Button 4</p>
                         <p id="start" class="btn btn-start">Start</p>
                     </div>
                 </div>

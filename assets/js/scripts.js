@@ -1,36 +1,32 @@
-/* ----------------- Base data during gameplay */
-let currentQuestion = {};
-let score = 0;
-let questionCounter = 0;
-let questions = [];
+/* ----------------- Getting category data from opentbd.com API */
 
-/* ----------------- Getting any data from opentbd.com API */
-
-let baseURL = "https://opentdb.com/"
-
-let getData = function (url) {
-    return fetch(url).then(Response => Response.json())
+let selectedCategory = document.getElementById("category-selector");
+let getCategories = fetch("https://opentdb.com/api_category.php")
+    .then(Response => Response.json())
     .catch(err => {
         console.error(err)
     });
-};
-
-/* ----------------- Getting category data from opentbd.com API */
-
-let selectCategory = document.getElementById("category-selector");
-let getCategories = getData(baseURL + "api_category.php");
 
 getCategories.then(function (result) {
-    categories = result.trivia_categories; /* array of categories taken from API*/
+    categories = result.trivia_categories;
     for (let category of categories) {
-        (selectCategory.options[selectCategory.options.length] = new Option(category.name, category.id)); /* Create an option list for the category selector */
+        (selectedCategory.options[selectedCategory.options.length] = new Option(category.name, category.id)); /* Create an option list for the category selector */
     };
 });
 
-/* ----------------- Getting category choice back to request appropriate questions form the API and start the game */
+/* ---------------------------------- */
 
-document.getElementById("start").addEventListener("click", function () {
-   /*  let getQuestions = getData(baseURL + "api.php?amount=10&category=" + categoryId + "&type=multiple"); */
+const question = document.getElementById("question");
+const choices = Array.from(document.getElementsByClassName("answer-choice"));
+
+let currentQuestion = {};
+let acceptingAnswers = false;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+let questions = [];
+
+document.getElementById("start").addEventListener("click", function startGame() {
     setTimeout(
         function () {
             document.getElementById("game-circle").className += " inner-circle-load";
@@ -38,44 +34,63 @@ document.getElementById("start").addEventListener("click", function () {
             document.getElementById("start").className += " hide";
             document.getElementById("linkHelpModal").className += " hide"
             document.getElementById("restart").className = "give-up";
+            
+            
+            questionCount = 0;
+            score = 0;
+
+            fetchQuestions();
+            availabeQuestions = [...questions];
+
+
         }, 200
     );
     setTimeout(
         function () {
+            /* loadQuestions */
             document.getElementById("game-circle").className = "inner-circle";
             document.getElementById("tally-container").className = "";
             document.getElementById("question").className = "";
-            document.getElementById("choiceOne").className = "btn btn-answer";
-            document.getElementById("choiceTwo").className = "btn btn-answer";
-            document.getElementById("choiceThree").className = "btn btn-answer";
-            document.getElementById("choiceFour").className = "btn btn-answer";
+            for (let choice of choices) {
+                choice.className = "btn answer-choice"
+            }
         }, 3000
     );
-});
-
-/* ----------------- Getting question data from opentbd.com API */
-
-
-
-/* ----------------- Collapse animation Script */
-
-/* document.getElementById("start").addEventListener("click", collapseFunction); */
-
-/* function unCollapseFunction() {
-
     setTimeout(
         function () {
-            document.getElementById("game-circle").className = "inner-circle";
-        }, 2000
+            document.getElementById("left").className = "timer left"
+            document.getElementById("right").className = "timer right"
+        }, 4000
     );
-    setTimeout(
-        function () {
-            document.getElementById("category-container").className = "";
-            document.getElementById("start").className = "btn btn-start";
-        }, 2800
-    );
-}; */
+})
 
+/* getQuestions */
+
+function fetchQuestions() {
+    let categoryId = document.getElementById("category-selector").value;
+    const fetchedQuestions = fetch(`https://opentdb.com/api.php?amount=20&category=${categoryId}&type=multiple`)
+        .then(Response => Response.json())
+        .catch(err => {
+            console.error(err)
+        });
+    fetchedQuestions.then((data) => {
+        questions = data.results.map(fetchedQuestion => {
+            const formattedQuestions = {
+                question: fetchedQuestion.question,
+            };
+
+            formattedQuestions.answer = Math.floor(Math.random() * 3) + 1;
+            const answerChoices = [...fetchedQuestion.incorrect_answers];
+            answerChoices.splice(formattedQuestions.answer - 1, 0, fetchedQuestion.correct_answer);
+
+            answerChoices.forEach((choice, index) => {
+                formattedQuestions['choice' + (index + 1)] = choice;
+            });
+            console.log(formattedQuestions);
+            return formattedQuestions;
+        });
+    });
+}
 
 /* ----------------- Modal Help Script */
 
@@ -99,9 +114,8 @@ window.onclick = function (event) {
 
 /* ----------------- Restart Script */
 
-document.getElementById("restart").addEventListener("click", function(){
-    if(!confirm("Are you sure you want to quit the game and go back to the menu?")){}
-    else {
+document.getElementById("restart").addEventListener("click", function () {
+    if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
         window.location.reload();
     }
 });
