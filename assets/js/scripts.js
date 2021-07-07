@@ -136,13 +136,21 @@ for (let choice of choices) {
             function() {
                 selectedChoice.classList.remove(classToApply);
                 document.getElementById("outer-circle").className = "neutral";
+                document.getElementById("left").className = "timer left hide"
+                document.getElementById("right").className = "timer right hide"
 
                 getNewQuestion();
             }, 1000
         );
-
+        setTimeout(
+            function() {
+                document.getElementById("left").className = "timer left"
+                document.getElementById("right").className = "timer right"
+            }, 1100
+        );
         console.log(classToApply);
-   
+
+        
     });
 }
 
