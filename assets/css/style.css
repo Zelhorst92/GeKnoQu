@@ -22,12 +22,11 @@ header {
     position: relative;
 }
 
-.outer-circle {
+#outer-circle {
     height: 100vw;
     max-height: 50rem;
     width: 100vw;
     max-width: 50rem;
-    background-color: blue;
     border: 0.5rem solid black;
     border-radius: 100%;
     position: fixed;
@@ -244,6 +243,10 @@ header {
 
 .incorrect {
     background-color: red;
+}
+
+.neutral {
+    background-color: blue;
 }
 
 .hide {

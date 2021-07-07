@@ -62,7 +62,7 @@ document.getElementById("start").addEventListener("click", function startGame() 
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
-    console.log(availableQuestions);
+    /* console.log(availableQuestions); */
     getNewQuestion();
     setTimeout(
         function () {
@@ -95,8 +95,11 @@ document.getElementById("start").addEventListener("click", function startGame() 
 
 function getNewQuestion() {
 
-    if (availableQuestions.length == 0) {
-        question.innerText = "Game Done";
+    if (availableQuestions.length === 0) {
+        question.innerText = "Game Done"; /* Temporary end message */
+        for (let choice of choices) {
+            choice.className = "btn answer-choice hide"
+        };
     } else {
         questionCounter++;
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -120,8 +123,26 @@ for (let choice of choices) {
         acceptingAnswers = false;
         const selectedChoice = event.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-        console.log(selectedAnswer);
-        getNewQuestion();
+
+        let classToApply = "incorrect"
+            if(selectedAnswer == currentQuestion.answer) {
+                classToApply = "correct";
+            };
+
+        selectedChoice.classList.add(classToApply);
+        document.getElementById("outer-circle").className = classToApply
+        
+        setTimeout(
+            function() {
+                selectedChoice.classList.remove(classToApply);
+                document.getElementById("outer-circle").className = "neutral";
+
+                getNewQuestion();
+            }, 1000
+        );
+
+        console.log(classToApply);
+   
     });
 }
 
