@@ -144,26 +144,38 @@ for (let choice of choices) {
         acceptingAnswers = false;
         const selectedChoice = event.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-        let classToApply = "incorrect"
+
+        let classToApply;
+
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = "correct";
-        };
-        if (classToApply === "correct") {
             addScore(correctPoint);
-        }
+        } else {
+            classToApply = "incorrect";
+            setTimeout(function() {
+                const correctAnswerNumber = currentQuestion.answer;
+                const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
+    
+                correctAnswer.classList.add("correct");
+            }, 750)
+
+        };
 
         selectedChoice.classList.add(classToApply);
         document.getElementById("outer-circle").className = classToApply
 
         setTimeout(
             function () {
+                const correctAnswerNumber = currentQuestion.answer;
+                const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
                 selectedChoice.classList.remove(classToApply);
+                correctAnswer.classList.remove("correct");
                 document.getElementById("outer-circle").className = "neutral";
                 document.getElementById("left").className = "timer left hide"
                 document.getElementById("right").className = "timer right hide"
 
                 getNewQuestion();
-            }, 1000
+            }, 1500
         );
         setTimeout(
             function () {
@@ -171,7 +183,6 @@ for (let choice of choices) {
                 document.getElementById("right").className = "timer right"
             }, 1100
         );
-        console.log(classToApply);
     });
 };
 
