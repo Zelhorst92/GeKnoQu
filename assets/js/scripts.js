@@ -106,8 +106,8 @@ function getNewQuestion() {
         };
     } else {
         questionCounter++;
-        
         questionCounterProgress.innerText = questionCounter+"/"+maxQuestions;
+
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestion = availableQuestions[questionIndex];
         question.innerText = currentQuestion.question;
@@ -138,6 +138,10 @@ for (let choice of choices) {
                 classToApply = "correct";
             };
 
+            if(classToApply === "correct") {
+                addScore(correctPoint);
+            }
+
         selectedChoice.classList.add(classToApply);
         document.getElementById("outer-circle").className = classToApply
         
@@ -159,6 +163,11 @@ for (let choice of choices) {
         );
         console.log(classToApply);
     });
+};
+
+function addScore (num) {
+    score += num;
+    scoreProgress.innerText = score;
 }
 
 
