@@ -44,7 +44,7 @@ function fetchQuestions() {
     });
 };
 
-/* ----------------- */
+/* ----------------- constants and variables */
 
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
@@ -63,6 +63,8 @@ let questions = [];
 
 const correctPoint = 1;
 const maxQuestions = 20;
+
+/* ----------------- Start the game */
 
 document.getElementById("start").addEventListener("click", function startGame() {
     if (questions.length === 0) {
@@ -111,10 +113,9 @@ function getNewQuestion() {
     } else {
         setTimeout(
             function () {
-                leftLoad.className = "timer left"
-                rightLoad.className = "timer right"
+                startTimerBar();
             }, 4000
-        )
+        );
         questionCounter++;
         questionCounterProgress.innerHTML = questionCounter + "/" + maxQuestions;
 
@@ -153,12 +154,10 @@ for (let choice of choices) {
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = "correct";
             addScore(correctPoint);
-            leftLoad.className = "timer left hide"
-            rightLoad.className = "timer right hide"
+            stopTimerBar();
         } else {
             classToApply = "incorrect";
-            leftLoad.className = "timer left hide"
-            rightLoad.className = "timer right hide"
+            stopTimerBar();
             setTimeout(function () {
                 correctAnswer.classList.add("correct");
             }, 500)
@@ -176,32 +175,32 @@ for (let choice of choices) {
                 getNewQuestion();
             }, 2750
         );
-        if (availableQuestions.length == 0) {
+        if (availableQuestions.length === 0) {
             return;
         } else {
         setTimeout(
             function () {
                 console.log("I am called 4");
                 console.log(availableQuestions.length);
-                leftLoad.className = "timer left"
-                rightLoad.className = "timer right"
-            }, 3000
+                startTimerBar();
+            }, 3250
         );
     }});
 };
 
+/* ----------------- Add score point*/
+
 function addScore(num) {
     score += num;
     scoreProgress.innerText = score;
-}
+};
 
 /* ----------------- Game End */
 
 let gameResult = document.getElementById("result");
 
 function gameEnd() {
-    leftLoad.className = "timer left hide";
-    rightLoad.className = "timer right hide";
+    stopTimerBar();
     question.className = "hide";
     for (let choice of choices) {
         choice.className = "btn answer-choice hide"
@@ -209,6 +208,20 @@ function gameEnd() {
     document.getElementById("tally-container").className = "hide";
     gameResult.className = "";
     gameResult.innerHTML = "Your game score is: " + score + " out of " + maxQuestions;
+};
+
+/* ----------------- Timer bar stop (hide) */
+
+function stopTimerBar() {
+    leftLoad.className = "timer left hide";
+    rightLoad.className = "timer right hide";
+};
+
+/* ----------------- Timer bar start (show) */
+
+function startTimerBar() {
+    leftLoad.className = "timer left";
+    rightLoad.className = "timer right";
 };
 
 /* ----------------- Modal Help Script */
