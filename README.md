@@ -104,6 +104,8 @@ An easy to read, compact, professional looking font.
 As this game has a 'correct' and 'incorrect', a green and a red colour respectively, the initial colours should be more on the neutral side. It should also go easy on the eyes as concentation is needed to answer the questions of the quiz.
 
 ![Colour Pallette Scheme](https://github.com/Zelhorst92/GeKnoQu/blob/master/wireframes/colour-pallette-basis.png?raw=true "Colour Pallette Scheme")
+![Colour Pallette Scheme 2](https://github.com/Zelhorst92/GeKnoQu/blob/master/wireframes/colour-pallette-advanced.png?raw=true "Colour Pallette Scheme 2")
+
 
 ---
 
