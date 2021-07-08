@@ -116,6 +116,12 @@ The primary colours in this pallette:
 
 Colour pallette comes with complementary colour, which might be deviated to if it fits the purpose better.
 
+### Coloors Contrast Checker
+
+To be done.
+
+[Back to top](#table-of-content)
+
 ## Wireframes
 I have made wireframes for the sizes Mobile, Tablet and Desktop.
 As per Bootstrap order, from small to large. To make the wireframes I have used the program [Balsamig Wireframes](https://balsamiq.com/wireframes/ "Link to Balsamig Wireframes").
