@@ -87,10 +87,12 @@ User expects:
 The goal of this site is that users can play a quiz/questionaire game. Therefore the user should immediately see the way to start to game or to see how to.
 
 ### The structure
-For the structure of the website I will use the framework [Bootstrap](https://getbootstrap.com/ "Link to bootstrap").
+~~For the structure of the website I will use the framework [Bootstrap](https://getbootstrap.com/ "Link to bootstrap").
 This framework allows for a proper responsive website which is build up from a mobile-first perspective.
 The grid-system that Bootstrap provides is very usefull to have a well working responsive website.
-Furthermore Bootstrap has a wide browser compatibility, is quite easy to use and is very customizable.
+Furthermore Bootstrap has a wide browser compatibility, is quite easy to use and is very customizable.~~
+
+For the structure of the website I wil use my own css style sheet. It still will be build up from a mobile-first perspective and should be responsive to different screen sizes.
 
 ### Fonts
 During the quiz there will be a time restraint, therefore a simple but well readable font is necessary.
