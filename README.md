@@ -104,7 +104,19 @@ An easy to read, compact, professional looking font.
 As this game has a 'correct' and 'incorrect', a green and a red colour respectively, the initial colours should be more on the neutral side. It should also go easy on the eyes as concentation is needed to answer the questions of the quiz.
 
 ![Colour Pallette Scheme](https://github.com/Zelhorst92/GeKnoQu/blob/master/wireframes/colour-pallette-basis.png?raw=true "Colour Pallette Scheme")
-![Colour Pallette Scheme 2](https://github.com/Zelhorst92/GeKnoQu/blob/master/wireframes/colour-pallette-advanced.png?raw=true "Colour Pallette Scheme 2")
+
+The primary colours in this pallette:
+
+* #AF0B0B "Red", Will serve as the colour indicating incorrect.
+* #098C09 "green, ", will serve as the colour indicating correct.
+* #076969 "blue", will serve as the neutral colour. Neither correct or incorrect. It is also a colour that is easy on the eyes and could therefore be used as the background.
+* #AF550b "Orange" Supplementary colour. Possible use for buttons and/or the timer bar.
+
+![Colour Pallette Scheme 2](https://github.com/Zelhorst92/GeKnoQu/blob/master/wireframes/colour-pallette-advanced.png?raw=true "Colour Pallette Scheme with hex codes")
+
+Colour pallette comes with complementary colour, which might be deviated to if it fits the purpose better.
+
+
 
 
 ---
