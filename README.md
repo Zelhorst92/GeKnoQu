@@ -99,6 +99,12 @@ During the quiz there will be a time restraint, therefore a simple but well read
 I will be using a font from [Google Fonts](https://fonts.google.com/ "Google Fonts"), specifically the [Nanum Gothic](https://fonts.google.com/specimen/Nanum+Gothic "Nanum Gothic").
 An easy to read, compact, professional looking font.
 
+### Colours
+
+As this game has a 'correct' and 'incorrect', a green and a red colour respectively, the initial colours should be more on the neutral side. It should also go easy on the eyes as concentation is needed to answer the questions of the quiz.
+
+![Colour Pallette Scheme](https://github.com/Zelhorst92/GeKnoQu/blob/master/wireframes/colour-pallette-basis.png?raw=true "Colour Pallette Scheme")
+
 ---
 
 # Technologies
