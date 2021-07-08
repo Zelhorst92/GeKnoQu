@@ -16,9 +16,9 @@ getCategories.then(function (result) {
 
 /* ----------------- Getting question data from opentbd.com API with selected category*/
 
-document.getElementById("category-selector").addEventListener("select", function () {
+/* document.getElementById("category-selector").addEventListener("select", function () {
     fetchQuestions();
-});
+}); */
 
 function fetchQuestions() {
     let categoryId = document.getElementById("category-selector").value;
@@ -50,6 +50,7 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
 const questionCounterProgress = document.getElementById("question-counter");
 const scoreProgress = document.getElementById("score");
+const feedbackCircle = document.getElementById("outer-circle");
 const leftLoad = document.getElementById("left");
 const rightLoad = document.getElementById("right");
 const gameCircle = document.getElementById("game-circle");
@@ -72,10 +73,9 @@ document.getElementById("start").addEventListener("click", function startGame() 
         setTimeout(
             function () {
                 startGame();
-            }, 50
+            }, 100
         );
     } else {
-
         questionCounter = 0;
         score = 0;
         availableQuestions = [...questions];
@@ -88,7 +88,7 @@ document.getElementById("start").addEventListener("click", function startGame() 
                 document.getElementById("start").className += " hide";
                 document.getElementById("linkHelpModal").className += " hide"
                 document.getElementById("give-up").className = "btn-bottom";
-            }, 200
+            }, 100
         );
         setTimeout(
             function () {
@@ -165,13 +165,13 @@ for (let choice of choices) {
         };
 
         selectedChoice.classList.add(classToApply);
-        document.getElementById("outer-circle").className = classToApply
+        feedbackCircle.className = classToApply
 
         setTimeout(
             function () {
                 selectedChoice.classList.remove(classToApply);
                 correctAnswer.classList.remove("correct");
-                document.getElementById("outer-circle").className = "neutral";
+                feedbackCircle.className = "neutral";
                 getNewQuestion();
             }, 2750
         );
