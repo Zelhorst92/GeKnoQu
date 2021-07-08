@@ -116,7 +116,20 @@ The primary colours in this pallette:
 
 Colour pallette comes with complementary colour, which might be deviated to if it fits the purpose better.
 
+## Wireframes
+I have made wireframes for the sizes Mobile, Tablet and Desktop.
+As per Bootstrap order, from small to large. To make the wireframes I have used the program [Balsamig Wireframes](https://balsamiq.com/wireframes/ "Link to Balsamig Wireframes").
+* [Mobile Wireframe Start](/wireframes/mobile-start.png)
+* [Mobile Wireframe During Question](/wireframes/mobile-during-question.png)
+* [Mobile Wireframe Play Again](/wireframes/mobile-play-again.png)
+* [Mobile Wireframe How To Play](/wireframes/mobile-how-to-play.png)
+* [Tablet Wireframe Start](/wireframes/tablet-start.png)
+* [Tablet Wireframe During Question](/wireframes/tablet-during-question.png)
+* [Desktop Wireframe Start](/wireframes/desktop-start.png)
+* [Desktop Wireframe Druing Question](/wireframes/desktop-during-question.png)
 
+
+[Back to top](#table-of-content)
 
 
 ---
