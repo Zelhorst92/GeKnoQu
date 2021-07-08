@@ -137,8 +137,31 @@ As per Bootstrap order, from small to large. To make the wireframes I have used 
 
 [Back to top](#table-of-content)
 
+---
+---
+
+# Features
+## Existing Features
+### Category Select and Start
+
+On page load you will see a category selector and the start button.
+The category selector fetches the possible categories from [opentdb.com](https://opentdb.com "Link to open trivia database"), where then one of the categories can be selected. Upon selecting a category and pressing start, the interface will collapse and move to the game fase.
+
+### Help Modal
+
+### Loading Beneath The Collapse
+
+### Game
+
+### Score and Question Progress
+
+### Restart alert
+
+[Back to top](#table-of-content)
 
 ---
+
+## Future Features
 
 # Technologies
 ## Languages
@@ -148,9 +171,10 @@ As per Bootstrap order, from small to large. To make the wireframes I have used 
 
 ## Libraries and Tools
 ### Libraries & Frameworks
-*   [Bootstrap](https://getbootstrap.com/ "Link to bootstrap")
-*   [Fontawsome](https://fontawesome.com/ "Link to fontawesome") 
+*   ~~[Bootstrap](https://getbootstrap.com/ "Link to bootstrap")~~
+*   ~~[Fontawsome](https://fontawesome.com/ "Link to fontawesome")~~
 *   [Googlefonts](https://fonts.google.com/ "Link to googlefonts") 
+*   [Open Trivia Database](https://opentdb.com/ "Link to open trivia database")
 
 ### Tools
 *   [Gitpod](https://www.gitpod.io/ "Link to gitpod")
