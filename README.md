@@ -167,6 +167,8 @@ During the game itself, on the top of the game interface there will be counters 
 
 ### Restart alert
 
+When the game has started, it is assumed that you have read the how to play and therefore this link has been replaced with a button to restart the game. Upon clicking you will receive an alert which asks you if you are realy sure to exit the game and return to the main menu. When clicked on **OK**, the game will return to the main menu.
+
 [Back to top](#table-of-content)
 
 ---
