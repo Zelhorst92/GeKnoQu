@@ -22,7 +22,7 @@ document.getElementById("category-selector").addEventListener("select", function
 
 function fetchQuestions() {
     let categoryId = document.getElementById("category-selector").value;
-    const fetchedQuestions = fetch("https://opentdb.com/api.php?amount=20&category=" + categoryId + "&type=multiple")
+    const fetchedQuestions = fetch("https://opentdb.com/api.php?amount=4&category=" + categoryId + "&type=multiple") /* Dont forget to change it back to 20! */
         .then(Response => Response.json())
         .catch(err => {
             console.error(err)
@@ -92,7 +92,7 @@ document.getElementById("start").addEventListener("click", function startGame() 
             function () {
                 gameCircle.className = "inner-circle";
                 document.getElementById("tally-container").className = "";
-                document.getElementById("question").className = "";
+                question.className = "";
                 for (let choice of choices) {
                     choice.className = "btn answer-choice";
                 }
@@ -107,10 +107,7 @@ document.getElementById("start").addEventListener("click", function startGame() 
 function getNewQuestion() {
 
     if (availableQuestions.length === 0) {
-        question.innerHTML = "Game Done"; /* Temporary end message */
-        for (let choice of choices) {
-            choice.className = "btn answer-choice hide"
-        };
+            gameEnd();
     } else {
         setTimeout(
             function () {
@@ -164,7 +161,7 @@ for (let choice of choices) {
             rightLoad.className = "timer right hide"
             setTimeout(function () {
                 correctAnswer.classList.add("correct");
-            }, 750)
+            }, 500)
 
         };
 
@@ -179,19 +176,40 @@ for (let choice of choices) {
                 getNewQuestion();
             }, 2750
         );
+        if (availableQuestions.length == 0) {
+            return;
+        } else {
         setTimeout(
             function () {
+                console.log("I am called 4");
+                console.log(availableQuestions.length);
                 leftLoad.className = "timer left"
                 rightLoad.className = "timer right"
             }, 3000
         );
-    });
+    }});
 };
 
 function addScore(num) {
     score += num;
     scoreProgress.innerText = score;
 }
+
+/* ----------------- Game End */
+
+let gameResult = document.getElementById("result");
+
+function gameEnd() {
+    leftLoad.className = "timer left hide";
+    rightLoad.className = "timer right hide";
+    question.className = "hide";
+    for (let choice of choices) {
+        choice.className = "btn answer-choice hide"
+    };
+    document.getElementById("tally-container").className = "hide";
+    gameResult.className = "";
+    gameResult.innerHTML = "Your game score is: " + score + " out of " + maxQuestions;
+};
 
 /* ----------------- Modal Help Script */
 
