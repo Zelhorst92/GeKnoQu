@@ -96,7 +96,7 @@ For the structure of the website I wil use my own css style sheet. It still will
 
 ### Fonts
 During the quiz there will be a time restraint, therefore a simple but well readable font is necessary.
-I will be using a font from [Google Fonts](https://fonts.google.com/ "Google Fonts"), specifically the [Teko Font](https://fonts.google.com/specimen/Teko "Teko Font").
+I will be using a font from [Google Fonts](https://fonts.google.com/ "Google Fonts"), specifically the [Nanum Gothic](https://fonts.google.com/specimen/Nanum+Gothic "Nanum Gothic").
 An easy to read, compact, professional looking font.
 
 ---

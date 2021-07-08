@@ -1,11 +1,10 @@
-@import url('');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Nanum Gothic', 'Times New Roman', serif;
     font-weight: 400;
     font-size: 2rem;
     text-align: center;
