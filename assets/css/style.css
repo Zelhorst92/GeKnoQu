@@ -4,12 +4,11 @@ html {
 }
 
 body {
+    background-color: #2B8888;
     font-family: 'Nanum Gothic', 'Times New Roman', serif;
     font-weight: 400;
     font-size: 2rem;
     text-align: center;
-    justify-content: center;
-    align-items: center;
 }
 
 header {
@@ -22,11 +21,11 @@ header {
 }
 
 #outer-circle {
-    height: 100vw;
+    height: 120vw;
     max-height: 50rem;
-    width: 100vw;
+    width: 120vw;
     max-width: 50rem;
-    border: 0.5rem solid black;
+    border: 2px solid #000000;
     border-radius: 100%;
     position: fixed;
     top: 50%;
@@ -37,13 +36,13 @@ header {
     z-index: 4;
 }
 
-/* --------Test Loading Bar */
+/* -------- Circular Loading Bar */
 
 .middle-circle {
-    height: 31rem;
-    width: 31rem;
+    height: 32rem;
+    width: 32rem;
     background-color: #ffffff;
-    border: 1px solid black;
+    border: 1px solid #000000;
     border-radius: 100%;
     position: absolute;
     top: 50%;
@@ -54,9 +53,9 @@ header {
 .timer {
     height: 100%;
     width: 100%;
-    background-color: blue;
+    background-color: #3AB53A;
     border-radius: 50%;
-    clip: rect(0px, 31rem, 31rem, 15.5rem);
+    clip: rect(0px, 32rem, 32rem, 16rem);
     position: absolute;
 }
 
@@ -65,7 +64,7 @@ header {
     width: 100%;
     background-color: white;
     border-radius: 50%;
-    clip: rect(0px, 31rem, 31rem, 15.5rem);
+    clip: rect(0px, 32rem, 32rem, 16rem);
     position: absolute;
 }
 
@@ -140,10 +139,10 @@ header {
 /* -------------------- Inner Circle */
 
 .inner-circle {
-    height: 25rem;
-    width: 25rem;
-    background-color: white;
-    border: .5rem solid black;
+    height: 26.5rem;
+    width: 26.5rem;
+    background-color: #ffffff;
+    border: 2px solid #000000;
     border-radius: 50%;
     margin: auto;
     padding: 2rem;
@@ -165,7 +164,6 @@ header {
 }
 
 .tally {
-    /* height:15%; */
     margin: 0;
     display: grid;
     grid-template-columns: auto auto;
@@ -179,7 +177,7 @@ header {
     width: 4rem;
     font-size: 1.25rem;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #000000;
     border-radius: 50%;
     margin: 0 1rem;
     display: flex;
@@ -192,7 +190,7 @@ header {
 }
 
 #question {
-    /* height:25%; */
+    height:25%;
     font-size: 1.5rem;
 }
 
@@ -207,22 +205,25 @@ header {
 }
 
 .btn {
-    height: 4rem;
-    width: 10rem;
+    height: 5rem;
+    width: 12rem;
     font-size: 1.2rem;
-    border: .1rem solid black;
+    border: .1rem solid #000000;
     border-radius: 1rem;
     margin: 0rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem #000000;
  
 }
 
-.btn:hover {
-    background-color: blue;
-    color: white;
-    border: 2px solid black;
+.btn:hover, .btn::selection {
+    background-color: #004040;
+    color: #ffffff;
+    border: 1px solid black;
+    box-shadow: -0.2rem -0.2rem -0.2rem -0.1rem #000000;
 }
 
 .answer-choice {
@@ -237,15 +238,15 @@ header {
 }
 
 .correct {
-    background-color: green;
+    background-color: #3AB53A;
 }
 
 .incorrect {
-    background-color: red;
+    background-color: #D41C1C;
 }
 
 .neutral {
-    background-color: blue;
+    background-color: #076969;
 }
 
 .hide {
@@ -260,7 +261,7 @@ header {
 }
 
 .btn-bottom:hover {
-    color: blue;
+    color: #004040;
 }
 
 /* --------------- Help modal */
@@ -268,7 +269,7 @@ header {
 .help-modal {
     height: 100%;
     width: 100%;
-    background-color: rgb(0,0,0);
+    background-color: #000000;
     background-color: rgba(0,0,0,0.75);
     padding-top: 5vh;
     display: none;
@@ -284,8 +285,8 @@ header {
 .help-content {
     height: 90vh;
     width: 90vw;
-    background-color: #fefefe;
-    border: 1px solid #888;
+    background-color: #ffffff;
+    border: 1px solid #000000;
     margin: auto;
     display: flex;
     align-items: center;
@@ -303,5 +304,5 @@ header {
 }
 
 #helpExit:hover {
-    background-color: blue;
+    background-color: #004040;
 }
