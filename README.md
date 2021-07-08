@@ -153,6 +153,9 @@ Below the starting area, there is a link on **how to play**. This will popout a 
 
 ### Loading Beneath The Collapse
 
+When start is pressed, the interface will collapse in on itself and to appear a couple of seconds later with the proper questions loaded in and the first question ready to be answered. The start button will be gone and made room for the choice buttons. The category selector will be gone and made room for the questions, the score and question counters.
+The fetching of the questions will be done in the time on the collapse and reappear animation.
+
 ### Game
 
 ### Score and Question Progress
