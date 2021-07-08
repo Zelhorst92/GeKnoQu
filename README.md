@@ -163,6 +163,8 @@ The questions are made possible by the API of [opentdb.com](https://opentdb.com 
 
 ### Score and Question Progress
 
+During the game itself, on the top of the game interface there will be counters to show on which question you are and how many of them you have answered correctly.
+
 ### Restart alert
 
 [Back to top](#table-of-content)
