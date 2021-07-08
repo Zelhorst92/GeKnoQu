@@ -149,6 +149,8 @@ The category selector fetches the possible categories from [opentdb.com](https:/
 
 ### Help Modal
 
+Below the starting area, there is a link on **how to play**. This will popout a modal, explaining the basics of the game. Upon clicking on the back button or next to the modal, it will disappear.
+
 ### Loading Beneath The Collapse
 
 ### Game
