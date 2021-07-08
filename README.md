@@ -174,6 +174,13 @@ When the game has started, it is assumed that you have read the how to play and 
 ---
 
 ## Future Features
+### High Score
+
+It would be interesting to see how well you scored the last couple of times and also the user would then have a score to beat. This could be done locally.
+
+### 
+
+[Back to top](#table-of-content)
 
 # Technologies
 ## Languages
