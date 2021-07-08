@@ -158,6 +158,9 @@ The fetching of the questions will be done in the time on the collapse and reapp
 
 ### Game
 
+The game itself is about answering 20 questions in the general knowledge area or of the selected category. You will be presented with a question and 4 answers. Upon selecting an answer, the button and the outer ring will turn green or red, for correct or incorrect respectively. If incorrect, the correct answer will be shown after a short while, before moving on to the next question.
+The questions are made possible by the API of [opentdb.com](https://opentdb.com "Link to open trivia database").
+
 ### Score and Question Progress
 
 ### Restart alert
