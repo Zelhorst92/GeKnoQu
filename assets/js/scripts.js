@@ -1,7 +1,7 @@
 const selectedCategoryRef = document.getElementById("category-selector");
 const categoryIdRef = document.getElementById("category-selector");
 
-const question = document.getElementById("question");
+const questionRef = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
 const questionCounterProgress = document.getElementById("question-counter");
 const scoreProgress = document.getElementById("score");
@@ -39,45 +39,31 @@ const createSelectBox = (categories) => {
 
 document.getElementById("start").addEventListener("click", function startGame() {
     if (questions.length === 0) {
+        console.log("Number of questions in the array: " + questions.length)
+        console.log("Questions array is empty, fetching questions...")
         fetchQuestions();
         setTimeout(
             function () {
                 startGame();
-            }, 100
+            }, 250
         );
     } else {
+        console.log("Questions array has questions!")
         questionCounter = 0;
         score = 0;
+        console.log("Moving 'fetched' questions from questions-array to available-questions-array...")
         availableQuestions = [...questions];
+        console.log("Printing availablequestions...")
         console.log(availableQuestions);
+        collapseAnimation();
         getNewQuestion();
-        setTimeout(
-            function () {
-                gameCircle.className += " inner-circle-load";
-                document.getElementById("category-container").className += " hide";
-                document.getElementById("start").className += " hide";
-                document.getElementById("linkHelpModal").className += " hide"
-                document.getElementById("give-up").className = "btn-bottom";
-            }, 100
-        );
-        setTimeout(
-            function () {
-                gameCircle.className = "inner-circle";
-                document.getElementById("tally-container").className = "";
-                question.className = "";
-                for (let choice of choices) {
-                    choice.className = "btn answer-choice";
-                }
-            }, 3000
-        );
-
     }
 });
 
 /* ----------------- Getting question data from opentbd.com API with selected category*/
 
 const fetchQuestions = () => {
-    
+    console.log("Executing fetchQuestions...")
     fetch(`https://opentdb.com/api.php?amount=4&category=${categoryIdRef.value}&type=multiple`)
         .then(res => res.json())
         .then((data) => {
@@ -91,16 +77,36 @@ const fetchQuestions = () => {
                 answerChoices.forEach((choice, index) => {
                     formattedQuestions['choice' + (index + 1)] = choice;
                 });
-                /* questions = formattedQuestions; */
-                console.log(formattedQuestions)
-                /* return questions; */
-                return formattedQuestions; /* Why does this work? How does this end up in the questions array? */
+                return formattedQuestions;
             });
         })
         .catch(err => {
             console.error(err)
         });
+};
 
+/* ----------------- Collapse animation*/
+
+const collapseAnimation = () => {
+    setTimeout(
+        function () {
+            gameCircle.className += " inner-circle-load";
+            document.getElementById("category-container").className += " hide";
+            document.getElementById("start").className += " hide";
+            document.getElementById("linkHelpModal").className += " hide"
+            document.getElementById("give-up").className = "btn-bottom";
+        }, 200
+    );
+    setTimeout(
+        function () {
+            gameCircle.className = "inner-circle";
+            document.getElementById("tally-container").className = "";
+            questionRef.className = "";
+            for (let choice of choices) {
+                choice.className = "btn answer-choice";
+            }
+        }, 1500
+    )
 };
 
 /* ----------------- Get a new question */
@@ -119,7 +125,7 @@ function getNewQuestion() {
 
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestion = availableQuestions[questionIndex];
-        question.innerHTML = currentQuestion.question;
+        questionRef.innerHTML = currentQuestion.question;
 
         for (let choice of choices) {
             const number = choice.dataset["number"];
@@ -200,7 +206,7 @@ let gameResult = document.getElementById("result");
 
 function gameEnd() {
     stopTimerBar();
-    question.className = "hide";
+    questionRef.className = "hide";
     for (let choice of choices) {
         choice.className = "btn answer-choice hide"
     };
