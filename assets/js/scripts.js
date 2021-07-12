@@ -1,18 +1,19 @@
+const selectedCategoryRef = document.getElementById("category-selector");
+
 /* ----------------- Getting category data from opentbd.com API */
 
-let selectedCategory = document.getElementById("category-selector");
-let getCategories = fetch("https://opentdb.com/api_category.php")
-    .then(Response => Response.json())
+const getCategories = fetch("https://opentdb.com/api_category.php")
+    .then(res => res.json())
+    .then((result) => createSelectBox(result.trivia_categories))
     .catch(err => {
         console.error(err)
     });
 
-getCategories.then(function (result) {
-    categories = result.trivia_categories;
+const createSelectBox = (categories) => {
     for (let category of categories) {
-        (selectedCategory.options[selectedCategory.options.length] = new Option(category.name, category.id)); /* Create an option list for the category selector */
+        (selectedCategoryRef.options[selectedCategoryRef.options.length] = new Option(category.name, category.id)); /* Create an option list for the category selector */
     };
-});
+};
 
 /* ----------------- Getting question data from opentbd.com API with selected category*/
 
