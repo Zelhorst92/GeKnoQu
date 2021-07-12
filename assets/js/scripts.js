@@ -22,6 +22,9 @@ let questionCounter = 0;
 let availableQuestions = [];
 let questions = [];
 
+let sec = 0;
+let time;
+
 let classToApply;
 
 const correctPoint = 1;
@@ -118,6 +121,8 @@ const collapseAnimation = () => {
 // ----------------- Get a new question
 
 const getNewQuestion = () => {
+    sec = 0;
+    console.log("getNewQuestion function is being executed")
     feedbackCircle.className = "neutral";
     if (availableQuestions.length === 0) {
         console.log("No more questions.")
@@ -129,24 +134,23 @@ const getNewQuestion = () => {
         console.log("Presenting new question...")
         collapseAnimation();
         setTimeout(() => {
-                const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-                currentQuestion = availableQuestions[questionIndex];
-                questionRef.innerHTML = currentQuestion.question;
-                questionCounter++;
-                questionCounterProgress.innerHTML = questionCounter + "/" + maxQuestions;
-                for (let choice of choices) {
-                    const number = choice.dataset["number"];
-                    choice.innerHTML = currentQuestion["choice" + number];
-                };
-                availableQuestions.splice(questionIndex, 1);
-            }, 2000
-        );
+            const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+            currentQuestion = availableQuestions[questionIndex];
+            questionRef.innerHTML = currentQuestion.question;
+            questionCounter++;
+            questionCounterProgress.innerHTML = questionCounter + "/" + maxQuestions;
+            for (let choice of choices) {
+                const number = choice.dataset["number"];
+                choice.innerHTML = currentQuestion["choice" + number];
+            };
+            availableQuestions.splice(questionIndex, 1);
+        }, 2000);
         setTimeout(() => {
-                acceptingAnswers = true;
-                checkAnswer();
-                startTimerBar();
-            }, 3000
-        );
+            acceptingAnswers = true;
+            checkAnswer();
+            startTimerBar();
+            time = setInterval(timer, 1000);
+        }, 3000);
     };
 };
 
@@ -157,6 +161,7 @@ const checkAnswer = () => {
     const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
     for (let choice of choices) {
         choice.addEventListener("click", (event) => {
+            clearInterval(time);
             const selectedChoice = event.target;
             const selectedAnswer = selectedChoice.dataset["number"];
             if (!acceptingAnswers) {
@@ -189,6 +194,24 @@ const checkAnswer = () => {
         });
     };
 };
+
+// ----------------- Timer
+
+const timer = () => {
+    sec++;
+    console.log(sec);
+    if (sec === 15) {
+        clearInterval(time);
+        acceptingAnswers = false;
+        classToApply = "incorrect"
+        stopTimerBar();
+        feedbackCircle.className = classToApply;
+        console.log("interval cleared!")
+        setTimeout( () => {
+            getNewQuestion();
+        }, 3000)
+    }
+}
 
 // ----------------- Add score point
 
