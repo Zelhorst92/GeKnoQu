@@ -114,13 +114,15 @@ const collapseAnimation = () => {
 
 const getNewQuestion = () => {
     if (availableQuestions.length === 0) {
+        console.log("No more questions.")
         collapseAnimation();
         setTimeout(
             function () {
                 gameEnd();
             }, 2000
-        );        
+        );
     } else {
+        console.log("Presenting new question...")
         collapseAnimation();
         setTimeout(
             function () {
@@ -138,51 +140,51 @@ const getNewQuestion = () => {
         );
         setTimeout(
             function () {
+                acceptingAnswers = true;
+                checkAnswer();
                 startTimerBar();
             }, 3000
         );
-        acceptingAnswers = true;
-        checkAnswer();
     };
 };
 
 /* ----------------- Check answer on click */
 
 const checkAnswer = () => {
-
-
+    const correctAnswerNumber = currentQuestion.answer;
+    const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
     for (let choice of choices) {
         choice.addEventListener("click", function (event) {
-            /* Wait for a click on one of four choices */
-            if (!acceptingAnswers) {
-                return;
-            };
-            const correctAnswerNumber = currentQuestion.answer;
-            const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
             const selectedChoice = event.target;
             const selectedAnswer = selectedChoice.dataset["number"];
-            acceptingAnswers = false;
-            if (selectedAnswer == currentQuestion.answer) {
-                classToApply = "correct";
-                addScore(correctPoint);
-                stopTimerBar();
+            if (!acceptingAnswers) {
+                return;
             } else {
-                classToApply = "incorrect";
+                acceptingAnswers = false;
                 stopTimerBar();
-                setTimeout(function () {
-                    correctAnswer.classList.add("correct");
-                }, 500)
+                if (selectedAnswer == currentQuestion.answer) {
+                    classToApply = "correct";
+                    addScore(correctPoint);
+                    console.log("correct answer given!")
+                } else {
+                    classToApply = "incorrect";
+                    console.log("Incorrect answer given!")
+                    setTimeout(function () {
+                        correctAnswer.classList.add("correct");
+                        console.log("Showing correct answer")
+                    }, 500)
+                };
+                selectedChoice.classList.add(classToApply);
+                feedbackCircle.className = classToApply
+                setTimeout(
+                    function () {
+                        selectedChoice.classList.remove(classToApply);
+                        correctAnswer.classList.remove("correct");
+                        feedbackCircle.className = "neutral";
+                        getNewQuestion();
+                    }, 2750
+                );
             };
-            setTimeout(
-                function () {
-                    selectedChoice.classList.remove(classToApply);
-                    correctAnswer.classList.remove("correct");
-                    feedbackCircle.className = "neutral";
-                    getNewQuestion();
-                }, 2750
-            );
-            selectedChoice.classList.add(classToApply);
-            feedbackCircle.className = classToApply
         });
     };
 };
@@ -199,12 +201,13 @@ function addScore(num) {
 let gameResult = document.getElementById("result");
 
 function gameEnd() {
-    stopTimerBar();
+
     questionRef.className = "hide";
     for (let choice of choices) {
         choice.className = "btn answer-choice hide"
     };
     document.getElementById("tally-container").className = "hide";
+    console.log("Showing game score..")
     gameResult.className = "";
     gameResult.innerHTML = "Your game score is: " + score + " out of " + maxQuestions;
 };
