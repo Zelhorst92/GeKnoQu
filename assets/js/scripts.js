@@ -1,19 +1,19 @@
-const selectedCategoryRef = document.getElementById("category-selector");
-const categoryIdRef = document.getElementById("category-selector");
+const selectedCategoryRef = document.querySelector("#category-selector");
+const categoryId = selectedCategoryRef.value;
 
-const questionRef = document.getElementById("question");
+const questionRef = document.querySelector("#question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
-const questionCounterProgress = document.getElementById("question-counter");
-const scoreProgress = document.getElementById("score");
-const feedbackCircle = document.getElementById("outer-circle");
-const leftLoad = document.getElementById("left");
-const rightLoad = document.getElementById("right");
-const gameCircle = document.getElementById("game-circle");
-const gameResultRef = document.getElementById("result");
+const questionCounterProgress = document.querySelector("#question-counter");
+const scoreProgress = document.querySelector("#score");
+const feedbackCircle = document.querySelector("#outer-circle");
+const leftLoad = document.querySelector("#left");
+const rightLoad = document.querySelector("#right");
+const gameCircle = document.querySelector("#game-circle");
+const gameResultRef = document.querySelector("#result");
 
-const modal = document.getElementById("helpModal");
-const help = document.getElementById("linkHelpModal");
-const close = document.getElementById("helpExit")
+const modal = document.querySelector("#helpModal");
+const help = document.querySelector("#linkHelpModal");
+const close = document.querySelector("#helpExit")
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -44,7 +44,7 @@ const createSelectBox = (categories) => {
 
 /* ----------------- Start the game */
 
-document.getElementById("start").addEventListener("click", startGame = () => {
+document.querySelector("#start").addEventListener("click", startGame = () => {
     if (questions.length === 0) {
         console.log("Number of questions in the array: " + questions.length)
         console.log("Questions array is empty, fetching questions...")
@@ -58,7 +58,7 @@ document.getElementById("start").addEventListener("click", startGame = () => {
         console.log("Questions array has questions!")
         questionCounter = 0;
         score = 0;
-        console.log("Moving 'fetched' questions from questions-array to available-questions-array...")
+        console.log("Moving questions from questions-array to available-questions-array...")
         availableQuestions = [...questions];
         console.log("Printing availablequestions...")
         console.log(availableQuestions);
@@ -70,7 +70,7 @@ document.getElementById("start").addEventListener("click", startGame = () => {
 
 const fetchQuestions = () => {
     console.log("Executing fetchQuestions...")
-    fetch(`https://opentdb.com/api.php?amount=4&category=${categoryIdRef.value}&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=4&category=${categoryId}&type=multiple`)
         .then(res => res.json())
         .then((data) => {
             questions = data.results.map(fetchedQuestion => {
@@ -97,16 +97,16 @@ const collapseAnimation = () => {
     setTimeout(
         () => {
             gameCircle.className += " inner-circle-load";
-            document.getElementById("category-container").className += " hide";
-            document.getElementById("start").className += " hide";
-            document.getElementById("linkHelpModal").className += " hide"
-            document.getElementById("give-up").className = "btn-bottom";
+            document.querySelector("#category-container").className += " hide";
+            document.querySelector("#start").className += " hide";
+            document.querySelector("#linkHelpModal").className += " hide"
+            document.querySelector("#give-up").className = "btn-bottom";
         }, 200
     );
     setTimeout(
         () => {
             gameCircle.className = "inner-circle";
-            document.getElementById("tally-container").className = "";
+            document.querySelector("#tally-container").className = "";
             questionRef.className = "";
             for (let choice of choices) {
                 choice.className = "btn answer-choice";
@@ -118,6 +118,7 @@ const collapseAnimation = () => {
 /* ----------------- Get a new question */
 
 const getNewQuestion = () => {
+    feedbackCircle.className = "neutral";
     if (availableQuestions.length === 0) {
         console.log("No more questions.")
         collapseAnimation();
@@ -181,7 +182,6 @@ const checkAnswer = () => {
                     () => {
                         selectedChoice.classList.remove(classToApply);
                         correctAnswer.classList.remove("correct");
-                        feedbackCircle.className = "neutral";
                         getNewQuestion();
                     }, 2750
                 );
@@ -205,7 +205,7 @@ const gameEnd = () => {
     for (let choice of choices) {
         choice.className = "btn answer-choice hide"
     };
-    document.getElementById("tally-container").className = "hide";
+    document.querySelector("#tally-container").className = "hide";
     console.log("Showing game score..")
     gameResultRef.className = "";
     gameResultRef.innerHTML = "Your game score is: " + score + " out of " + maxQuestions;
@@ -243,7 +243,7 @@ window.onclick = (event) => {
 
 /* ----------------- Restart Script */
 
-document.getElementById("give-up").addEventListener("click", () => {
+document.querySelector("#give-up").addEventListener("click", () => {
     if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
         window.location.reload();
     }
