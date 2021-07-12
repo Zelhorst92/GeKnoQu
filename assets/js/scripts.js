@@ -114,7 +114,12 @@ const collapseAnimation = () => {
 
 const getNewQuestion = () => {
     if (availableQuestions.length === 0) {
-        gameEnd();
+        collapseAnimation();
+        setTimeout(
+            function () {
+                gameEnd();
+            }, 2000
+        );        
     } else {
         collapseAnimation();
         setTimeout(
