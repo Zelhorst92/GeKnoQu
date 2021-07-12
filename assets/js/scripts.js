@@ -9,6 +9,11 @@ const feedbackCircle = document.getElementById("outer-circle");
 const leftLoad = document.getElementById("left");
 const rightLoad = document.getElementById("right");
 const gameCircle = document.getElementById("game-circle");
+const gameResultRef = document.getElementById("result");
+
+const modal = document.getElementById("helpModal");
+const help = document.getElementById("linkHelpModal");
+const close = document.getElementById("helpExit")
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -39,13 +44,13 @@ const createSelectBox = (categories) => {
 
 /* ----------------- Start the game */
 
-document.getElementById("start").addEventListener("click", function startGame() {
+document.getElementById("start").addEventListener("click", startGame = () => {
     if (questions.length === 0) {
         console.log("Number of questions in the array: " + questions.length)
         console.log("Questions array is empty, fetching questions...")
         fetchQuestions();
         setTimeout(
-            function () {
+            () => {
                 startGame();
             }, 250
         );
@@ -90,7 +95,7 @@ const fetchQuestions = () => {
 
 const collapseAnimation = () => {
     setTimeout(
-        function () {
+        () => {
             gameCircle.className += " inner-circle-load";
             document.getElementById("category-container").className += " hide";
             document.getElementById("start").className += " hide";
@@ -99,7 +104,7 @@ const collapseAnimation = () => {
         }, 200
     );
     setTimeout(
-        function () {
+        () => {
             gameCircle.className = "inner-circle";
             document.getElementById("tally-container").className = "";
             questionRef.className = "";
@@ -116,16 +121,13 @@ const getNewQuestion = () => {
     if (availableQuestions.length === 0) {
         console.log("No more questions.")
         collapseAnimation();
-        setTimeout(
-            function () {
-                gameEnd();
-            }, 2000
-        );
+        setTimeout(() => {
+            gameEnd();
+        }, 2000);
     } else {
         console.log("Presenting new question...")
         collapseAnimation();
-        setTimeout(
-            function () {
+        setTimeout(() => {
                 const questionIndex = Math.floor(Math.random() * availableQuestions.length);
                 currentQuestion = availableQuestions[questionIndex];
                 questionRef.innerHTML = currentQuestion.question;
@@ -138,8 +140,7 @@ const getNewQuestion = () => {
                 availableQuestions.splice(questionIndex, 1);
             }, 2000
         );
-        setTimeout(
-            function () {
+        setTimeout(() => {
                 acceptingAnswers = true;
                 checkAnswer();
                 startTimerBar();
@@ -154,7 +155,7 @@ const checkAnswer = () => {
     const correctAnswerNumber = currentQuestion.answer;
     const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
     for (let choice of choices) {
-        choice.addEventListener("click", function (event) {
+        choice.addEventListener("click", (event) => {
             const selectedChoice = event.target;
             const selectedAnswer = selectedChoice.dataset["number"];
             if (!acceptingAnswers) {
@@ -169,7 +170,7 @@ const checkAnswer = () => {
                 } else {
                     classToApply = "incorrect";
                     console.log("Incorrect answer given!")
-                    setTimeout(function () {
+                    setTimeout(() => {
                         correctAnswer.classList.add("correct");
                         console.log("Showing correct answer")
                     }, 500)
@@ -177,7 +178,7 @@ const checkAnswer = () => {
                 selectedChoice.classList.add(classToApply);
                 feedbackCircle.className = classToApply
                 setTimeout(
-                    function () {
+                    () => {
                         selectedChoice.classList.remove(classToApply);
                         correctAnswer.classList.remove("correct");
                         feedbackCircle.className = "neutral";
@@ -191,16 +192,14 @@ const checkAnswer = () => {
 
 /* ----------------- Add score point*/
 
-function addScore(num) {
+const addScore = (num) => {
     score += num;
     scoreProgress.innerText = score;
 };
 
 /* ----------------- Game End */
 
-let gameResult = document.getElementById("result");
-
-function gameEnd() {
+const gameEnd = () => {
 
     questionRef.className = "hide";
     for (let choice of choices) {
@@ -208,39 +207,35 @@ function gameEnd() {
     };
     document.getElementById("tally-container").className = "hide";
     console.log("Showing game score..")
-    gameResult.className = "";
-    gameResult.innerHTML = "Your game score is: " + score + " out of " + maxQuestions;
+    gameResultRef.className = "";
+    gameResultRef.innerHTML = "Your game score is: " + score + " out of " + maxQuestions;
 };
 
 /* ----------------- Timer bar stop (hide) */
 
-function stopTimerBar() {
+const stopTimerBar = () => {
     leftLoad.className = "timer left hide";
     rightLoad.className = "timer right hide";
 };
 
 /* ----------------- Timer bar start (show) */
 
-function startTimerBar() {
+const startTimerBar = () => {
     leftLoad.className = "timer left";
     rightLoad.className = "timer right";
 };
 
 /* ----------------- Modal Help Script */
 
-let modal = document.getElementById("helpModal");
-let help = document.getElementById("linkHelpModal");
-let close = document.getElementById("helpExit")
-
-help.onclick = function () {
+help.onclick = () => {
     modal.style.display = "block";
 }
 
-close.onclick = function () {
+close.onclick = () => {
     modal.style.display = "none";
 }
 
-window.onclick = function (event) {
+window.onclick = (event) => {
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -248,7 +243,7 @@ window.onclick = function (event) {
 
 /* ----------------- Restart Script */
 
-document.getElementById("give-up").addEventListener("click", function () {
+document.getElementById("give-up").addEventListener("click", () => {
     if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
         window.location.reload();
     }
