@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
 html {
     font-size: 62.5%;
 }
@@ -68,7 +69,7 @@ header {
     position: absolute;
 }
 
-.left .loading { 
+.left .loading {
     -webkit-animation: left 7.5s linear;
     -moz-animation: left 7.5s linear;
     animation: left 7.5s linear both;
@@ -108,7 +109,7 @@ header {
     -webkit-animation: right 7.5s linear;
     -moz-animation: right 7.5s linear;
     animation: right 7.5s linear both;
-    
+
     -webkit-animation-delay: 7.5s;
     -moz-animation-delay: 7.5s;
     animation-delay: 7.5s;
@@ -194,7 +195,7 @@ header {
 }
 
 #question {
-    height:25%;
+    height: 25%;
     font-size: 1.5rem;
 }
 
@@ -224,14 +225,16 @@ header {
     align-items: center;
 
     box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem #000000;
- 
+
 }
 
-.btn:hover, .btn::selection {
-    background-color: #004040;
-    color: #ffffff;
-    border: 1px solid black;
-    box-shadow: -0.2rem -0.2rem -0.2rem -0.1rem #000000;
+.btn:hover,
+.btn::selection {
+    color: #000000;
+    border: 1px solid #000000;
+    -webkit-box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
+    -moz-box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
+    box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
 }
 
 .answer-choice {
@@ -278,7 +281,7 @@ header {
     height: 100%;
     width: 100%;
     background-color: #000000;
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     padding-top: 5vh;
     display: none;
     position: fixed;
