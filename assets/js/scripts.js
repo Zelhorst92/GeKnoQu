@@ -27,7 +27,7 @@ let classToApply;
 const correctPoint = 1;
 const maxQuestions = 20;
 
-/* ----------------- Getting category data from opentbd.com API */
+// ----------------- Getting category data from opentbd.com API
 
 const getCategories = fetch("https://opentdb.com/api_category.php")
     .then(res => res.json())
@@ -38,11 +38,11 @@ const getCategories = fetch("https://opentdb.com/api_category.php")
 
 const createSelectBox = (categories) => {
     for (let category of categories) {
-        (selectedCategoryRef.options[selectedCategoryRef.options.length] = new Option(category.name, category.id)); /* Create an option list for the category selector */
+        (selectedCategoryRef.options[selectedCategoryRef.options.length] = new Option(category.name, category.id));
     };
 };
 
-/* ----------------- Start the game */
+// ----------------- Start the game
 
 document.querySelector("#start").addEventListener("click", startGame = () => {
     if (questions.length === 0) {
@@ -66,7 +66,7 @@ document.querySelector("#start").addEventListener("click", startGame = () => {
     }
 });
 
-/* ----------------- Getting question data from opentbd.com API with selected category*/
+// ----------------- Getting question data from opentbd.com API with selected category
 
 const fetchQuestions = () => {
     console.log("Executing fetchQuestions...")
@@ -91,7 +91,7 @@ const fetchQuestions = () => {
         });
 };
 
-/* ----------------- Collapse animation*/
+// ----------------- Collapse animation
 
 const collapseAnimation = () => {
     setTimeout(
@@ -115,7 +115,7 @@ const collapseAnimation = () => {
     )
 };
 
-/* ----------------- Get a new question */
+// ----------------- Get a new question
 
 const getNewQuestion = () => {
     feedbackCircle.className = "neutral";
@@ -150,7 +150,7 @@ const getNewQuestion = () => {
     };
 };
 
-/* ----------------- Check answer on click */
+// ----------------- Check answer on click
 
 const checkAnswer = () => {
     const correctAnswerNumber = currentQuestion.answer;
@@ -190,14 +190,14 @@ const checkAnswer = () => {
     };
 };
 
-/* ----------------- Add score point*/
+// ----------------- Add score point
 
 const addScore = (num) => {
     score += num;
     scoreProgress.innerText = score;
 };
 
-/* ----------------- Game End */
+// ----------------- Game End
 
 const gameEnd = () => {
 
@@ -211,21 +211,21 @@ const gameEnd = () => {
     gameResultRef.innerHTML = "Your game score is: " + score + " out of " + maxQuestions;
 };
 
-/* ----------------- Timer bar stop (hide) */
+// ----------------- Timer bar stop (hide) 
 
 const stopTimerBar = () => {
     leftLoad.className = "timer left hide";
     rightLoad.className = "timer right hide";
 };
 
-/* ----------------- Timer bar start (show) */
+// ----------------- Timer bar start (show) 
 
 const startTimerBar = () => {
     leftLoad.className = "timer left";
     rightLoad.className = "timer right";
 };
 
-/* ----------------- Modal Help Script */
+// ----------------- Modal Help Script
 
 help.onclick = () => {
     modal.style.display = "block";
@@ -241,7 +241,7 @@ window.onclick = (event) => {
     }
 }
 
-/* ----------------- Restart Script */
+// ----------------- Restart Script
 
 document.querySelector("#give-up").addEventListener("click", () => {
     if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
