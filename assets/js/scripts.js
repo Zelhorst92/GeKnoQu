@@ -1,51 +1,5 @@
 const selectedCategoryRef = document.getElementById("category-selector");
-
-/* ----------------- Getting category data from opentbd.com API */
-
-const getCategories = fetch("https://opentdb.com/api_category.php")
-    .then(res => res.json())
-    .then((result) => createSelectBox(result.trivia_categories))
-    .catch(err => {
-        console.error(err)
-    });
-
-const createSelectBox = (categories) => {
-    for (let category of categories) {
-        (selectedCategoryRef.options[selectedCategoryRef.options.length] = new Option(category.name, category.id)); /* Create an option list for the category selector */
-    };
-};
-
-/* ----------------- Getting question data from opentbd.com API with selected category*/
-
-/* document.getElementById("category-selector").addEventListener("select", function () {
-    fetchQuestions();
-}); */
-
-function fetchQuestions() {
-    let categoryId = document.getElementById("category-selector").value;
-    const fetchedQuestions = fetch("https://opentdb.com/api.php?amount=4&category=" + categoryId + "&type=multiple") /* Dont forget to change it back to 20! */
-        .then(Response => Response.json())
-        .catch(err => {
-            console.error(err)
-        });
-    fetchedQuestions.then((data) => {
-        questions = data.results.map(fetchedQuestion => {
-            const formattedQuestions = {
-                question: fetchedQuestion.question,
-            };
-            formattedQuestions.answer = Math.floor(Math.random() * 3) + 1;
-            const answerChoices = [...fetchedQuestion.incorrect_answers];
-            answerChoices.splice(formattedQuestions.answer - 1, 0, fetchedQuestion.correct_answer);
-            answerChoices.forEach((choice, index) => {
-                formattedQuestions['choice' + (index + 1)] = choice;
-            });
-            questions = formattedQuestions;
-            return questions;
-        });
-    });
-};
-
-/* ----------------- constants and variables */
+const categoryIdRef = document.getElementById("category-selector");
 
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
@@ -65,6 +19,21 @@ let questions = [];
 
 const correctPoint = 1;
 const maxQuestions = 20;
+
+/* ----------------- Getting category data from opentbd.com API */
+
+const getCategories = fetch("https://opentdb.com/api_category.php")
+    .then(res => res.json())
+    .then((result) => createSelectBox(result.trivia_categories))
+    .catch(err => {
+        console.error(err)
+    });
+
+const createSelectBox = (categories) => {
+    for (let category of categories) {
+        (selectedCategoryRef.options[selectedCategoryRef.options.length] = new Option(category.name, category.id)); /* Create an option list for the category selector */
+    };
+};
 
 /* ----------------- Start the game */
 
@@ -105,12 +74,40 @@ document.getElementById("start").addEventListener("click", function startGame() 
     }
 });
 
+/* ----------------- Getting question data from opentbd.com API with selected category*/
+
+const fetchQuestions = () => {
+    
+    fetch(`https://opentdb.com/api.php?amount=4&category=${categoryIdRef.value}&type=multiple`)
+        .then(res => res.json())
+        .then((data) => {
+            questions = data.results.map(fetchedQuestion => {
+                const formattedQuestions = {
+                    question: fetchedQuestion.question,
+                };
+                formattedQuestions.answer = Math.floor(Math.random() * 3) + 1;
+                const answerChoices = [...fetchedQuestion.incorrect_answers];
+                answerChoices.splice(formattedQuestions.answer - 1, 0, fetchedQuestion.correct_answer);
+                answerChoices.forEach((choice, index) => {
+                    formattedQuestions['choice' + (index + 1)] = choice;
+                });
+                /* questions = formattedQuestions; */
+                console.log(formattedQuestions)
+                /* return questions; */
+                return formattedQuestions; /* Why does this work? How does this end up in the questions array? */
+            });
+        })
+        .catch(err => {
+            console.error(err)
+        });
+
+};
+
 /* ----------------- Get a new question */
 
 function getNewQuestion() {
-
     if (availableQuestions.length === 0) {
-            gameEnd();
+        gameEnd();
     } else {
         setTimeout(
             function () {
@@ -179,14 +176,15 @@ for (let choice of choices) {
         if (availableQuestions.length === 0) {
             return;
         } else {
-        setTimeout(
-            function () {
-                console.log("I am called 4");
-                console.log(availableQuestions.length);
-                startTimerBar();
-            }, 3250
-        );
-    }});
+            setTimeout(
+                function () {
+                    console.log("I am called 4");
+                    console.log(availableQuestions.length);
+                    startTimerBar();
+                }, 3250
+            );
+        }
+    });
 };
 
 /* ----------------- Add score point*/
