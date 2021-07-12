@@ -199,7 +199,7 @@ header {
 }
 
 #result {
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
 
 /* -------------Buttons */
@@ -241,7 +241,7 @@ header {
 .btn-start {
     height: 6rem;
     width: 12rem;
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-top: 1.5rem;
 }
 

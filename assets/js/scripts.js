@@ -72,7 +72,7 @@ document.querySelector("#start").addEventListener("click", startGame = () => {
 
 const fetchQuestions = () => {
     console.log("Executing fetchQuestions...")
-    fetch(`https://opentdb.com/api.php?amount=4&category=${selectedCategoryRef.value}&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=2&category=${selectedCategoryRef.value}&type=multiple`)
         .then(res => res.json())
         .then((data) => {
             questions = data.results.map(fetchedQuestion => {
@@ -194,24 +194,6 @@ const checkAnswer = () => {
     };
 };
 
-// ----------------- Timer
-
-const timer = () => {
-    sec++;
-    console.log(sec);
-    if (sec === 15) {
-        clearInterval(time);
-        acceptingAnswers = false;
-        classToApply = "incorrect";
-        stopTimerBar();
-        feedbackCircle.className = classToApply;
-        console.log("Time is up!");
-        setTimeout( () => {
-            getNewQuestion();
-        }, 3000);
-    };
-};
-
 // ----------------- Add score point
 
 const addScore = (num) => {
@@ -227,10 +209,33 @@ const gameEnd = () => {
     for (let choice of choices) {
         choice.className = "btn answer-choice hide";
     };
+    document.querySelector("#give-up").className = "hide"
     document.querySelector("#tally-container").className = "hide";
     console.log("Showing game score..");
     gameResultRef.className = "";
-    gameResultRef.innerHTML = `Your game score is: ${score} out of ${maxQuestions}`;
+    gameResultRef.innerHTML =
+        `<p>Your game score is:</p>
+        <p> ${score} out of ${maxQuestions}</p>`;
+    document.querySelector("#restart").className = "btn btn-start";
+};
+
+// -------------------------------------------- Timer
+// ----------------- time counter script
+
+const timer = () => {
+    sec++;
+    console.log(sec);
+    if (sec === 15) {
+        clearInterval(time);
+        acceptingAnswers = false;
+        classToApply = "incorrect";
+        stopTimerBar();
+        feedbackCircle.className = classToApply;
+        console.log("Time is up!");
+        setTimeout(() => {
+            getNewQuestion();
+        }, 3000);
+    };
 };
 
 // ----------------- Timer bar stop (hide) 
@@ -265,8 +270,9 @@ window.onclick = (event) => {
 
 // ----------------- Restart Script
 
-document.querySelector("#give-up").addEventListener("click", () => {
+document.querySelector("#give-up").addEventListener("click", restartFunc = () => {
     if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
         window.location.reload();
     }
 });
+document.querySelector("#restart").addEventListener("click", restartFunc);
