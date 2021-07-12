@@ -1,5 +1,4 @@
 const selectedCategoryRef = document.querySelector("#category-selector");
-const categoryId = selectedCategoryRef.value;
 
 const questionRef = document.querySelector("#question");
 const choices = Array.from(document.getElementsByClassName("answer-choice"));
@@ -49,8 +48,8 @@ const createSelectBox = (categories) => {
 
 document.querySelector("#start").addEventListener("click", startGame = () => {
     if (questions.length === 0) {
-        console.log("Number of questions in the array: " + questions.length)
-        console.log("Questions array is empty, fetching questions...")
+        console.log("Number of questions in the array: " + questions.length);
+        console.log("Questions array is empty, fetching questions...");
         fetchQuestions();
         setTimeout(
             () => {
@@ -58,12 +57,12 @@ document.querySelector("#start").addEventListener("click", startGame = () => {
             }, 250
         );
     } else {
-        console.log("Questions array has questions!")
+        console.log("Questions array has questions!");
         questionCounter = 0;
         score = 0;
-        console.log("Moving questions from questions-array to available-questions-array...")
+        console.log("Moving questions from questions-array to available-questions-array...");
         availableQuestions = [...questions];
-        console.log("Printing availablequestions...")
+        console.log("Printing availablequestions...");
         console.log(availableQuestions);
         getNewQuestion();
     }
@@ -73,7 +72,7 @@ document.querySelector("#start").addEventListener("click", startGame = () => {
 
 const fetchQuestions = () => {
     console.log("Executing fetchQuestions...")
-    fetch(`https://opentdb.com/api.php?amount=4&category=${categoryId}&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=4&category=${selectedCategoryRef.value}&type=multiple`)
         .then(res => res.json())
         .then((data) => {
             questions = data.results.map(fetchedQuestion => {
@@ -90,7 +89,7 @@ const fetchQuestions = () => {
             });
         })
         .catch(err => {
-            console.error(err)
+            console.error(err);
         });
 };
 
@@ -102,7 +101,7 @@ const collapseAnimation = () => {
             gameCircle.className += " inner-circle-load";
             document.querySelector("#category-container").className += " hide";
             document.querySelector("#start").className += " hide";
-            document.querySelector("#linkHelpModal").className += " hide"
+            document.querySelector("#linkHelpModal").className += " hide";
             document.querySelector("#give-up").className = "btn-bottom";
         }, 200
     );
@@ -113,19 +112,19 @@ const collapseAnimation = () => {
             questionRef.className = "";
             for (let choice of choices) {
                 choice.className = "btn answer-choice";
-            }
+            };
         }, 2000
-    )
+    );
 };
 
 // ----------------- Get a new question
 
 const getNewQuestion = () => {
     sec = 0;
-    console.log("getNewQuestion function is being executed")
+    console.log("getNewQuestion function is being executed");
     feedbackCircle.className = "neutral";
     if (availableQuestions.length === 0) {
-        console.log("No more questions.")
+        console.log("No more questions.");
         collapseAnimation();
         setTimeout(() => {
             gameEnd();
@@ -172,17 +171,17 @@ const checkAnswer = () => {
                 if (selectedAnswer == currentQuestion.answer) {
                     classToApply = "correct";
                     addScore(correctPoint);
-                    console.log("correct answer given!")
+                    console.log("correct answer given!");
                 } else {
                     classToApply = "incorrect";
-                    console.log("Incorrect answer given!")
+                    console.log("Incorrect answer given!");
                     setTimeout(() => {
                         correctAnswer.classList.add("correct");
-                        console.log("Showing correct answer")
-                    }, 500)
+                        console.log("Showing correct answer");
+                    }, 500);
                 };
                 selectedChoice.classList.add(classToApply);
-                feedbackCircle.className = classToApply
+                feedbackCircle.className = classToApply;
                 setTimeout(
                     () => {
                         selectedChoice.classList.remove(classToApply);
@@ -203,15 +202,15 @@ const timer = () => {
     if (sec === 15) {
         clearInterval(time);
         acceptingAnswers = false;
-        classToApply = "incorrect"
+        classToApply = "incorrect";
         stopTimerBar();
         feedbackCircle.className = classToApply;
-        console.log("interval cleared!")
+        console.log("Time is up!");
         setTimeout( () => {
             getNewQuestion();
-        }, 3000)
-    }
-}
+        }, 3000);
+    };
+};
 
 // ----------------- Add score point
 
@@ -226,12 +225,12 @@ const gameEnd = () => {
 
     questionRef.className = "hide";
     for (let choice of choices) {
-        choice.className = "btn answer-choice hide"
+        choice.className = "btn answer-choice hide";
     };
     document.querySelector("#tally-container").className = "hide";
-    console.log("Showing game score..")
+    console.log("Showing game score..");
     gameResultRef.className = "";
-    gameResultRef.innerHTML = "Your game score is: " + score + " out of " + maxQuestions;
+    gameResultRef.innerHTML = `Your game score is: ${score} out of ${maxQuestions}`;
 };
 
 // ----------------- Timer bar stop (hide) 
