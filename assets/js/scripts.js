@@ -209,8 +209,8 @@ const gameEnd = () => {
     for (let choice of choicesRef) {
         choice.classList.add("hide");
     };
-    document.querySelector("#give-up").className = "hide"
-    document.querySelector("#tally-container").className = "hide";
+    document.querySelector("#give-up").classList.add("hide");
+    document.querySelector("#tally-container").classList.add("hide");
     console.log("Showing game score..");
     gameResultRef.classList.remove("hide");
     gameResultRef.innerHTML =
