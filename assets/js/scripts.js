@@ -24,7 +24,7 @@ let questions = [];
 let sec = 0;
 let time;
 
-let classToApply;
+let feedbackClass;
 
 const correctPoint = 1;
 const maxQuestions = 20;
@@ -169,22 +169,22 @@ const checkAnswer = () => {
                 acceptingAnswers = false;
                 stopTimerBar();
                 if (selectedAnswer == currentQuestion.answer) {
-                    classToApply = "correct";
+                    feedbackClass = "correct";
                     addScore(correctPoint);
                     console.log("correct answer given!");
                 } else {
-                    classToApply = "incorrect";
+                    feedbackClass = "incorrect";
                     console.log("Incorrect answer given!");
                     setTimeout(() => {
                         correctAnswer.classList.add("correct");
                         console.log("Showing correct answer");
                     }, 500);
                 };
-                selectedChoice.classList.add(classToApply);
-                feedbackCircleRef.className = classToApply;
+                selectedChoice.classList.add(feedbackClass);
+                feedbackCircleRef.className = feedbackClass;
                 setTimeout(
                     () => {
-                        selectedChoice.classList.remove(classToApply);
+                        selectedChoice.classList.remove(feedbackClass);
                         correctAnswer.classList.remove("correct");
                         getNewQuestion();
                     }, 2750
@@ -228,9 +228,9 @@ const timer = () => {
     if (sec === 15) {
         clearInterval(time);
         acceptingAnswers = false;
-        classToApply = "incorrect";
+        feedbackClass = "incorrect";
         stopTimerBar();
-        feedbackCircleRef.className = classToApply;
+        feedbackCircleRef.className = feedbackClass;
         console.log("Time is up!");
         setTimeout(() => {
             getNewQuestion();
