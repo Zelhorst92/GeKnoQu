@@ -1,18 +1,18 @@
 const selectedCategoryRef = document.querySelector("#category-selector");
 
 const questionRef = document.querySelector("#question");
-const choices = Array.from(document.getElementsByClassName("answer-choice"));
-const questionCounterProgress = document.querySelector("#question-counter");
-const scoreProgress = document.querySelector("#score");
-const feedbackCircle = document.querySelector("#outer-circle");
-const leftLoad = document.querySelector("#left");
-const rightLoad = document.querySelector("#right");
-const gameCircle = document.querySelector("#game-circle");
+const choicesRef = Array.from(document.getElementsByClassName("answer-choice"));
+const questionCounterProgressRef = document.querySelector("#question-counter");
+const scoreProgressRef = document.querySelector("#score");
+const feedbackCircleRef = document.querySelector("#outer-circle");
+const leftLoadRef = document.querySelector("#left");
+const rightLoadRef = document.querySelector("#right");
+const gameCircleRef = document.querySelector("#game-circle");
 const gameResultRef = document.querySelector("#result");
 
-const modal = document.querySelector("#helpModal");
-const help = document.querySelector("#linkHelpModal");
-const close = document.querySelector("#helpExit")
+const modalRef = document.querySelector("#helpModal");
+const helpRef = document.querySelector("#linkHelpModal");
+const closeRef = document.querySelector("#helpExit")
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -98,7 +98,7 @@ const fetchQuestions = () => {
 const collapseAnimation = () => {
     setTimeout(
         () => {
-            gameCircle.className += " inner-circle-load";
+            gameCircleRef.className += " inner-circle-load";
             document.querySelector("#category-container").className += " hide";
             document.querySelector("#start").className += " hide";
             document.querySelector("#linkHelpModal").className += " hide";
@@ -107,10 +107,10 @@ const collapseAnimation = () => {
     );
     setTimeout(
         () => {
-            gameCircle.className = "inner-circle";
+            gameCircleRef.className = "inner-circle";
             document.querySelector("#tally-container").className = "";
             questionRef.className = "";
-            for (let choice of choices) {
+            for (let choice of choicesRef) {
                 choice.className = "btn answer-choice";
             };
         }, 2000
@@ -122,7 +122,7 @@ const collapseAnimation = () => {
 const getNewQuestion = () => {
     sec = 0;
     console.log("getNewQuestion function is being executed");
-    feedbackCircle.className = "neutral";
+    feedbackCircleRef.className = "neutral";
     if (availableQuestions.length === 0) {
         console.log("No more questions.");
         collapseAnimation();
@@ -137,8 +137,8 @@ const getNewQuestion = () => {
             currentQuestion = availableQuestions[questionIndex];
             questionRef.innerHTML = currentQuestion.question;
             questionCounter++;
-            questionCounterProgress.innerHTML = questionCounter + "/" + maxQuestions;
-            for (let choice of choices) {
+            questionCounterProgressRef.innerHTML = questionCounter + "/" + maxQuestions;
+            for (let choice of choicesRef) {
                 const number = choice.dataset["number"];
                 choice.innerHTML = currentQuestion["choice" + number];
             };
@@ -158,7 +158,7 @@ const getNewQuestion = () => {
 const checkAnswer = () => {
     const correctAnswerNumber = currentQuestion.answer;
     const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
-    for (let choice of choices) {
+    for (let choice of choicesRef) {
         choice.addEventListener("click", (event) => {
             clearInterval(time);
             const selectedChoice = event.target;
@@ -181,7 +181,7 @@ const checkAnswer = () => {
                     }, 500);
                 };
                 selectedChoice.classList.add(classToApply);
-                feedbackCircle.className = classToApply;
+                feedbackCircleRef.className = classToApply;
                 setTimeout(
                     () => {
                         selectedChoice.classList.remove(classToApply);
@@ -198,7 +198,7 @@ const checkAnswer = () => {
 
 const addScore = (num) => {
     score += num;
-    scoreProgress.innerText = score;
+    scoreProgressRef.innerText = score;
 };
 
 // ----------------- Game End
@@ -206,7 +206,7 @@ const addScore = (num) => {
 const gameEnd = () => {
 
     questionRef.className = "hide";
-    for (let choice of choices) {
+    for (let choice of choicesRef) {
         choice.className = "btn answer-choice hide";
     };
     document.querySelector("#give-up").className = "hide"
@@ -230,7 +230,7 @@ const timer = () => {
         acceptingAnswers = false;
         classToApply = "incorrect";
         stopTimerBar();
-        feedbackCircle.className = classToApply;
+        feedbackCircleRef.className = classToApply;
         console.log("Time is up!");
         setTimeout(() => {
             getNewQuestion();
@@ -241,30 +241,30 @@ const timer = () => {
 // ----------------- Timer bar stop (hide) 
 
 const stopTimerBar = () => {
-    leftLoad.className = "timer left hide";
-    rightLoad.className = "timer right hide";
+    leftLoadRef.className = "timer left hide";
+    rightLoadRef.className = "timer right hide";
 };
 
 // ----------------- Timer bar start (show) 
 
 const startTimerBar = () => {
-    leftLoad.className = "timer left";
-    rightLoad.className = "timer right";
+    leftLoadRef.className = "timer left";
+    rightLoadRef.className = "timer right";
 };
 
 // ----------------- Modal Help Script
 
-help.onclick = () => {
-    modal.style.display = "block";
+helpRef.onclick = () => {
+    modalRef.style.display = "block";
 }
 
-close.onclick = () => {
-    modal.style.display = "none";
+closeRef.onclick = () => {
+    modalRef.style.display = "none";
 }
 
 window.onclick = (event) => {
     if (event.target == modal) {
-        modal.style.display = "none";
+        modalRef.style.display = "none";
     }
 }
 
