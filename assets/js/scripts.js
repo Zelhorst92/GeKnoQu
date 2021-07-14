@@ -98,20 +98,20 @@ const fetchQuestions = () => {
 const collapseAnimation = () => {
     setTimeout(
         () => {
-            gameCircleRef.className += " inner-circle-load";
-            document.querySelector("#category-container").className += " hide";
-            document.querySelector("#start").className += " hide";
-            document.querySelector("#linkHelpModal").className += " hide";
-            document.querySelector("#give-up").className = "btn-bottom";
+            gameCircleRef.classList.add("inner-circle-load");
+            document.querySelector("#category-container").classList.add("hide");
+            document.querySelector("#start").classList.add("hide");
+            document.querySelector("#linkHelpModal").classList.add("hide");
+            document.querySelector("#give-up").classList.remove("hide");
         }, 200
     );
     setTimeout(
         () => {
-            gameCircleRef.className = "inner-circle";
-            document.querySelector("#tally-container").className = "";
-            questionRef.className = "";
+            gameCircleRef.classList.remove("inner-circle-load");
+            document.querySelector("#tally-container").classList.remove("hide");
+            questionRef.classList.remove("hide");
             for (let choice of choicesRef) {
-                choice.className = "btn answer-choice";
+                choice.classList.remove("hide");
             };
         }, 2000
     );
@@ -205,18 +205,18 @@ const addScore = (num) => {
 
 const gameEnd = () => {
 
-    questionRef.className = "hide";
+    questionRef.classList.add("hide");
     for (let choice of choicesRef) {
-        choice.className = "btn answer-choice hide";
+        choice.classList.add("hide");
     };
     document.querySelector("#give-up").className = "hide"
     document.querySelector("#tally-container").className = "hide";
     console.log("Showing game score..");
-    gameResultRef.className = "";
+    gameResultRef.classList.remove("hide");
     gameResultRef.innerHTML =
         `<p>Your game score is:</p>
         <p> ${score} out of ${maxQuestions}</p>`;
-    document.querySelector("#restart").className = "btn btn-start";
+    document.querySelector("#restart").classList.remove("hide");
 };
 
 // -------------------------------------------- Timer
@@ -241,15 +241,15 @@ const timer = () => {
 // ----------------- Timer bar stop (hide) 
 
 const stopTimerBar = () => {
-    leftLoadRef.className = "timer left hide";
-    rightLoadRef.className = "timer right hide";
+    leftLoadRef.classList.add("hide");
+    rightLoadRef.classList.add("hide");
 };
 
 // ----------------- Timer bar start (show) 
 
 const startTimerBar = () => {
-    leftLoadRef.className = "timer left";
-    rightLoadRef.className = "timer right";
+    leftLoadRef.classList.remove("hide");
+    rightLoadRef.classList.remove("hide");
 };
 
 // ----------------- Modal Help Script
