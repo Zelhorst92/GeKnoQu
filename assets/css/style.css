@@ -209,8 +209,8 @@ header {
 }
 
 #question {
-    font-size: 2vmax;
-    padding:0 6px;
+    font-size: 1.25rem;
+    padding:0 1.5rem;
 }
 
 #result {
@@ -250,7 +250,7 @@ header {
 
 .answer-choice {
     padding: 1px;
-    font-size: 2vmax;
+    font-size: 1.5rem;
     height: 5rem;
     width: 12rem;
     margin: 2px;
@@ -427,14 +427,14 @@ header {
     }
 
     #question {
-        font-size: 2.5vmax;
+        font-size: 2rem;
         
     }
 
     /* --------------- Buttons */
 
     .answer-choice {
-        font-size: 2.5vmax;
+        font-size: 2rem;
     }
 
     .answer-choice,
