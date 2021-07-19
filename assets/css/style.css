@@ -59,7 +59,7 @@ header {
 .timer {
     height: 100%;
     width: 100%;
-    background-color: rgb(0, 191, 255);
+    background-color: #D46F1C;
     border-radius: 50%;
     clip: rect(0px, 32rem, 32rem, 16rem);
     position: absolute;
@@ -68,7 +68,7 @@ header {
 .loading {
     height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 50%;
     clip: rect(0px, 32rem, 32rem, 16rem);
     position: absolute;
@@ -156,7 +156,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 1rem 2px;
+    /* box-shadow: 0 0 1rem 2px; */
     overflow: hidden;
     z-index: 4;
 
@@ -324,7 +324,6 @@ header {
     width: 100%;
     background-color: #000000;
     background-color: rgba(0, 0, 0, 0.75);
-    padding-top: 25vh;
     display: none;
     position: fixed;
     left: 0;
@@ -342,7 +341,9 @@ header {
     max-width: 50rem;
     background-color: #ffffff;
     border: 1px solid #000000;
+    border-radius: 5rem;
     margin: auto;
+    margin-top: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -468,6 +469,10 @@ header {
     }
     /* --------------- Hide and Feedback */
     /* --------------- Help modal */
+
+    .help-content {
+        margin-top: 33%;
+    }
 
 }
 
