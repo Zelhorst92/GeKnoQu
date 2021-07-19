@@ -1,7 +1,11 @@
 const selectedCategoryRef = document.querySelector("#category-selector");
+const categoryWrapperRef = document.querySelector("#category-wrapper");
 
 const questionRef = document.querySelector("#question");
+const startBtnRef = document.querySelector("#start");
+const restartBtnRef = document.querySelector("#restart");
 const choicesRef = Array.from(document.getElementsByClassName("answer-choice"));
+const tallyContainerRef = document.querySelector("#tally-container");
 const questionCounterProgressRef = document.querySelector("#question-counter");
 const scoreProgressRef = document.querySelector("#score");
 const feedbackCircleRef = document.querySelector("#outer-circle");
@@ -10,6 +14,9 @@ const rightLoadRef = document.querySelector("#right");
 const gameCircleRef = document.querySelector("#game-circle");
 const gameResultRef = document.querySelector("#result");
 
+const restartDuringRef = document.querySelector("#give-up");  // Will be combined with restartBtnRef
+
+const helpBtn = document.querySelector("#linkHelpModal");
 const modalRef = document.querySelector("#helpModal");
 const helpRef = document.querySelector("#linkHelpModal");
 const closeRef = document.querySelector("#helpExit")
@@ -46,7 +53,7 @@ const createSelectBox = (categories) => {
 
 // ----------------- Start the game
 
-document.querySelector("#start").addEventListener("click", startGame = () => {
+startBtnRef.addEventListener("click", startGame = () => {
     if (questions.length === 0) {
         console.log("Number of questions in the array: " + questions.length);
         console.log("Questions array is empty, fetching questions...");
@@ -99,16 +106,16 @@ const collapseAnimation = () => {
     setTimeout(
         () => {
             gameCircleRef.classList.add("inner-circle-load");
-            document.querySelector("#category-container").classList.add("hide");
-            document.querySelector("#start").classList.add("hide");
-            document.querySelector("#linkHelpModal").classList.add("hide");
-            document.querySelector("#give-up").classList.remove("hide");
+            categoryWrapperRef.classList.add("hide");
+            startBtnRef.classList.add("hide");
+            helpBtn.classList.add("hide");
+            restartDuringRef.classList.remove("hide");
         }, 200
     );
     setTimeout(
         () => {
             gameCircleRef.classList.remove("inner-circle-load");
-            document.querySelector("#tally-container").classList.remove("hide");
+            tallyContainerRef.classList.remove("hide");
             questionRef.classList.remove("hide");
             for (let choice of choicesRef) {
                 choice.classList.remove("hide");
@@ -209,14 +216,14 @@ const gameEnd = () => {
     for (let choice of choicesRef) {
         choice.classList.add("hide");
     };
-    document.querySelector("#give-up").classList.add("hide");
-    document.querySelector("#tally-container").classList.add("hide");
+    restartDuringRef.classList.add("hide");
+    tallyContainerRef.classList.add("hide");
     console.log("Showing game score..");
     gameResultRef.classList.remove("hide");
     gameResultRef.innerHTML =
         `<p>Your game score is:</p>
         <p> ${score} out of ${maxQuestions}</p>`;
-    document.querySelector("#restart").classList.remove("hide");
+    restartBtnRef.classList.remove("hide");
 };
 
 // -------------------------------------------- Timer
@@ -270,9 +277,9 @@ window.onclick = (event) => {
 
 // ----------------- Restart Script
 
-document.querySelector("#give-up").addEventListener("click", restartFunc = () => {
+restartDuringRef.addEventListener("click", restartFunc = () => {
     if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
         window.location.reload();
     }
 });
-document.querySelector("#restart").addEventListener("click", restartFunc);
+restartBtnRef.addEventListener("click", restartFunc);
