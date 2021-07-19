@@ -34,10 +34,10 @@ header {
     border: 2px solid #000000;
     border-radius: 100%;
     position: fixed;
-    top: 52.5%;
+    top: 51.5%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 1rem 2px;
+    box-shadow: 0 0 2rem 2px;
 
     z-index: 4;
 }
@@ -439,13 +439,13 @@ header {
     .answer-choice,
     .btn-start {
         height: 8rem;
-        width: 20rem;
+        width: 18rem;
     }
 
     .restart-btn {
         font-size: 1.5rem;
         height: 2rem;
-        width: 20rem;
+        width: 18rem;
         margin-top: 1rem;
     }
 
