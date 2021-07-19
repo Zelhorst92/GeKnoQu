@@ -165,7 +165,7 @@ header {
 .question-container {
     border-radius: 50% 50% 0 0;
     justify-content: center;
-
+    padding: 0 1.5rem;
 }
 
 .tally {
@@ -202,7 +202,6 @@ header {
 
 #question {
     font-size: 1.25rem;
-    padding: 0 1.5rem;
 }
 
 #result {
@@ -226,9 +225,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
     box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem #000000;
-
 }
 
 @media(hover: hover) and (pointer: fine) {
@@ -391,6 +388,7 @@ header {
 
     .question-container {
         font-size: 2rem;
+        padding: 5px;
     }
 
     #question-counter,
@@ -440,20 +438,6 @@ header {
 }
 
 @media screen and (min-width: 768px) {
-    /* --------------- Buttons */
-
-    #give-up {
-        bottom: -4vh;
-    }
-
-    /* --------------- Help modal */
-    .help-content {
-        margin-top: 33%;
-    }
-
-}
-
-@media screen and (min-width: 992px) {
     #outer-circle {
         max-height: 80rem;
         max-width: 80rem;
@@ -477,6 +461,61 @@ header {
     .inner-circle {
         height: 60rem;
         width: 60rem;
+    }
+
+    .inner-circle-load {
+        height: 1px;
+        width: 1px;
+        padding: 0;
+    }
+
+    .question-container {
+        padding: 2rem;
+    }
+
+    #question {
+        font-size: 2.5rem;
+    }
+    /* --------------- Buttons */
+    .answer-choice {
+        width: 19rem;
+    }
+
+    #give-up {
+        bottom: -4vh;
+    }
+
+    /* --------------- Help modal */
+    .help-content {
+        margin-top: 33%;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    #outer-circle {
+        max-height: 85rem;
+        max-width: 85rem;
+    }
+
+    /* --------------- Circular Loading Bar */
+    .middle-circle {
+        height: 70rem;
+        width: 70rem;
+    }
+
+    .timer {
+        clip: rect(0px, 70rem, 70rem, 35rem);
+    }
+
+    .loading {
+        clip: rect(0px, 70rem, 70rem, 35rem);
+    }
+
+    /* --------------- Game/Inner Circle */
+    .inner-circle {
+        height: 63rem;
+        width: 63rem;
     }
 
     .inner-circle-load {
