@@ -10,6 +10,7 @@ body {
     font-weight: 400;
     font-size: 2rem;
     text-align: center;
+    margin: 0;
 }
 
 header {
@@ -18,8 +19,11 @@ header {
 }
 
 .game-section {
+    height: 85vh;
+    width: 100vw;
     position: relative;
     align-items: center;
+    justify-content: center;
 }
 
 #outer-circle {
@@ -257,7 +261,7 @@ header {
     margin-top: 1.5rem;
 }
 
-.restart {
+.restart-btn {
     font-size: 1.5rem;
     height:2rem;
     width:12rem;
@@ -266,10 +270,15 @@ header {
 }
 
 #give-up {
-    margin-top: 80vh;
+    position: absolute;
+    bottom: 5vh;
+    left:50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
     padding-left: 5px;
     padding-right: 5px;
     background-color: #ffffff;
+    z-index: 9999;
 }
 
 /* --------------- Hide and Feedback */
@@ -409,7 +418,7 @@ header {
         width: 20rem;
     }
 
-    .restart {
+    .restart-btn {
         font-size: 1.5rem;
         height:2rem;
         width:20rem;
