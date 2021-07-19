@@ -322,15 +322,17 @@ header {
 
 .help-content ul {
     padding-left: 0;
+    font-size: 1.5rem;
 }
 
 .help-content ul li {
-    padding: 1rem;
+    padding: 5px;
     list-style: none;
 }
 
-#helpExit:hover {
-    background-color: #004040;
+#help-exit-btn {
+    width: 50%;
+    padding-bottom: 2px;
 }
 
 /* --------------- Media Queries */

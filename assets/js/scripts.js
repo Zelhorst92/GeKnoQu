@@ -19,7 +19,7 @@ const restartDuringRef = document.querySelector("#give-up");  // Will be combine
 const helpBtn = document.querySelector("#linkHelpModal");
 const modalRef = document.querySelector("#helpModal");
 const helpRef = document.querySelector("#linkHelpModal");
-const closeRef = document.querySelector("#helpExit")
+const closeRef = document.querySelector("#help-exit-btn")
 
 let currentQuestion = {};
 let acceptingAnswers = false;
