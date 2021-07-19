@@ -276,10 +276,15 @@ window.onclick = (event) => {
 }
 
 // ----------------- Restart Script
-
-restartDuringRef.addEventListener("click", restartFunc = () => {
+const restartFunc = () => {
     if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
         window.location.reload();
     }
+};
+
+
+restartDuringRef.addEventListener("click", restartFunc);
+
+restartBtnRef.addEventListener("click", () => {
+    window.location.reload();
 });
-restartBtnRef.addEventListener("click", restartFunc);
