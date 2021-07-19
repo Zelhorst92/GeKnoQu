@@ -14,7 +14,7 @@ const rightLoadRef = document.querySelector("#right");
 const gameCircleRef = document.querySelector("#game-circle");
 const gameResultRef = document.querySelector("#result");
 
-const restartDuringRef = document.querySelector("#give-up");  // Will be combined with restartBtnRef
+const restartDuringRef = document.querySelector("#give-up");
 
 const helpBtn = document.querySelector("#linkHelpModal");
 const modalRef = document.querySelector("#helpModal");
@@ -54,14 +54,14 @@ const createSelectBox = (categories) => {
 // ----------------- Start the game
 
 startBtnRef.addEventListener("click", startGame = () => {
-    if (questions.length !== 15) {
+    if (questions.length !== maxQuestions) {
         console.log("Number of questions in the array: " + questions.length);
         console.log("Questions array is empty, fetching questions...");
         fetchQuestions();
         setTimeout(
             () => {
                 startGame();
-            }, 250
+            }, 500
         );
     } else {
         console.log("Questions array has questions!");
