@@ -29,7 +29,7 @@ header {
     border: 2px solid #000000;
     border-radius: 100%;
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 1rem 2px;
@@ -209,7 +209,7 @@ header {
 }
 
 #result {
-    margin-top: 8rem;
+    margin-top: 5rem;
 }
 
 /* --------------- Buttons */
@@ -227,7 +227,7 @@ header {
     width: 12rem;
     border: .1rem solid #000000;
     border-radius: 1rem;
-    margin: 0;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,12 +256,14 @@ header {
     margin-top: 1.5rem;
 }
 
-.btn-bottom {
-    position: relative;
-    top: 80vh;
+#linkHelpModal {
     justify-content: center;
     align-items: center;
 }
+
+/* .btn-bottom {
+
+} */
 
 .btn-bottom:hover {
     color: #004040;
