@@ -240,16 +240,16 @@ header {
 
 }
 
-.btn:hover,
-.btn::selection {
-    color: #000000;
-    border: 1px solid #000000;
-    -webkit-box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
-    -moz-box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
-    box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
+@media(hover: hover) and (pointer: fine) {
+    .btn:hover {
+        -webkit-box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
+        -moz-box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
+        box-shadow: inset 0.2rem 0.2rem 0.1rem #000000;
+    }
 }
 
 .answer-choice {
+    padding: 1px;
     font-size: 1.2rem;
     height: 5rem;
     width: 12rem;
@@ -281,8 +281,8 @@ header {
 
 .restart-btn {
     font-size: 1.5rem;
-    height:2rem;
-    width:12rem;
+    height: 2rem;
+    width: 12rem;
     margin-top: 1rem;
     padding: 3px 0 5px 0;
 }
@@ -290,7 +290,7 @@ header {
 #give-up {
     position: absolute;
     bottom: 5vh;
-    left:50%;
+    left: 50%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     padding-left: 5px;
@@ -389,6 +389,7 @@ header {
     .loading {
         clip: rect(0px, 50rem, 50rem, 25rem);
     }
+
     /* --------------- Game/Inner Circle */
 
     .inner-circle {
@@ -421,7 +422,7 @@ header {
         height: 4rem;
         width: 30rem;
         margin-top: 5rem;
-        font-size: 2rem;   
+        font-size: 2rem;
         border: 2px solid #000000;
     }
 
@@ -443,8 +444,8 @@ header {
 
     .restart-btn {
         font-size: 1.5rem;
-        height:2rem;
-        width:20rem;
+        height: 2rem;
+        width: 20rem;
         margin-top: 1rem;
     }
 
@@ -467,6 +468,7 @@ header {
     #give-up {
         bottom: -4vh;
     }
+
     /* --------------- Hide and Feedback */
     /* --------------- Help modal */
 
