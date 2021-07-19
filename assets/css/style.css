@@ -39,12 +39,10 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 2rem 2px;
-
     z-index: 4;
 }
 
 /* --------------- Circular Loading Bar */
-
 .middle-circle {
     height: 32rem;
     width: 32rem;
@@ -79,7 +77,6 @@ header {
     -webkit-animation: left 7.5s linear;
     -moz-animation: left 7.5s linear;
     animation: left 7.5s linear both;
-
     z-index: 4;
 }
 
@@ -87,7 +84,6 @@ header {
     0% {
         -webkit-transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(180deg);
     }
@@ -97,7 +93,6 @@ header {
     0% {
         -webkit-transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(180deg);
     }
@@ -107,7 +102,6 @@ header {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     transform: rotate(180deg);
-
     z-index: 3;
 }
 
@@ -144,7 +138,6 @@ header {
 }
 
 /* --------------- Game/Inner Circle */
-
 .inner-circle {
     height: 26.5rem;
     width: 26.5rem;
@@ -157,7 +150,6 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* box-shadow: 0 0 1rem 2px; */
     overflow: hidden;
     z-index: 4;
 
@@ -210,7 +202,7 @@ header {
 
 #question {
     font-size: 1.25rem;
-    padding:0 1.5rem;
+    padding: 0 1.5rem;
 }
 
 #result {
@@ -218,7 +210,6 @@ header {
 }
 
 /* --------------- Buttons */
-
 .btn-container {
     margin-top: 5%;
     bottom: 0;
@@ -300,7 +291,6 @@ header {
 }
 
 /* --------------- Hide and Feedback */
-
 .correct {
     background-color: #3AB53A;
 }
@@ -318,7 +308,6 @@ header {
 }
 
 /* --------------- Help modal */
-
 .help-modal {
     height: 100%;
     width: 100%;
@@ -367,7 +356,6 @@ header {
 
 /* --------------- Media Queries */
 @media screen and (min-width: 576px) {
-
     #outer-circle {
         height: 100vw;
         max-height: 75rem;
@@ -376,7 +364,6 @@ header {
     }
 
     /* --------------- Circular Loading Bar */
-
     .middle-circle {
         height: 50rem;
         width: 50rem;
@@ -391,7 +378,6 @@ header {
     }
 
     /* --------------- Game/Inner Circle */
-
     .inner-circle {
         height: 42.5rem;
         width: 42.5rem;
@@ -428,11 +414,9 @@ header {
 
     #question {
         font-size: 2rem;
-        
     }
 
     /* --------------- Buttons */
-
     .answer-choice {
         font-size: 2rem;
     }
@@ -453,26 +437,16 @@ header {
     #give-up {
         bottom: 0;
     }
-
-
-
-    /* --------------- Hide and Feedback */
-    /* --------------- Help modal */
 }
 
 @media screen and (min-width: 768px) {
-
-    /* --------------- Circular Loading Bar */
-    /* --------------- Game/Inner Circle */
     /* --------------- Buttons */
 
     #give-up {
         bottom: -4vh;
     }
 
-    /* --------------- Hide and Feedback */
     /* --------------- Help modal */
-
     .help-content {
         margin-top: 33%;
     }
@@ -480,28 +454,47 @@ header {
 }
 
 @media screen and (min-width: 992px) {
+    #outer-circle {
+        max-height: 80rem;
+        max-width: 80rem;
+    }
 
     /* --------------- Circular Loading Bar */
+    .middle-circle {
+        height: 66rem;
+        width: 66rem;
+    }
+
+    .timer {
+        clip: rect(0px, 66rem, 66rem, 33rem);
+    }
+
+    .loading {
+        clip: rect(0px, 66rem, 66rem, 33rem);
+    }
+
     /* --------------- Game/Inner Circle */
-    /* --------------- Buttons */
-    /* --------------- Hide and Feedback */
-    /* --------------- Help modal */
-}
+    .inner-circle {
+        height: 60rem;
+        width: 60rem;
+    }
 
-@media screen and (min-width: 1200px) {
+    .inner-circle-load {
+        height: 1px;
+        width: 1px;
+        padding: 0;
+    }
 
-    /* --------------- Circular Loading Bar */
-    /* --------------- Game/Inner Circle */
-    /* --------------- Buttons */
-    /* --------------- Hide and Feedback */
-    /* --------------- Help modal */
-}
+    .question-container {
+        height: 15rem;
+    }
 
-@media screen and (min-width: 1440px) {
+    #question {
+        padding: 5rem;
+    }
 
-    /* --------------- Circular Loading Bar */
-    /* --------------- Game/Inner Circle */
-    /* --------------- Buttons */
-    /* --------------- Hide and Feedback */
-    /* --------------- Help modal */
+    .answer-choice {
+        height:10rem;
+        width: 26rem;
+    }
 }
