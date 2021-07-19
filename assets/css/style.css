@@ -16,6 +16,7 @@ body {
 header {
     margin: 2rem;
     font-size: 2rem;
+    z-index: 99999;
 }
 
 .game-section {
@@ -170,7 +171,6 @@ header {
 }
 
 .question-container {
-    padding: 0 1rem;
     border-radius: 50% 50% 0 0;
     justify-content: center;
 
@@ -209,8 +209,8 @@ header {
 }
 
 #question {
-    height: 25%;
-    font-size: 1.25rem;
+    font-size: 2vmax;
+    padding:0 6px;
 }
 
 #result {
@@ -220,7 +220,7 @@ header {
 /* --------------- Buttons */
 
 .btn-container {
-    margin-top: 10%;
+    margin-top: 5%;
     bottom: 0;
     display: grid;
     grid-template-columns: auto auto;
@@ -250,7 +250,7 @@ header {
 
 .answer-choice {
     padding: 1px;
-    font-size: 1.2rem;
+    font-size: 2vmax;
     height: 5rem;
     width: 12rem;
     margin: 2px;
@@ -427,13 +427,14 @@ header {
     }
 
     #question {
-        font-size: 2rem;
+        font-size: 2.5vmax;
+        
     }
 
     /* --------------- Buttons */
 
     .answer-choice {
-        font-size: 2.25rem;
+        font-size: 2.5vmax;
     }
 
     .answer-choice,
