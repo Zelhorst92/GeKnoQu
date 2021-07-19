@@ -79,7 +79,7 @@ startBtnRef.addEventListener("click", startGame = () => {
 
 const fetchQuestions = () => {
     console.log("Executing fetchQuestions...")
-    fetch(`https://opentdb.com/api.php?amount=2&category=${selectedCategoryRef.value}&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=20&category=${selectedCategoryRef.value}&type=multiple`)
         .then(res => res.json())
         .then((data) => {
             questions = data.results.map(fetchedQuestion => {
