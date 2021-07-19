@@ -297,7 +297,7 @@ header {
     width: 100%;
     background-color: #000000;
     background-color: rgba(0, 0, 0, 0.75);
-    padding-top: 5vh;
+    padding-top: 25vh;
     display: none;
     position: fixed;
     left: 0;
@@ -310,7 +310,9 @@ header {
 
 .help-content {
     height: 90vh;
+    max-height: 50rem;
     width: 90vw;
+    max-width: 50rem;
     background-color: #ffffff;
     border: 1px solid #000000;
     margin: auto;
