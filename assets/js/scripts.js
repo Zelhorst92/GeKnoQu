@@ -270,7 +270,7 @@ closeRef.onclick = () => {
 }
 
 window.onclick = (event) => {
-    if (event.target == modal) {
+    if (event.target == modalRef) {
         modalRef.style.display = "none";
     }
 }

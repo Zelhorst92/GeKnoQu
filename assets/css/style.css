@@ -210,7 +210,7 @@ header {
 
 #question {
     height: 25%;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 #result {
@@ -221,6 +221,7 @@ header {
 
 .btn-container {
     margin-top: 10%;
+    bottom: 0;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
@@ -249,9 +250,26 @@ header {
 }
 
 .answer-choice {
+    font-size: 1.2rem;
     height: 5rem;
     width: 12rem;
     margin: 2px;
+}
+
+#choice-1 {
+    border-radius: 2.5rem 0 0 0;
+}
+
+#choice-2 {
+    border-radius: 0 2.5rem 0 0;
+}
+
+#choice-3 {
+    border-radius: 0 0 0 2.5rem;
+}
+
+#choice-4 {
+    border-radius: 0 0 2.5rem 0;
 }
 
 .btn-start {
@@ -412,6 +430,10 @@ header {
 
     /* --------------- Buttons */
 
+    .answer-choice {
+        font-size: 2.25rem;
+    }
+
     .answer-choice,
     .btn-start {
         height: 8rem;
@@ -425,6 +447,10 @@ header {
         margin-top: 1rem;
     }
 
+    #give-up {
+        bottom: 0;
+    }
+
 
 
     /* --------------- Hide and Feedback */
@@ -436,6 +462,10 @@ header {
     /* --------------- Circular Loading Bar */
     /* --------------- Game/Inner Circle */
     /* --------------- Buttons */
+
+    #give-up {
+        bottom: -4vh;
+    }
     /* --------------- Hide and Feedback */
     /* --------------- Help modal */
 
