@@ -54,7 +54,7 @@ const createSelectBox = (categories) => {
 // ----------------- Start the game
 
 startBtnRef.addEventListener("click", startGame = () => {
-    if (questions.length !== 20) {
+    if (questions.length !== 15) {
         console.log("Number of questions in the array: " + questions.length);
         console.log("Questions array is empty, fetching questions...");
         fetchQuestions();
