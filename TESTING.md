@@ -7,8 +7,10 @@
     *   [Transition](#transition)
     *   [Feedback](#feedback)
     *   [Score and Progress](#score-and-progress)
+    *   [Play Game As User](#play-game-as-user)
 *   [Bugreports](#bugreports)
-    *   [](#)
+    *   [Modal Margin](#modal-margin)
+    *   [Sporadic Correct Answer Not Given](#sporadic-correct-answer-not-given)
 
 
 # Testing
@@ -121,11 +123,19 @@
     *   The user expects to see the users final score on the end of the quiz.
     *   The user expects to see how far along the user is on the quiz.
 *   ### Intention
-    *   The intention is to show the user what score the user has and how far along the user is in the quiz. This is done via a simple question and score counter in the top of the gamesection. A good answer increases the score with one point while a wrong answer does not increase score. The progress advances with one on loading a new question.
+    *   The intention is to show the user what score the user has and how far along the user is in the quiz. This is done via a simple question and score counter in the top of the gamesection. A correct answer increases the score with one point while a wrong answer does not increase score. The progress advances with one on loading a new question.
 *   ### Test
+    *   See if question counter increases by one upon next question.
+    *   See if score counter increases by one upon giving a correct answer.
+    *   See if score counter does not increase upon giving an incorrect answer.
+    *   See if end score is given correctly on game end.
 *   ### Result
+    *   All works as intended.
 *   ### Bugs
+    *   None.
 *   ### Comments
+    *   None.
+
 
 [Back to top](#testing-and-bugreports)
 
@@ -148,7 +158,7 @@
 
 [Back to top](#testing-and-bugreports)
 
-## Sporadic Correct Answer Not Given 
+## Sporadic Correct Answer Not Given
 *   ### Bug
     *   Feedback to show the correct answer after a wrong answer is given does sporadically not work
 
