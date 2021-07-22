@@ -36,7 +36,6 @@ Thank you for visiting this project! For any feedback and/or questions you can a
 ## Site Owner Goal 
 * Having users to play a small game of a multiple choice quiz, on a broad scale of subjects.
 * For users to have fun and learn something at the same time.
-* 
 
 ---
 
@@ -170,7 +169,7 @@ The fetching of the questions will be done in the time on the collapse and reapp
 
 ### Game
 
-The game itself is about answering 20 questions in the general knowledge area or of the selected category. You will be presented with a question and 4 answers. Upon selecting an answer, the button and the outer ring will turn green or red, for correct or incorrect respectively. If incorrect, the correct answer will be shown after a short while, before moving on to the next question.
+The game itself is about answering ~~20~~ 15 questions in the general knowledge area or of the selected category. You will be presented with a question and 4 answers. Upon selecting an answer, the button and the outer ring will turn green or red, for correct or incorrect respectively. If incorrect, the correct answer will be shown after a short while, before moving on to the next question.
 The questions are made possible by the API of [opentdb.com](https://opentdb.com "Link to open trivia database").
 
 ### Score and Question Progress
@@ -179,7 +178,7 @@ During the game itself, on the top of the game interface there will be counters 
 
 ### Restart alert
 
-When the game has started, it is assumed that you have read the how to play and therefore this link has been replaced with a button to restart the game. Upon clicking you will receive an alert which asks you if you are realy sure to exit the game and return to the main menu. When clicked on **OK**, the game will return to the main menu.
+When the game has started, it is assumed that you have read the how to play and therefore this link has been replaced with a button to restart the game. Upon clicking you will receive an alert which asks you if you are realy sure to exit the game and return to the main menu. It is asked if you are sure, because it might be a missclick. When clicked on **OK**, the game will return to the main menu.
 
 [Back to top](#table-of-content)
 
