@@ -72,6 +72,7 @@ As a user;
 ## User Expectations
 User expects: 
 * the navigation on the site to be working properly.
+* to find on how to play the game.
 * to be able to select a category.
 * to known how much time the user has left to answer the question.
 * feedback on if the given answer is correct or wrong.
