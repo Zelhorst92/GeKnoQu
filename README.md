@@ -198,6 +198,11 @@ It could be fun to do a versus where all participants fill out there name before
 
 An extra feedback for answering a question correct or incorrect could play an appropriate sound. This ofcourse should be optional for the user if the user wants to play with sound or not.
 
+### Supportive comments
+
+It would be nice to have a compliment system in the endgame, giving the user a witty comment as extra feedback on the score the user got.
+'*Well done, you almost got a perfect score!*','*Not so good, only one correct answer...*', to name a few examples. 
+
 [Back to top](#table-of-content)
 
 # Technologies
