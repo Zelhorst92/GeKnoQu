@@ -170,13 +170,13 @@
     *   Modal being pushed down out of the screen on larger screen sizes.
 
 *   ### Fix
-    *   
+    *   Change the margin of 33%.
 
 *   ### Result
-    *   
+    *   Completely removed the margin of 33%. Works fine without.
 
 *   ### Status
-    *   Unresolved
+    *   Resolved
 
 [Back to top](#testing-and-bugreports)
 
@@ -186,6 +186,12 @@
 
 *   ### Fix
     *   
+
+*   ### Comments
+    *   
+
+*   ### Conclusion
+    *
 
 *   ### Result
     *   
@@ -199,12 +205,11 @@
 *   ### Bug
     *   The answer does sporadically not fit inside the choice button on mobile screen sizes.
 
-*   ### Fix
-    *   Several possibilities:
-        *   ~~Make the font-size either smaller. or responsive to size on answer.~~
-        *   ~~Make the font-size responsive to the length of the answer to always fit in the button.~~
-        *   Make the buttons bigger.
-        *   Target the questions with an answer to long to fit in the buttons and change them out for a better fitting one.
+*   ### Fixes
+    *   ~~Make the font-size either smaller. or responsive to size on answer.~~
+    *   ~~Make the font-size responsive to the length of the answer to always fit in the button.~~
+    *   Make the buttons bigger.
+    *   Target the questions with an answer to long to fit in the buttons and change them out for a better fitting one.
 
     ### Comments
     *   Making the font-size smaller would interfere with the usabilty; it might be to small to read. The font-size at the moment is as small as it should be.
