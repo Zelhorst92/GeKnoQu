@@ -94,7 +94,7 @@ This framework allows for a proper responsive website which is build up from a m
 The grid-system that Bootstrap provides is very usefull to have a well working responsive website.
 Furthermore Bootstrap has a wide browser compatibility, is quite easy to use and is very customizable.~~
 
-For the structure of the website I wil use my own css style sheet. It still will be build up from a mobile-first perspective and should be responsive to different screen sizes.
+For the structure of the website I wil use my own css style sheet. It still will be build up from a mobile-first perspective and should be responsive to different screen sizes. This because there will not be many elements that requires the responsiveness benefits of bootstrap.
 
 ### Fonts
 During the quiz there will be a time restraint, therefore a simple but well readable font is necessary.
@@ -109,14 +109,20 @@ As this game has a 'correct' and 'incorrect', a green and a red colour respectiv
 
 The primary colours in this pallette:
 
-* #AF0B0B "Red", Will serve as the colour indicating incorrect.
-* #098C09 "green, ", will serve as the colour indicating correct.
+* ~~#AF0B0B "Red", Will serve as the colour indicating incorrect.~~
+* ~~#098C09 "green, ", will serve as the colour indicating correct.~~
 * #076969 "blue", will serve as the neutral colour. Neither correct or incorrect. It is also a colour that is easy on the eyes and could therefore be used as the background.
-* #AF550b "Orange" Supplementary colour. Possible use for buttons and/or the timer bar.
+* ~~#AF550b "Orange" Supplementary colour. Possible use for buttons and/or the timer bar.~~
 
 ![Colour Pallette Scheme 2](https://github.com/Zelhorst92/GeKnoQu/blob/master/wireframes/colour-pallette-advanced.png?raw=true "Colour Pallette Scheme with hex codes")
 
-Colour pallette comes with complementary colour, which might be deviated to if it fits the purpose better.
+Colour pallette comes with complementary colours, which might be deviated to if it fits the purpose better.
+
+* #2B8888 is used as main background colour, where #076969 will be used as the neutral colour in the feedbackcircle.
+* #D41C1C is used as the incorrect feedback colour.
+* #3AB53A is used as the correct feedback colour.
+
+* #D46F1C will be used instead of #AF550b, as it a bit more bright and contrasts better with the background and the neutral colour.
 
 [Back to top](#table-of-content)
 
