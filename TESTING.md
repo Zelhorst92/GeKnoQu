@@ -155,7 +155,7 @@
     *   End score is shown in the end as well as the restart button.
     *   Restart button reloads the page.
 *   ### Bugs
-    *   The answer does sporadically not fit inside the choice button. See bugreport: [Answer To Large For Button](#answer-to-large-for-button)
+    *   The answer does sporadically not fit inside the choice button on mobile screensize. See bugreport: [Answer To Large For Button](#answer-to-large-for-button)
 *   ### Comments
     *   
 
@@ -182,7 +182,7 @@
 
 ## Sporadic Correct Answer Not Given
 *   ### Bug
-    *   Feedback to show the correct answer after a wrong answer is given does sporadically not work
+    *   Feedback to show the correct answer after a wrong answer is given does sporadically not work.
 
 *   ### Fix
     *   
@@ -197,13 +197,25 @@
 
 ## Answer To Large For Button
 *   ### Bug
-    *   The answer does sporadically not fit inside the choice button.
+    *   The answer does sporadically not fit inside the choice button on mobile screen sizes.
 
 *   ### Fix
-    *   
+    *   Several possibilities:
+        *   ~~Make the font-size either smaller. or responsive to size on answer.~~
+        *   ~~Make the font-size responsive to the length of the answer to always fit in the button.~~
+        *   Make the buttons bigger.
+        *   Target the questions with an answer to long to fit in the buttons and change them out for a better fitting one.
+
+    ### Comments
+    *   Making the font-size smaller would interfere with the usabilty; it might be to small to read. The font-size at the moment is as small as it should be.
+    *   Making the font-size responsive to the length of the answer could work, but would require another script. Also the risk stil remains that the font-size might end up to small for the user to read properly.
+    *   Making the buttons bigger would require a redesign of the whole design. Circles do make the real estate to work with significant smaller compared to the use of a more angular choice.
+
+*   ### Conclusion
+    *   A redesign or a filtering of the questions based on the answer length would be the way to go.
 
 *   ### Result
-    *   
+    * None.
 
 *   ### Status
     *   Unresolved
