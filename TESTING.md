@@ -48,7 +48,7 @@
 *   ### Result
     * Works as intended, with the execption of screensize larger then 768px wide. Margin top is set to 33% on screens larger then 768px width, which causes the modal to be pushed down out of the screen on large screens.
 *   ### Bugs
-    *   Modal being pushed down out of the screen on larger screen sizes. See [Modal Margin](#modal-margin).
+    *   Modal being pushed down out of the screen on larger screen sizes. See bugreport: [Modal Margin](#modal-margin).
 *   ### Comments
     *   None
 
@@ -102,9 +102,16 @@
     *   When an answer is given, the user will either see a green colour on the button the user has pressed when the answer is correct or a red colour when the answer is wrong. If wrong, the correct answer will be shown as green after a short while.
     *   There also is a feedback circle surrounding the game. This will change colour the same as the buttons. It will also turn red when the time has run out.
 *   ### Test
+    *   See if on click of an answer that it turns green or red, correct or incorrect respectively.
+    *   See if the correct answer is shown after a wrong answer is given.
+    *   See if the feedbackcircle on the edge changes colour respectively.
 *   ### Result
+    *   On click the button turns green or red if the answer is correct or incorrect respectively. Works as intended.
+    *   The correct answer is shown after a wrong answer is given most of the time.
 *   ### Bugs
+    *   Feedback to show the correct answer after a wrong answer is given does sporadically not work. See bugreport: [Sporadic Correct Answer Not Given](#sporadic-correct-answer-not-given).
 *   ### Comments
+    *   None.
 
 [Back to top](#testing-and-bugreports)
 
@@ -137,6 +144,19 @@
     *   
 
 *   ### Status
-    *   
+    *   Unresolved
 
 [Back to top](#testing-and-bugreports)
+
+## Sporadic Correct Answer Not Given 
+*   ### Bug
+    *   Feedback to show the correct answer after a wrong answer is given does sporadically not work
+
+*   ### Fix
+    *   
+
+*   ### Result
+    *   
+
+*   ### Status
+    *   Unresolved
