@@ -42,9 +42,13 @@
 *   ### Intention
     *   The intention is to have a button which will open a modal on click showing the basics on to how to play the game and the game rules.
 *   ### Test
+    *   Click on the button to open the modal and click on the back button or next the modal to exit the modal.
 *   ### Result
+    * Works as intended, with the execption of screensize larger then 768px wide. Margin top is set to 33% on screens larger then 768px width, which causes the modal to be pushed down out of the screen on large screens.
 *   ### Bugs
+    *   Modal being pushed down out of the screen on larger screen sizes. See [Modal Margin](#modal-margin).
 *   ### Comments
+    *   None
 
 ##  Timer
 *   ### User Expectation
@@ -95,5 +99,18 @@
 ---
 
 # Bugreports
+
+## Modal Margin
+*   ### Bug
+    *   The phonenumberfield can contain any number between 0 and infinity.
+
+*   ### Fix
+    *   Change input type to tel and give it a pattern value of 8 to 10 character of only numbers.
+
+*   ### Result
+    *   Only numbers between 8 to 10 digits can now be submitted.
+
+*   ### Status
+    *   Resolved
 
 [Back to top](#testing-and-bugreports)
