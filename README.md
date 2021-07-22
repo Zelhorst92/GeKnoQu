@@ -118,10 +118,6 @@ The primary colours in this pallette:
 
 Colour pallette comes with complementary colour, which might be deviated to if it fits the purpose better.
 
-### Coloors Contrast Checker
-
-To be done.
-
 [Back to top](#table-of-content)
 
 ## Wireframes
@@ -180,7 +176,13 @@ When the game has started, it is assumed that you have read the how to play and 
 
 It would be interesting to see how well you scored the last couple of times and also the user would then have a score to beat. This could be done locally.
 
-### 
+### Versus
+
+It could be fun to do a versus where all participants fill out there name before hand and then go against eachother. Different rules could be interesting, where a correct answer for player A would cost player a point. Both starting with 5 points for example. The array of questions would need to be bigger in such an instance. The possibilities are many.
+
+### Sound
+
+An extra feedback for answering a question correct or incorrect could play an appropriate sound. This ofcourse should be optional for the user if the user wants to play with sound or not.
 
 [Back to top](#table-of-content)
 
