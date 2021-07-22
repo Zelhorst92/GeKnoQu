@@ -11,6 +11,7 @@
 *   [Bugreports](#bugreports)
     *   [Modal Margin](#modal-margin)
     *   [Sporadic Correct Answer Not Given](#sporadic-correct-answer-not-given)
+    *   [Answer To Large For Button](#answer-to-large-for-button)
 
 
 # Testing
@@ -136,6 +137,27 @@
 *   ### Comments
     *   None.
 
+##  Play Game As User
+*   ### Intention
+    *   From start to end the game should work as intended.
+        *   Select category.
+        *   Start the game and get the appropriate question regarding category choice.
+        *   See the users score increase upon playing the game.
+        *   See the end result on endscreen.
+        *   Restart the game.
+*   ### Test
+    *   See how the game plays 10 times.
+*   ### Result
+    *   Game overal works as intended.
+    *   Questions are regarding the selected category.
+    *   Score and progress add appropriately.
+    *   Sometimes the answer does not fit the answerbutton correctly.
+    *   End score is shown in the end as well as the restart button.
+    *   Restart button reloads the page.
+*   ### Bugs
+    *   The answer does sporadically not fit inside the choice button. See bugreport: [Answer To Large For Button](#answer-to-large-for-button)
+*   ### Comments
+    *   
 
 [Back to top](#testing-and-bugreports)
 
@@ -170,3 +192,20 @@
 
 *   ### Status
     *   Unresolved
+
+[Back to top](#testing-and-bugreports)
+
+## Answer To Large For Button
+*   ### Bug
+    *   The answer does sporadically not fit inside the choice button.
+
+*   ### Fix
+    *   
+
+*   ### Result
+    *   
+
+*   ### Status
+    *   Unresolved
+
+[Back to top](#testing-and-bugreports)
