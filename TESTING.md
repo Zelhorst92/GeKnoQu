@@ -19,12 +19,22 @@
 *   ### Intention
     *   A dropdown menu where the user can select the desired category regarding the questions of the quiz. The categories shown should be the same as the categories offered on [opentdb](https://opentdb.com/).
 *   ### Test
+    *   The category selector will be looked at at multiple devices if works.
+    *   The categories shown in the dropdown menu will be compared to the categories given on [opentdb](https://opentdb.com/).
 
+    *   The questions will be looked at if the selected category will affect the questions presented.
 *   ### Result
+    *   The category selector works on all tested screen/sizes. Tested devices are: Sony Experia XZ, Ipad, Asus laptop and a Desktop.
+    *   All categories given on [opentdb](https://opentdb.com/) are also shown in the categoryselector. Therefore the categories are fetched correctly.
 
+    ![Category comparison](https://github.com/Zelhorst92/GeKnoQu/blob/master/testing/categories-comparison.png?raw=true "Category comparison screenshot")
+    *   The questions after category selection do resemble the selected category. In the example below the category sport has been selected and in the console you can see that the questions resemble sports-questions.
+    
+    ![Category select relative to questions](https://github.com/Zelhorst92/GeKnoQu/blob/master/testing/category-select-result.png?raw=true "Category select relative to questions screenshot")
 *   ### Bugs
-
+    *   None
 *   ### Comments
+    *   None
 
 ##  How to play
 *   ### User Expectation
@@ -69,7 +79,7 @@
 *   ### Comments
 
 ##  Score and Progress
-*   ### User Expectation
+*   ### User Expectations
     *   The user expects a score increase upon giving the correct answer.
     *   The user expects to see the users final score on the end of the quiz.
     *   The user expects to see how far along the user is on the quiz.
@@ -85,3 +95,5 @@
 ---
 
 # Bugreports
+
+[Back to top](#testing-and-bugreports)
