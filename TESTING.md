@@ -74,11 +74,23 @@
 *   ### User Expectation
     *   The user expects the navigation on the site to be working properly.
 *   ### Intention
+    *   The start button starts the game. On start the questions are fetched, combined with the selected category.
     *   There should be a good transition between start, the game and the end. This is done via a collapse animation, where the switching on different elements happens behind, out of view of the user.
+    *   The restart button during gameplay gives an alert and reloads the page on confirmation so the user can select a category and play again.
+    *   The restart button at the end of the game restarts the game by reloading the page, so the user can select a category and play again.
 *   ### Test
+    *   See if the start button starts the game.
+    *   See if the questions are fetched.
+    *   See if the collapse animation lines up properly and that the (next) question is loaded during the animation.
 *   ### Result
+    *   Start button works as intended. Questions are fetcheds as intended.
+    *   Collapse animantion works as intended. Next question is loaded during the collapse animation.
+    *   Restart button during gameplay gives an alert to confirm restart. And reloads the page on confirmation.
+    *   Restart button at the end of the game does reload the page.
 *   ### Bugs
+    *   None.
 *   ### Comments
+    *   None.
 
 [Back to top](#testing-and-bugreports)
 
