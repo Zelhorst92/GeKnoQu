@@ -45,9 +45,9 @@ Thank you for visiting this project! For any feedback and/or questions you can a
 * An explanation on how to play the game and if there are any rules to it.
 * In game:
     * To see whether a given answer is correct or wrong.
-    * To see how many answers were answered correctly.
+    * To see how many answers were answered correctly. Ie score.
     * To see how many questions are there still to go/on which question out of total amount of questions the user is.
-    * To see the score.
+    * ~~To see the score.~~
 
 ---
 
