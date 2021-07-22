@@ -1,3 +1,11 @@
+Welcome to the GeKnoQu! The place to test your **Ge**neral **Kno**wledge in a **Qu**iz!
+
+Ranging categories from sports to mythology to music, for every taste there is something. Or you could go with everything in one with the general knowledge option! Using the API from [Opentdb](#https://opentdb.com/) this quiz app has over 4000 verified questions to test your knowledge!
+
+Thank you for visiting this project! For any feedback and/or questions you can always contact me via GitHub!
+
+~ Robert L. Z.
+
 # Table of Content
 - [User Experience](#user-experience)
   * [Site Owner Goal](#site-owner-goal)
