@@ -226,6 +226,7 @@ It would be nice to have a compliment system in the endgame, giving the user a w
 *   [W3C Css-validator](https://jigsaw.w3.org/css-validator/ "Link to the w3 css validator")
 *   [W3C Markup-validator](https://validator.w3.org/ "Link to w3c markup validator")
 *   [Techsini](http://techsini.com/ "techsini.com")
+*   [Favicon.cc](#https://www.favicon.cc/?)
 
 [Back to top](#table-of-content)
 
@@ -279,13 +280,13 @@ The website was deployed via GitHub by following the steps below:
 
 ## Content
 
-## Images
-
 ### Useful links
 
 ## Code
 
-### Overal
+### Core
+
+The core base mechanics is based on the following youtube series by [James Q Quick](#https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx). 
 
 ### Timer bar
 
