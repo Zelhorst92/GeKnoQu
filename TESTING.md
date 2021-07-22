@@ -36,6 +36,8 @@
 *   ### Comments
     *   None
 
+[Back to top](#testing-and-bugreports)
+
 ##  How to play
 *   ### User Expectation
     *   The user expects to find on how to play the game.
@@ -50,15 +52,23 @@
 *   ### Comments
     *   None
 
+[Back to top](#testing-and-bugreports)
+
 ##  Timer
 *   ### User Expectation
     *   The user expects to known how much time the user has left to answer the question.
 *   ### Intention
-    *   Via a visual timerbar the user will be informed on how much time the user has left to answer the question. On timer end the question is considered wrong, see feedback, and the game moves on to the next question.
+    *   Via a visual timerbar the user will be informed on how much time the user has left to answer the question. On timer end the question is considered wrong, see feedback, and the game moves on to the next question. The timer should start when the question is fully visibly after collapse animation.
 *   ### Test
+    *   Check if timer starts when the collapse animation is finished and if the visual bar lines up with the time counter in the javascript.
 *   ### Result
+    *   Works as intended. Visualisation of the timer lines up correctly to the time counter in the script. Also on time run out, the question is considered wrong and its moving on to the next question.
 *   ### Bugs
+    *   None.
 *   ### Comments
+    *   None.
+
+[Back to top](#testing-and-bugreports)
 
 ##  Transition
 *   ### User Expectation
@@ -69,6 +79,8 @@
 *   ### Result
 *   ### Bugs
 *   ### Comments
+
+[Back to top](#testing-and-bugreports)
 
 ##  Feedback
 *   ### User Expectations
@@ -81,6 +93,8 @@
 *   ### Result
 *   ### Bugs
 *   ### Comments
+
+[Back to top](#testing-and-bugreports)
 
 ##  Score and Progress
 *   ### User Expectations
@@ -102,15 +116,15 @@
 
 ## Modal Margin
 *   ### Bug
-    *   The phonenumberfield can contain any number between 0 and infinity.
+    *   Modal being pushed down out of the screen on larger screen sizes.
 
 *   ### Fix
-    *   Change input type to tel and give it a pattern value of 8 to 10 character of only numbers.
+    *   
 
 *   ### Result
-    *   Only numbers between 8 to 10 digits can now be submitted.
+    *   
 
 *   ### Status
-    *   Resolved
+    *   
 
 [Back to top](#testing-and-bugreports)
