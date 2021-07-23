@@ -143,6 +143,7 @@ const getNewQuestion = () => {
             const questionIndex = Math.floor(Math.random() * availableQuestions.length);
             currentQuestion = availableQuestions[questionIndex];
             questionRef.innerHTML = currentQuestion.question;
+            questionRef.ariaLabel = currentQuestion.question;
             questionCounter++;
             questionCounterProgressRef.innerHTML = questionCounter + "/" + maxQuestions;
             questionCounterProgressRef.ariaLabel = "You are on question " + questionCounter + " out of " + maxQuestions;
@@ -226,6 +227,7 @@ const gameEnd = () => {
     gameResultRef.innerHTML =
         `<p>Your game score is:</p>
         <p> ${score} out of ${maxQuestions}</p>`;
+    gameResultRef.ariaLabel = "Your game score is "+ score +" out of "+ maxQuestions;
     restartBtnRef.classList.remove("hide");
 };
 
