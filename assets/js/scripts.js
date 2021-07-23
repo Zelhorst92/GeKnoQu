@@ -34,7 +34,7 @@ let time;
 let feedbackClass;
 
 const correctPoint = 1;
-const maxQuestions = 15;
+const maxQuestions = 2;  // ---- DONT FORGET!
 
 // ----------------- Getting category data from opentbd.com API
 
@@ -42,6 +42,7 @@ const getCategories = fetch("https://opentdb.com/api_category.php")
     .then(res => res.json())
     .then((result) => createSelectBox(result.trivia_categories))
     .catch(err => {
+
         console.error(err)
     });
 
@@ -65,6 +66,18 @@ startBtnRef.addEventListener("click", startGame = () => {
         questionCounter = 0;
         score = 0;
         availableQuestions = [...questions];
+        setTimeout(
+            () => {
+                categoryWrapperRef.classList.add("hide");
+                startBtnRef.classList.add("hide");
+                helpBtn.classList.add("hide");
+                restartDuringRef.classList.remove("hide");
+                tallyContainerRef.classList.remove("hide");
+                questionRef.classList.remove("hide");
+                for (let choice of choicesRef) {
+                    choice.classList.remove("hide");
+                };
+            }, 1100);
         getNewQuestion();
     }
 });
@@ -72,7 +85,7 @@ startBtnRef.addEventListener("click", startGame = () => {
 // ----------------- Getting question data from opentbd.com API with selected category
 
 const fetchQuestions = () => {
-    fetch(`https://opentdb.com/api.php?amount=15&category=${selectedCategoryRef.value}&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=2&category=${selectedCategoryRef.value}&type=multiple`) // ---- DONT FORGET!
         .then(res => res.json())
         .then((data) => {
             questions = data.results.map(fetchedQuestion => {
@@ -99,20 +112,11 @@ const collapseAnimation = () => {
     setTimeout(
         () => {
             gameCircleRef.classList.add("inner-circle-load");
-            categoryWrapperRef.classList.add("hide");
-            startBtnRef.classList.add("hide");
-            helpBtn.classList.add("hide");
-            restartDuringRef.classList.remove("hide");
         }, 200
     );
     setTimeout(
         () => {
             gameCircleRef.classList.remove("inner-circle-load");
-            tallyContainerRef.classList.remove("hide");
-            questionRef.classList.remove("hide");
-            for (let choice of choicesRef) {
-                choice.classList.remove("hide");
-            };
         }, 2000
     );
 };
@@ -213,7 +217,7 @@ const gameEnd = () => {
     gameResultRef.innerHTML =
         `<p>Your game score is:</p>
         <p> ${score} out of ${maxQuestions}</p>`;
-    gameResultRef.ariaLabel = "Your game score is "+ score +" out of "+ maxQuestions;
+    gameResultRef.ariaLabel = "Your game score is " + score + " out of " + maxQuestions;
     restartBtnRef.classList.remove("hide");
 };
 
