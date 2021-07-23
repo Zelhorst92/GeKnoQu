@@ -42,7 +42,10 @@ const getCategories = fetch("https://opentdb.com/api_category.php")
     .then(res => res.json())
     .then((result) => createSelectBox(result.trivia_categories))
     .catch(err => {
-
+        categoryWrapperRef.classList.add("hide");
+        startBtnRef.classList.add("hide");
+        questionRef.classList.remove("hide");
+        questionRef.innerHTML = "An error has occurred getting the category list. Refresh page or try again later!"
         console.error(err)
     });
 
