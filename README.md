@@ -275,23 +275,50 @@ The website was deployed via GitHub by following the steps below:
 ---
 
 # Credits
+## API
 
-## Overall
-
-## Content
-
-### Useful links
+The API used is a free to use [API](https://opentdb.com/) made possible by the folks at [pixeltailgames](https://www.pixeltailgames.com/). My mentor, [Simen Daehlin](https://github.com/Eventyret "githubpage of Simen Daehlin") pointed me in the direction of this API.
 
 ## Code
 
 ### Core
 
-The core base mechanics is based on the following youtube series by [James Q Quick](#https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx). 
+The core mechanics are based on the youtube series by [James Q Quick](https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx).It was a great start to this project and helped me understand javascript quite a bit better. I would recommend this video series to everyone starting out on javascript. 
 
 ### Timer bar
 
 The timer bar is roughly based on [this](https://stackoverflow.com/questions/35383629/css-circle-border-fill-animation "stackoverflow forum") and [this](https://jsfiddle.net/rsfkmegp/2/ "jsfiddle") piece of code, made by [G-Cyrillus](https://stackoverflow.com/users/2442099/g-cyrillus "stackoverflow forum"). Integration with the code I already made myself was quite something to figure out, but ultimately successful.
 
-# Thanks
+### Collapse animation
 
-#### Several People
+Created with information from [W3schools Transitions](https://www.w3schools.com/cssref/css3_pr_transition.asp).
+
+### Modal
+
+Created with information from [W3schools Modals](https://www.w3schools.com/howto/howto_css_modals.asp).
+
+### Other usefull videos
+
+Other helpfull videos I used to supplement my knowledge about javascript. While I have not take code directly from these videos, they should be mentioned as an asset.
+
+* [Video by Akshay Saini](https://www.youtube.com/watch?v=8zKuNo4ay8E)
+* [Web Dev Simplified](https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw)
+
+## Thanks
+
+### My mentor
+I would like to thank my mentor [Simen Daehlin](https://github.com/Eventyret "githubpage of Simen") for pointing me in the right direction in terms of the goals of the site. He also gave me quite a couple of pointers on how to improve my code, the order of code and how the javascript could be written easiers/simpler.
+
+### My family and friends
+I would also like to thank my family and friends for their brutally honest feedback which helped a lot to view the website from the users perspective.
+They did not shy away from pointing out any flaws that I had overlooked.
+
+## Afterword
+
+This was quite a bit more challenging project compared to the first sole HTML and CSS project, but a lot of fun to do. I really like the fact that you can manipulate the HTML and CSS with the help of javascript and make the website more 'alive'. I am quite fond of the collapse animation.
+
+The circular design did make me run into a few problems, as with circles you have a lot less 'real estate' to work with compared to a more angular design. As such there the space available for the questions and answer is not always optimal. If I had more time, I problably would consider a redesign. 
+
+Overal it was enjoyable project to do.
+
+[Back to top](#table-of-content)
