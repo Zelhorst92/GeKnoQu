@@ -200,13 +200,10 @@
 ## Modal Margin
 *   ### Bug
     *   Modal being pushed down out of the screen on larger screen sizes.
-
 *   ### Fix
     *   Change the margin of 33%.
-
-*   ### Result
+*   ### ### Conclusion/Result
     *   Completely removed the margin of 33%. Works fine without.
-
 *   ### Status
     *   Resolved
 
@@ -216,13 +213,11 @@
 *   ### Bug
     *   Feedback to show the correct answer after a wrong answer is given does sporadically not work.
 *   ### Fix
-    *   
+    *   None.
 *   ### Comments
-    *   So far I am unable to determine what causes this to happen, as it is not a recreatable error.
-*   ### Conclusion
-    *   
-*   ### Result
-    *   
+    *   So far I am unable to determine what causes this to happen, as it is not a recreatable error. 
+    ### Conclusion/Result
+    *   None.
 *   ### Status
     *   Unresolved
 
@@ -240,10 +235,8 @@
     *   Making the font-size smaller would interfere with the usabilty; it might be to small to read. The font-size at the moment is as small as it should be.
     *   Making the font-size responsive to the length of the answer could work, but would require another script. Also the risk stil remains that the font-size might end up to small for the user to read properly.
     *   Making the buttons bigger would require a redesign of the whole design. Circles do make the real estate to work with significant smaller compared to the use of a more angular choice.
-*   ### Conclusion
+*   ### Conclusion/Result
     *   A redesign or a filtering of the questions based on the answer length would be the way to go.
-*   ### Result
-    * None.
 *   ### Status
     *   Unresolved
 
@@ -252,11 +245,7 @@
     *   Pressing the start button multiple times results in the game running the scripts multiple times and going haywire.
     ### Fix
     *   Adding a acceptingStart variable in such a way that the script only executes once after pressing start, the same way as how the game only accepts one answer during game play.
-    ### Comment
-    *   None
-    ### Conclusion
-    *   None
-    ### Result
+    ### Conclusion/Result
     *   Adding an if statement to the eventlistener on the startbutton, checking if acceptingStart is true. Which is initially set to false, but when categories are fetched set to true. When the startbutton is pressed it is once again set to false, thus only accepting one event from pressing the startbutton.
     ### Status
     *   Resolved
