@@ -256,8 +256,8 @@
     ### Conclusion
     *   None
     ### Result
-    *   None
+    *   Adding an if statement to the eventlistener on the startbutton, checking if acceptingStart is true. Which is initially set to false, but when categories are fetched set to true. When the startbutton is pressed it is once again set to false, thus only accepting one event from pressing the startbutton.
     ### Status
-    *   Unresolved
+    *   Resolved
 
 [Back to top](#testing-and-bugreports)

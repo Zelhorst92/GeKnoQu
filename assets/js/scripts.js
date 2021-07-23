@@ -21,6 +21,7 @@ const modalRef = document.querySelector("#helpModal");
 const helpRef = document.querySelector("#linkHelpModal");
 const closeRef = document.querySelector("#help-exit-btn")
 
+let acceptingStart = false;
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -53,11 +54,14 @@ const createSelectBox = (categories) => {
     for (let category of categories) {
         (selectedCategoryRef.options[selectedCategoryRef.options.length] = new Option(category.name, category.id));
     };
+    acceptingStart = true;
 };
 
 // ----------------- Start the game
 
 startBtnRef.addEventListener("click", startGame = () => {
+    if(acceptingStart) {
+    acceptingStart = false;
     fetchQuestions();
     questionCounter = 0;
     score = 0;
@@ -78,7 +82,7 @@ startBtnRef.addEventListener("click", startGame = () => {
                 choice.classList.remove("hide");
             };
         }, 1100);
-});
+}});
 
 // ----------------- Getting question data from opentbd.com API with selected category
 
