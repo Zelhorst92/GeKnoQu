@@ -66,6 +66,8 @@
     *   Check if timer starts when the collapse animation is finished and if the visual bar lines up with the time counter in the javascript.
 *   ### Result
     *   Works as intended. Visualisation of the timer lines up correctly to the time counter in the script. Also on time run out, the question is considered wrong and its moving on to the next question.
+
+        ![Timer going and timer end screenshot](https://github.com/Zelhorst92/GeKnoQu/blob/master/testing/timer-plus-timerend.png?raw=true "Timer and timer end screenshot")
 *   ### Bugs
     *   None.
 *   ### Comments
