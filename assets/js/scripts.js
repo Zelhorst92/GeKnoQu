@@ -85,7 +85,7 @@ startBtnRef.addEventListener("click", startGame = () => {
 // ----------------- Getting question data from opentbd.com API with selected category
 
 const fetchQuestions = () => {
-    fetch(`https://opentdb.com/api.php?amount=2&category=${selectedCategoryRef.value}&type=multiple`) // ---- DONT FORGET!
+    fetch(`https://opentdb.com/api.php?amount=${maxQuestions}&category=${selectedCategoryRef.value}&type=multiple`)
         .then(res => res.json())
         .then((data) => {
             questions = data.results.map(fetchedQuestion => {
