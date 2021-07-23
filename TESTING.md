@@ -8,6 +8,7 @@
     *   [Feedback](#feedback)
     *   [Score and Progress](#score-and-progress)
     *   [Play Game As User](#play-game-as-user)
+    *   [Arialabels](#arialabels)
 *   [Bugreports](#bugreports)
     *   [Modal Margin](#modal-margin)
     *   [Sporadic Correct Answer Not Given](#sporadic-correct-answer-not-given)
@@ -174,6 +175,8 @@
     ### Comments
     *   The arialabel do update for the visually impaired. In such an event, the time given to answer the question might be to short.
     See [Future Features](https://github.com/Zelhorst92/GeKnoQu/blob/master/README.md#future-features "Link to tests and bugs file") in the README.
+
+##
 
 [Back to top](#testing-and-bugreports)
 
