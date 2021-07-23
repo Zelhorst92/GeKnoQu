@@ -34,7 +34,7 @@ let time;
 let feedbackClass;
 
 const correctPoint = 1;
-const maxQuestions = 2; // ---- DONT FORGET!
+const maxQuestions = 10;
 
 // ----------------- Getting category data from opentbd.com API
 
@@ -251,6 +251,7 @@ const startTimerBar = () => {
     rightLoadRef.classList.remove("hide");
 };
 
+// ------------------------------------
 // ----------------- Modal Help Script
 
 helpRef.onclick = () => {
@@ -273,7 +274,6 @@ const restartFunc = () => {
         window.location.reload();
     }
 };
-
 
 restartDuringRef.addEventListener("click", restartFunc);
 
