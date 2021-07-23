@@ -159,6 +159,19 @@
 *   ### Comments
     *   
 
+## Arialabels
+*   ### Intention
+    *   The arialabels should represent what is the current question, choice options, the current score and the current question number.
+    ### Test
+    *   Check via the console terminal if the arialabel updates correctly with the changes to question, answers, score, questionnumber and end score message.
+    ### Result
+    *   Arialabels change accordingly on all fronts.
+    ### Bugs
+    *   None.
+    ### Comments
+    *   The arialabel do update for the visually impaired. In such an event, the time given to answer the question might be to short.
+    See [Future Features](https://github.com/Zelhorst92/GeKnoQu/blob/master/README.md#future-features "Link to tests and bugs file") in the README.
+
 [Back to top](#testing-and-bugreports)
 
 ---
