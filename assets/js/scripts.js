@@ -145,9 +145,11 @@ const getNewQuestion = () => {
             questionRef.innerHTML = currentQuestion.question;
             questionCounter++;
             questionCounterProgressRef.innerHTML = questionCounter + "/" + maxQuestions;
+            questionCounterProgressRef.ariaLabel = "You are on question " + questionCounter + " out of " + maxQuestions;
             for (let choice of choicesRef) {
                 const number = choice.dataset["number"];
                 choice.innerHTML = currentQuestion["choice" + number];
+                choice.ariaLabel = currentQuestion["choice" + number];
             };
             availableQuestions.splice(questionIndex, 1);
         }, 2000);
@@ -206,6 +208,7 @@ const checkAnswer = () => {
 const addScore = (num) => {
     score += num;
     scoreProgressRef.innerText = score;
+    scoreProgressRef.ariaLabel = "Your score is " + score
 };
 
 // ----------------- Game End
