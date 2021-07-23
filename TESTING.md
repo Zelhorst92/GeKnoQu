@@ -14,6 +14,7 @@
     *   [Modal Margin](#modal-margin)
     *   [Sporadic Correct Answer Not Given](#sporadic-correct-answer-not-given)
     *   [Answer To Large For Button](#answer-to-large-for-button)
+    *   [Start spam](#start-spam)
 
 
 # Testing
