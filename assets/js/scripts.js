@@ -101,6 +101,7 @@ const fetchQuestions = () => {
         })
         .catch(err => {
             console.error(err);
+            if(!alert('Something went wrong getting the questions. Redirecting back to start!')){window.location.reload();}   
         });
 };
 
