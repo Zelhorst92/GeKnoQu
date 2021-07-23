@@ -67,7 +67,7 @@
 *   ### Result
     *   Works as intended. Visualisation of the timer lines up correctly to the time counter in the script. Also on time run out, the question is considered wrong and its moving on to the next question.
 
-        ![Timer going and timer end screenshot](https://github.com/Zelhorst92/GeKnoQu/blob/master/testing/timer-plus-timerend.png?raw=true "Timer and timer end screenshot")
+    ![Timer going and timer end screenshot](https://github.com/Zelhorst92/GeKnoQu/blob/master/testing/timer-plus-timerend.png?raw=true "Timer and timer end screenshot")
 *   ### Bugs
     *   None.
 *   ### Comments
@@ -113,6 +113,7 @@
 *   ### Result
     *   On click the button turns green or red if the answer is correct or incorrect respectively. Works as intended.
     *   The correct answer is shown after a wrong answer is given most of the time.
+        ![Feedback correct and incorrect screenshot](https://github.com/Zelhorst92/GeKnoQu/blob/master/testing/feedback-test.png?raw=true "Feedback correct and incorrect screenshot")
 *   ### Bugs
     *   Feedback to show the correct answer after a wrong answer is given does sporadically not work. See bugreport: [Sporadic Correct Answer Not Given](#sporadic-correct-answer-not-given).
 *   ### Comments
