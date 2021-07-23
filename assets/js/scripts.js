@@ -55,8 +55,6 @@ const createSelectBox = (categories) => {
 
 startBtnRef.addEventListener("click", startGame = () => {
     if (questions.length !== maxQuestions) {
-        console.log("Number of questions in the array: " + questions.length);
-        console.log("Questions array is empty, fetching questions...");
         fetchQuestions();
         setTimeout(
             () => {
@@ -64,13 +62,9 @@ startBtnRef.addEventListener("click", startGame = () => {
             }, 500
         );
     } else {
-        console.log("Questions array has questions!");
         questionCounter = 0;
         score = 0;
-        console.log("Moving questions from questions-array to available-questions-array...");
         availableQuestions = [...questions];
-        console.log("Printing availablequestions...");
-        console.log(availableQuestions);
         getNewQuestion();
     }
 });
@@ -78,7 +72,6 @@ startBtnRef.addEventListener("click", startGame = () => {
 // ----------------- Getting question data from opentbd.com API with selected category
 
 const fetchQuestions = () => {
-    console.log("Executing fetchQuestions...")
     fetch(`https://opentdb.com/api.php?amount=15&category=${selectedCategoryRef.value}&type=multiple`)
         .then(res => res.json())
         .then((data) => {
@@ -128,16 +121,13 @@ const collapseAnimation = () => {
 
 const getNewQuestion = () => {
     sec = 0;
-    console.log("getNewQuestion function is being executed");
     feedbackCircleRef.className = "neutral";
     if (availableQuestions.length === 0) {
-        console.log("No more questions.");
         collapseAnimation();
         setTimeout(() => {
             gameEnd();
         }, 2000);
     } else {
-        console.log("Presenting new question...")
         collapseAnimation();
         setTimeout(() => {
             const questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -181,13 +171,10 @@ const checkAnswer = () => {
                 if (selectedAnswer == currentQuestion.answer) {
                     feedbackClass = "correct";
                     addScore(correctPoint);
-                    console.log("correct answer given!");
                 } else {
                     feedbackClass = "incorrect";
-                    console.log("Incorrect answer given!");
                     setTimeout(() => {
                         correctAnswer.classList.add("correct");
-                        console.log("Showing correct answer");
                     }, 500);
                 };
                 selectedChoice.classList.add(feedbackClass);
@@ -222,7 +209,6 @@ const gameEnd = () => {
     };
     restartDuringRef.classList.add("hide");
     tallyContainerRef.classList.add("hide");
-    console.log("Showing game score..");
     gameResultRef.classList.remove("hide");
     gameResultRef.innerHTML =
         `<p>Your game score is:</p>
@@ -236,14 +222,12 @@ const gameEnd = () => {
 
 const timer = () => {
     sec++;
-    console.log(sec);
     if (sec === 15) {
         clearInterval(time);
         acceptingAnswers = false;
         feedbackClass = "incorrect";
         stopTimerBar();
         feedbackCircleRef.className = feedbackClass;
-        console.log("Time is up!");
         setTimeout(() => {
             getNewQuestion();
         }, 3000);
