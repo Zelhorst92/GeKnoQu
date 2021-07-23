@@ -207,6 +207,10 @@ An extra feedback for answering a question correct or incorrect could play an ap
 It would be nice to have a compliment system in the endgame, giving the user a witty comment as extra feedback on the score the user got.
 '*Well done, you almost got a perfect score!*','*Not so good, only one correct answer...*', to name a few examples. 
 
+### A time delay for the visually impaired
+
+The arialabels do adapt to the content of the question and answers. However when a visual impaired user wants to play the game with help via the arialabels, the time might insufficient to answer the question. Therefore an option at the start of the game to give more time in such cases would be a good future feature.
+
 [Back to top](#table-of-content)
 
 # Technologies
