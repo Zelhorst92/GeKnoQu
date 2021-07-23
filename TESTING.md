@@ -9,6 +9,7 @@
     *   [Score and Progress](#score-and-progress)
     *   [Play Game As User](#play-game-as-user)
     *   [Arialabels](#arialabels)
+    *   [Catch categories and questions](#catch-categories-and-questions)
 *   [Bugreports](#bugreports)
     *   [Modal Margin](#modal-margin)
     *   [Sporadic Correct Answer Not Given](#sporadic-correct-answer-not-given)
@@ -176,7 +177,18 @@
     *   The arialabel do update for the visually impaired. In such an event, the time given to answer the question might be to short.
     See [Future Features](https://github.com/Zelhorst92/GeKnoQu/blob/master/README.md#future-features "Link to tests and bugs file") in the README.
 
-##
+## Catch categories and questions
+*   ### Intention
+    *   When the categories or questions cannot be fetched for any reason, the game should not start. As in such an event there are no categories or/and questions, thus nothing to play with.
+    ### Test
+    *   Intentionally break the URL's for fetching categories and questions and see if feedback works.
+    ### Result
+    *   When the categories cannot be fetched, the game will show that this is happening and gives the user feedback that the user has to wait a bit or/and refresh the page.
+    *   When the questions cannot be fetched, an alert will poppup explaining that the questions cannot be fetched and on clicking 'ok' the page will refresh, bringing the user back to start.
+    ### Bugs
+    *   None.
+    ### Comments
+    *   The alert on failed questions fetching is a workaround, as when no questions are fetched the script thinks the game is done and triggering the gameEnd script. Thus giving the player a 0 score instead on feedback that fetching the questions has failed.
 
 [Back to top](#testing-and-bugreports)
 
