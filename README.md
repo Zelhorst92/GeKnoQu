@@ -32,11 +32,10 @@ Thank you for visiting this project! For any feedback and/or questions you can a
   * [Deployment via GitHub Pages](#deployment-via-github-pages)
   * [Deployment of the website locally:](#deployment-of-the-website-locally-)
 - [Credits](#credits)
-  * [Overall](#overall)
-  * [Content](#content)
-  * [Images](#images)
+  * [API](#api)
   * [Code](#code)
-- [Thanks](#thanks)
+  * [Thanks](#thanks)
+  * [Afterword](#afterword)
 
 # User Experience
 ## Site Owner Goal 
