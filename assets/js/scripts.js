@@ -34,7 +34,7 @@ let time;
 let feedbackClass;
 
 const correctPoint = 1;
-const maxQuestions = 2;  // ---- DONT FORGET!
+const maxQuestions = 2; // ---- DONT FORGET!
 
 // ----------------- Getting category data from opentbd.com API
 
@@ -58,31 +58,26 @@ const createSelectBox = (categories) => {
 // ----------------- Start the game
 
 startBtnRef.addEventListener("click", startGame = () => {
-    if (questions.length !== maxQuestions) {
-        fetchQuestions();
-        setTimeout(
-            () => {
-                startGame();
-            }, 500
-        );
-    } else {
-        questionCounter = 0;
-        score = 0;
-        availableQuestions = [...questions];
-        setTimeout(
-            () => {
-                categoryWrapperRef.classList.add("hide");
-                startBtnRef.classList.add("hide");
-                helpBtn.classList.add("hide");
-                restartDuringRef.classList.remove("hide");
-                tallyContainerRef.classList.remove("hide");
-                questionRef.classList.remove("hide");
-                for (let choice of choicesRef) {
-                    choice.classList.remove("hide");
-                };
-            }, 1100);
-        getNewQuestion();
-    }
+    fetchQuestions();
+    questionCounter = 0;
+    score = 0;
+    setTimeout(
+        () => {
+            availableQuestions = [...questions];
+            getNewQuestion();
+        }, 500);
+    setTimeout(
+        () => {
+            categoryWrapperRef.classList.add("hide");
+            startBtnRef.classList.add("hide");
+            helpBtn.classList.add("hide");
+            restartDuringRef.classList.remove("hide");
+            tallyContainerRef.classList.remove("hide");
+            questionRef.classList.remove("hide");
+            for (let choice of choicesRef) {
+                choice.classList.remove("hide");
+            };
+        }, 1100);
 });
 
 // ----------------- Getting question data from opentbd.com API with selected category
