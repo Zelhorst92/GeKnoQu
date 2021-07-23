@@ -214,19 +214,14 @@
 ## Sporadic Correct Answer Not Given
 *   ### Bug
     *   Feedback to show the correct answer after a wrong answer is given does sporadically not work.
-
 *   ### Fix
     *   
-
 *   ### Comments
     *   So far I am unable to determine what causes this to happen, as it is not a recreatable error.
-
 *   ### Conclusion
     *   
-
 *   ### Result
     *   
-
 *   ### Status
     *   Unresolved
 
@@ -235,25 +230,34 @@
 ## Answer To Large For Button
 *   ### Bug
     *   The answer does sporadically not fit inside the choice button on mobile screen sizes.
-
 *   ### Fixes
     *   ~~Make the font-size either smaller. or responsive to size on answer.~~
     *   ~~Make the font-size responsive to the length of the answer to always fit in the button.~~
     *   Make the buttons bigger.
     *   Target the questions with an answer to long to fit in the buttons and change them out for a better fitting one.
-
     ### Comments
     *   Making the font-size smaller would interfere with the usabilty; it might be to small to read. The font-size at the moment is as small as it should be.
     *   Making the font-size responsive to the length of the answer could work, but would require another script. Also the risk stil remains that the font-size might end up to small for the user to read properly.
     *   Making the buttons bigger would require a redesign of the whole design. Circles do make the real estate to work with significant smaller compared to the use of a more angular choice.
-
 *   ### Conclusion
     *   A redesign or a filtering of the questions based on the answer length would be the way to go.
-
 *   ### Result
     * None.
-
 *   ### Status
+    *   Unresolved
+
+## Start spam
+*   ### Bug
+    *   Pressing the start button multiple times results in the game running the scripts multiple times and going haywire.
+    ### Fix
+    *   Adding a acceptingStart variable in such a way that the script only executes once after pressing start, the same way as how the game only accepts one answer during game play.
+    ### Comment
+    *   None
+    ### Conclusion
+    *   None
+    ### Result
+    *   None
+    ### Status
     *   Unresolved
 
 [Back to top](#testing-and-bugreports)
