@@ -257,11 +257,13 @@
 *   ### Fix
     *   None.
 *   ### Comments
-    *   So far I am unable to determine what causes this to happen, as it is not a recreatable error. 
+    *   ~~So far I am unable to determine what causes this to happen, as it is not a recreatable error. ~~
+    *   It seems something to do with the position of the following code:
+        *       const correctAnswer = document.querySelector(`[data-number="${currentQuestion.answer}"]`);
     ### Conclusion/Result
-    *   None.
+    *   Moved the code to when the actual check of the correctness of the answer happens. This seems to have resolved the issue.
 *   ### Status
-    *   Unresolved
+    *   Resolved
 
 [Back to top](#testing-and-bugreports)
 
