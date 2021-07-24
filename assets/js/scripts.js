@@ -21,7 +21,7 @@ const restartDuringRef = document.querySelector("#give-up");
 const helpBtn = document.querySelector("#linkHelpModal");
 const modalRef = document.querySelector("#helpModal");
 const helpRef = document.querySelector("#linkHelpModal");
-const closeRef = document.querySelector("#help-exit-btn")
+const closeRef = document.querySelector("#help-exit-btn");
 
 let acceptingStart = false;
 let currentQuestion = {};
@@ -41,27 +41,27 @@ const maxQuestions = 10;
 
 // ----------------- Getting category data from opentbd.com API
 
-const getCategories = fetch("https://opentdb.com/api_category.php")
+fetch("https://opentdb.com/api_category.php")
     .then(res => res.json())
     .then((result) => createSelectBox(result.trivia_categories))
     .catch(err => {
         categoryWrapperRef.classList.add("hide");
         startBtnRef.classList.add("hide");
         questionRef.classList.remove("hide");
-        questionRef.innerHTML = "An error has occurred getting the category list. Refresh page or try again later!"
-        console.error(err)
+        questionRef.innerHTML = "An error has occurred getting the category list. Refresh page or try again later!";
+        console.error(err);
     });
 
 const createSelectBox = (categories) => {
     for (let category of categories) {
         (selectedCategoryRef.options[selectedCategoryRef.options.length] = new Option(category.name, category.id));
-    };
+    }
     acceptingStart = true;
 };
 
 // ----------------- Start the game
 
-startBtnRef.addEventListener("click", startGame = () => {
+startBtnRef.addEventListener("click", () => {
     if (acceptingStart) {
         acceptingStart = false;
         fetchQuestions();
@@ -82,7 +82,7 @@ startBtnRef.addEventListener("click", startGame = () => {
                 questionRef.classList.remove("hide");
                 for (let choice of choicesRef) {
                     choice.classList.remove("hide");
-                };
+                }
             }, 1100);
     }
 });
@@ -150,10 +150,10 @@ const getNewQuestion = () => {
             questionCounterProgressRef.innerHTML = questionCounter + "/" + maxQuestions;
             questionCounterProgressRef.ariaLabel = "You are on question " + questionCounter + " out of " + maxQuestions;
             for (let choice of choicesRef) {
-                const number = choice.dataset["number"];
+                const number = choice.dataset.number;
                 choice.innerHTML = currentQuestion["choice" + number];
                 choice.ariaLabel = currentQuestion["choice" + number];
-            };
+            }
             availableQuestions.splice(questionIndex, 1);
         }, 2000);
         setTimeout(() => {
@@ -162,7 +162,7 @@ const getNewQuestion = () => {
             startTimerBar();
             time = setInterval(timer, 1000);
         }, 3000);
-    };
+    }
 };
 
 // ----------------- Check answer on click
@@ -174,7 +174,7 @@ const checkAnswer = () => {
         choice.addEventListener("click", (event) => {
             clearInterval(time);
             const selectedChoice = event.target;
-            const selectedAnswer = selectedChoice.dataset["number"];
+            const selectedAnswer = selectedChoice.dataset.number;
             if (!acceptingAnswers) {
                 return;
             } else {
@@ -188,7 +188,7 @@ const checkAnswer = () => {
                     setTimeout(() => {
                         correctAnswer.classList.add("correct");
                     }, 500);
-                };
+                }
                 selectedChoice.classList.add(feedbackClass);
                 feedbackCircleRef.className = feedbackClass;
                 setTimeout(
@@ -198,9 +198,9 @@ const checkAnswer = () => {
                         getNewQuestion();
                     }, 2750
                 );
-            };
+            }
         });
-    };
+    }
 };
 
 // ----------------- Add score point
@@ -208,7 +208,7 @@ const checkAnswer = () => {
 const addScore = (num) => {
     score += num;
     scoreProgressRef.innerText = score;
-    scoreProgressRef.ariaLabel = "Your score is " + score
+    scoreProgressRef.ariaLabel = "Your score is " + score;
 };
 
 // ----------------- Game End
@@ -218,7 +218,7 @@ const gameEnd = () => {
     questionRef.classList.add("hide");
     for (let choice of choicesRef) {
         choice.classList.add("hide");
-    };
+    }
     restartDuringRef.classList.add("hide");
     tallyContainerRef.classList.add("hide");
     gameResultRef.classList.remove("hide");
@@ -242,7 +242,7 @@ const timer = () => {
         setTimeout(() => {
             getNewQuestion();
         }, 3000);
-    };
+    }
 };
 
 // ----------------- Timer bar stop (hide) 
@@ -263,17 +263,17 @@ const startTimerBar = () => {
 
 helpRef.onclick = () => {
     modalRef.style.display = "block";
-}
+};
 
 closeRef.onclick = () => {
     modalRef.style.display = "none";
-}
+};
 
 window.onclick = (event) => {
     if (event.target == modalRef) {
         modalRef.style.display = "none";
     }
-}
+};
 
 // ----------------- Restart Script
 const restartFunction = () => {
