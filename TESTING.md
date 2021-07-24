@@ -10,6 +10,7 @@
     *   [Play Game As User](#play-game-as-user)
     *   [Arialabels](#arialabels)
     *   [Catch categories and questions](#catch-categories-and-questions)
+    *   [Validation of code](#validation-of-code)
 *   [Bugreports](#bugreports)
     *   [Modal Margin](#modal-margin)
     *   [Sporadic Correct Answer Not Given](#sporadic-correct-answer-not-given)
@@ -190,6 +191,47 @@
     *   None.
     ### Comments
     *   The alert on failed questions fetching is a workaround, as when no questions are fetched the script thinks the game is done and triggering the gameEnd script. Thus giving the player a 0 score instead on feedback that fetching the questions has failed.
+
+## Validation of code
+*   ### Intention
+    *   All code should be correctly written and therefore pass the validators.
+    ### Test
+    *   Validate CSS in [W3C Css-validator](https://jigsaw.w3.org/css-validator/ "Link to the w3 css validator")
+    *   Validate HTML in [W3C Markup-validator](https://validator.w3.org/ "Link to w3c markup validator")
+    *   Validate JavaScript in the linter [Jshint](https://jshint.com/ "Link to jshint")
+    ### Result
+    *   Validation of CSS came up without any issues.
+    *   Validation of HTML came up with 13 warnings about a possible misuse of the arialabels.
+
+    *   Passing the javascript through Jshint came up with several missing or unnecessary semicolons and statements that the 'const', 'let', 'for of' and 'arrow function syntax' is only available in ES6 and up.
+    *   On line 44:
+        *   Unused variable: getCategories.
+    *   On line 64:
+        *   Undefined variable: startGame
+    *   On line 153:
+        *       ['number'] is better written in dot notation.
+    *   On line 174
+        *       Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (time, acceptingAnswers, stopTimerBar, currentQuestion, feedbackClass, addScore, correctPoint, feedbackCircleRef, getNewQuestion)
+    *   On line 177:
+        *       ['number'] is better written in dot notation.
+    ### Bugs/Fixes
+    *   Fixing all missing and unnecessary semicolons.
+    *   On line 44:
+        *   Removed the 'const getCategories'
+    *   On line 64:
+        *   Removed function name startGame as it does not need to be called again.
+    *   On line 153:
+        *   changed to .number;
+    *   On line 174
+        *   Unchanged
+    *   On line 177:
+        *   changed to .number;
+    *   
+    ### Comments
+    *   **Possible** misuse of arialabels are warnings, no errors. Adapting the arialabels is part of the code.
+    *   The website has no compatability with browsers with no ES6 or above support.
+    *   only remaining warning:
+        *     Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (time, acceptingAnswers, stopTimerBar, currentQuestion, feedbackClass, addScore, correctPoint, feedbackCircleRef, getNewQuestion)
 
 [Back to top](#testing-and-bugreports)
 
