@@ -83,6 +83,7 @@ startBtnRef.addEventListener("click", () => {
                 for (let choice of choicesRef) {
                     choice.classList.remove("hide");
                 }
+                console.log(availableQuestions);
             }, 1100);
     }
 });
@@ -97,7 +98,7 @@ const fetchQuestions = () => {
                 const formattedQuestions = {
                     question: fetchedQuestion.question,
                 };
-                formattedQuestions.answer = Math.floor(Math.random() * 3) + 1;
+                formattedQuestions.answer = Math.floor(Math.random() * 4) + 1;
                 const answerChoices = [...fetchedQuestion.incorrect_answers];
                 answerChoices.splice(formattedQuestions.answer - 1, 0, fetchedQuestion.correct_answer);
                 answerChoices.forEach((choice, index) => {
