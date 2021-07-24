@@ -152,7 +152,6 @@ header {
     transform: translate(-50%, -50%);
     overflow: hidden;
     z-index: 4;
-
     transition: all 1s;
 }
 
@@ -316,7 +315,6 @@ header {
     top: 0;
     justify-content: center;
     align-items: center;
-
     z-index: 99;
 }
 
@@ -485,12 +483,6 @@ header {
     #give-up {
         bottom: -4vh;
     }
-
-    /* --------------- Help modal */
-    .help-content {
-        /* margin-top: 33%; */
-    }
-
 }
 
 @media screen and (min-width: 992px) {
