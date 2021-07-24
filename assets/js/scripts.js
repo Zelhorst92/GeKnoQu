@@ -83,7 +83,6 @@ startBtnRef.addEventListener("click", () => {
                 for (let choice of choicesRef) {
                     choice.classList.remove("hide");
                 }
-                console.log(availableQuestions);
             }, 1100);
     }
 });
@@ -169,8 +168,6 @@ const getNewQuestion = () => {
 // ----------------- Check answer on click
 
 const checkAnswer = () => {
-    const correctAnswerNumber = currentQuestion.answer;
-    const correctAnswer = document.querySelector(`[data-number="${correctAnswerNumber}"]`);
     for (let choice of choicesRef) {
         choice.addEventListener("click", (event) => {
             clearInterval(time);
@@ -179,6 +176,7 @@ const checkAnswer = () => {
             if (!acceptingAnswers) {
                 return;
             } else {
+                const correctAnswer = document.querySelector(`[data-number="${currentQuestion.answer}"]`);
                 acceptingAnswers = false;
                 stopTimerBar();
                 if (selectedAnswer == currentQuestion.answer) {
