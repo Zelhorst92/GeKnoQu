@@ -5,9 +5,11 @@ const questionRef = document.querySelector("#question");
 const startBtnRef = document.querySelector("#start");
 const restartBtnRef = document.querySelector("#restart");
 const choicesRef = Array.from(document.getElementsByClassName("answer-choice"));
+
 const tallyContainerRef = document.querySelector("#tally-container");
 const questionCounterProgressRef = document.querySelector("#question-counter");
 const scoreProgressRef = document.querySelector("#score");
+
 const feedbackCircleRef = document.querySelector("#outer-circle");
 const leftLoadRef = document.querySelector("#left");
 const rightLoadRef = document.querySelector("#right");
@@ -60,29 +62,30 @@ const createSelectBox = (categories) => {
 // ----------------- Start the game
 
 startBtnRef.addEventListener("click", startGame = () => {
-    if(acceptingStart) {
-    acceptingStart = false;
-    fetchQuestions();
-    questionCounter = 0;
-    score = 0;
-    setTimeout(
-        () => {
-            availableQuestions = [...questions];
-            getNewQuestion();
-        }, 500);
-    setTimeout(
-        () => {
-            categoryWrapperRef.classList.add("hide");
-            startBtnRef.classList.add("hide");
-            helpBtn.classList.add("hide");
-            restartDuringRef.classList.remove("hide");
-            tallyContainerRef.classList.remove("hide");
-            questionRef.classList.remove("hide");
-            for (let choice of choicesRef) {
-                choice.classList.remove("hide");
-            };
-        }, 1100);
-}});
+    if (acceptingStart) {
+        acceptingStart = false;
+        fetchQuestions();
+        questionCounter = 0;
+        score = 0;
+        setTimeout(
+            () => {
+                availableQuestions = [...questions];
+                getNewQuestion();
+            }, 500);
+        setTimeout(
+            () => {
+                categoryWrapperRef.classList.add("hide");
+                startBtnRef.classList.add("hide");
+                helpBtn.classList.add("hide");
+                restartDuringRef.classList.remove("hide");
+                tallyContainerRef.classList.remove("hide");
+                questionRef.classList.remove("hide");
+                for (let choice of choicesRef) {
+                    choice.classList.remove("hide");
+                };
+            }, 1100);
+    }
+});
 
 // ----------------- Getting question data from opentbd.com API with selected category
 
@@ -105,7 +108,9 @@ const fetchQuestions = () => {
         })
         .catch(err => {
             console.error(err);
-            if(!alert('Something went wrong getting the questions. Redirecting back to start!')){window.location.reload();}   
+            if (!alert('Something went wrong getting the questions. Redirecting back to start!')) {
+                window.location.reload();
+            }
         });
 };
 
@@ -224,7 +229,6 @@ const gameEnd = () => {
     restartBtnRef.classList.remove("hide");
 };
 
-// -------------------------------------------- Timer
 // ----------------- time counter script
 
 const timer = () => {
@@ -255,7 +259,6 @@ const startTimerBar = () => {
     rightLoadRef.classList.remove("hide");
 };
 
-// ------------------------------------
 // ----------------- Modal Help Script
 
 helpRef.onclick = () => {
@@ -273,13 +276,13 @@ window.onclick = (event) => {
 }
 
 // ----------------- Restart Script
-const restartFunc = () => {
+const restartFunction = () => {
     if (!confirm("Are you sure you want to quit the game and go back to the menu?")) {} else {
         window.location.reload();
     }
 };
 
-restartDuringRef.addEventListener("click", restartFunc);
+restartDuringRef.addEventListener("click", restartFunction);
 
 restartBtnRef.addEventListener("click", () => {
     window.location.reload();
