@@ -174,7 +174,7 @@ The fetching of the questions will be done in the time on the collapse and reapp
 
 ### Game
 
-The game itself is about answering ~~20~~ 15 questions in the general knowledge area or of the selected category. You will be presented with a question and 4 answers. Upon selecting an answer, the button and the outer ring will turn green or red, for correct or incorrect respectively. If incorrect, the correct answer will be shown after a short while, before moving on to the next question.
+The game itself is about answering ~~20~~ ~~15~~ 10 questions in the general knowledge area or of the selected category. You will be presented with a question and 4 answers. Upon selecting an answer, the button and the outer ring will turn green or red, for correct or incorrect respectively. If incorrect, the correct answer will be shown after a short while, before moving on to the next question.
 The questions are made possible by the API of [opentdb.com](https://opentdb.com "Link to open trivia database").
 
 ### Score and Question Progress
@@ -235,7 +235,7 @@ The arialabels do adapt to the content of the question and answers. However when
 *   [W3C Css-validator](https://jigsaw.w3.org/css-validator/ "Link to the w3 css validator")
 *   [W3C Markup-validator](https://validator.w3.org/ "Link to w3c markup validator")
 *   [Techsini](http://techsini.com/ "techsini.com")
-*   [Favicon.cc](#https://www.favicon.cc/?)
+*   [Favicon.cc](https://www.favicon.cc/)
 
 [Back to top](#table-of-content)
 
@@ -308,7 +308,7 @@ Created with information from [W3schools Modals](https://www.w3schools.com/howto
 
 ### Other usefull videos
 
-Other helpfull videos I used to supplement my knowledge about javascript. While I have not take code directly from these videos, they should be mentioned as an asset.
+Other helpfull videos I used to supplement my knowledge about javascript. While I have not used information directly from these videos, they should be mentioned as an asset, as they made me understand javascript better.
 
 * [Video by Akshay Saini](https://www.youtube.com/watch?v=8zKuNo4ay8E)
 * [Web Dev Simplified](https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw)
@@ -329,5 +329,7 @@ This was quite a bit more challenging project compared to the first sole HTML an
 The circular design did make me run into a few problems, as with circles you have a lot less 'real estate' to work with compared to a more angular design. As such there the space available for the questions and answer is not always optimal. If I had more time, I problably would consider a redesign. 
 
 Overal it was enjoyable project to do.
+
+Robert L. Zelhorst
 
 [Back to top](#table-of-content)
